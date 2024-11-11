@@ -11,12 +11,12 @@
         <tr>
             <td>No</td>
             <td>Nama</td>
-            <td>Moto</td>
+            <td>Motto</td>
         </tr>
         <tr>
             <td>1.</td>
-            <td></td>
-            <td></td>
+            <td>Muhammad Abyaz Shadiq</td>
+            <td>Jadilah pengikut impianmu, bukan pengikut keinginan orang lain</td>
         </tr>
         <tr>
             <td>2.</td>
