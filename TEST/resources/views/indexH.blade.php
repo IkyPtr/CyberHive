@@ -30,8 +30,8 @@
         </tr>
         <tr>
             <td>4.</td>
-            <td></td>
-            <td></td>
+            <td>Helfia Giska Renata</td>
+            <td>Jalani aja dulu</td>
         </tr>
     </table>
 </body>
