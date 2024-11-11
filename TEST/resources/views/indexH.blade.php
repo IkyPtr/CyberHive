@@ -25,8 +25,8 @@
         </tr>
         <tr>
             <td>3.</td>
-            <td></td>
-            <td></td>
+            <td>Aqila Wafiah</td>
+            <td>Saat kita punya harapan, maka kita akan fokus mencapai tujuan hidup</td>
         </tr>
         <tr>
             <td>4.</td>
