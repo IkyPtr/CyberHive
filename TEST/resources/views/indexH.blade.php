@@ -25,13 +25,13 @@
         </tr>
         <tr>
             <td>3.</td>
-            <td></td>
-            <td></td>
+            <td>Aqila Wafiah</td>
+            <td>Aku cantik</td>
         </tr>
         <tr>
             <td>4.</td>
-            <td></td>
-            <td></td>
+            <td>Helfia Giska Renata</td>
+            <td>Jalani aja dulu</td>
         </tr>
         <tr>
             <td>5.</td>
