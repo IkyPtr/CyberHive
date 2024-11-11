@@ -20,8 +20,8 @@
         </tr>
         <tr>
             <td>2.</td>
-            <td></td>
-            <td></td>
+            <td>Rezki Saputra</td>
+            <td>JADILAH YANG TERBAIK KARENA SAYA ADA 2</td>
         </tr>
         <tr>
             <td>3.</td>
