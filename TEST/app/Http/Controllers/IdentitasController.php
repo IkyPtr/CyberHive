@@ -13,7 +13,7 @@ class IdentitasController extends Controller
      */
     public function index()
     {
-        //
+        return view('identitas.tampil');
     }
 
     /**
@@ -21,7 +21,7 @@ class IdentitasController extends Controller
      */
     public function create()
     {
-        //
+        return view('identitas.create');
     }
 
     /**
