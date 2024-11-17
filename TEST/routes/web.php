@@ -14,3 +14,8 @@ Route::get('/rezki', function() {
     $identitas = Identitas::find(1);
     return view('identitas.rezki', compact('identitas'));
 })->name('rezki');
+
+Route::get('/aqila', function() {
+    $identitas = Identitas::find(2);
+    return view('identitas.aqila', compact('identitas'));
+})->name('aqila');
