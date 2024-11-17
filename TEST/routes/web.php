@@ -26,6 +26,6 @@ Route::get('/giska', function() {
 })->name('giska');
 
 Route::get('/abyaz', function() {
-    $identitas = Identitas::find(3);
+    $identitas = Identitas::find(4);
     return view('identitas.abyaz', compact('identitas'));
 })->name('abyaz');
