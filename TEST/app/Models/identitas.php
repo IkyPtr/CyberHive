@@ -6,5 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class identitas extends Model
 {
-    protected $guarded = [];
+    protected $fillable = [
+        'nama',
+        'foto',
+        'umur',
+        'no_hp',
+        'motivasi'
+    ];
 }

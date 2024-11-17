@@ -37,10 +37,18 @@ class IdentitasController extends Controller
             'motivasi' => 'required|string',
         ]);
 
-        // Simpan data ke database
-        identitas::create($validated);
-        return redirect()->route('identitas.index')->with('success', 'Data berhasil disimpan.');
+        if ($request->hasFile('foto')) {
+            $image = $request->file('foto');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('images'), $imageName);
+            $validated['foto'] = $imageName;
+        }
+
+        Identitas::create($validated);
+
+        return redirect()->route('identitas.index');
     }
+
 
     /**
      * Display the specified resource.

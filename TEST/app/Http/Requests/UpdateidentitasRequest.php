@@ -11,7 +11,7 @@ class UpdateidentitasRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,11 @@ class UpdateidentitasRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'nama' => 'required|string|max:255',
+            'foto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'umur' => 'required|integer',
+            'no_hp' => 'required|string|max:14',
+            'motivasi' => 'required|string',
         ];
     }
 }
