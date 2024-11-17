@@ -195,7 +195,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="https://soft-ui-dashboard-laravel.creative-tim.com/billing">
+                    <a class="nav-link " href="{{ route('abyaz') }}">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <svg width="12px" height="12px" viewBox="0 0 46 42" version="1.1"
@@ -226,7 +226,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="https://soft-ui-dashboard-laravel.creative-tim.com/virtual-reality">
+                    <a class="nav-link " href="{{ route('fadhel') }}">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <svg width="12px" height="12px" viewBox="0 0 46 42" version="1.1"
@@ -434,7 +434,7 @@
                                                 </td>
                                                 <td class="text-center">
                                                     <a href="{{ route('rezki') }}" class="mx-3" data-bs-toggle="tooltip"
-                                                        data-bs-original-title="Edit user">
+                                                        data-bs-original-title="Lihat Anggota">
                                                         <i class="fas fa-user-edit text-secondary"></i>
                                                     </a>
                                                 </td>
@@ -459,7 +459,7 @@
                                                 </td>
                                                 <td class="text-center">
                                                     <a href="{{ route('aqila') }}" class="mx-3" data-bs-toggle="tooltip"
-                                                        data-bs-original-title="Edit user">
+                                                        data-bs-original-title="Lihat Anggota">
                                                         <i class="fas fa-user-edit text-secondary"></i>
                                                     </a>
                                                 </td>
@@ -485,7 +485,7 @@
                                                 </td>
                                                 <td class="text-center">
                                                     <a href="{{ route('giska') }}" class="mx-3" data-bs-toggle="tooltip"
-                                                        data-bs-original-title="Edit user">
+                                                        data-bs-original-title="Lihat Anggota">
                                                         <i class="fas fa-user-edit text-secondary"></i>
                                                     </a>
                                                 </td>
@@ -510,8 +510,8 @@
                                                         DEVELOPER</span>
                                                 </td>
                                                 <td class="text-center">
-                                                    <a href="#" class="mx-3" data-bs-toggle="tooltip"
-                                                        data-bs-original-title="Edit user">
+                                                    <a href="{{ route('abyaz') }}" class="mx-3" data-bs-toggle="tooltip"
+                                                        data-bs-original-title="Lihat Anggota">
                                                         <i class="fas fa-user-edit text-secondary"></i>
                                                     </a>
                                                 </td>
@@ -536,8 +536,8 @@
                                                         DEVELOPER</span>
                                                 </td>
                                                 <td class="text-center">
-                                                    <a href="#" class="mx-3" data-bs-toggle="tooltip"
-                                                        data-bs-original-title="Edit user">
+                                                    <a href="{{ route('fadhel') }}" class="mx-3" data-bs-toggle="tooltip"
+                                                        data-bs-original-title="Lihat Anggota">
                                                         <i class="fas fa-user-edit text-secondary"></i>
                                                     </a>
                                                 </td>

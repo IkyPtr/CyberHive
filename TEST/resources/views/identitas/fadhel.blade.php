@@ -380,7 +380,7 @@
                                             {{ $identitas->nama }}
                                         </h5>
                                         <p class="mb-0 font-weight-bold text-sm">
-                                            PROJECT MANAGER DAN BACKEND DEVELOPER
+                                            FRONTEND DEV
                                         </p>
                                     </div>
                                 </div>
@@ -429,7 +429,7 @@
                                             <div class="form-group">
                                                 <label for="user.location" class="form-control-label">EMAIL</label>
                                                 <div class="">
-                                                   <h6>rezki23ti@mahasiswa.pcr.ac.id</h6>
+                                                   <h6>fadhel23ti@mahasiswa.pcr.ac.id</h6>
                                                 </div>
                                             </div>
                                         </div>
