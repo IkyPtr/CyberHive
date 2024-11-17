@@ -356,215 +356,110 @@
         <!-- End Navbar -->
         <div class="container-fluid py-4">
 
-            <div>
-                <div class="alert alert-secondary mx-4" role="alert">
-                    <span class="text-white">
-                        <strong>
-                            <center>SELAMAT DATANG DI CYBERHIVE, DIBAWAH INI ADALAH DESKRIPSI ANGOTTA KELOMPOK DAN PIC
-                                NYA!!!</center>
-                        </strong>
-                    </span>
-                </div>
+            <div class="container-fluid py-4">
 
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card mb-4 mx-4">
-                            <div class="card-header pb-0">
-                                <div class="d-flex flex-row justify-content-between">
-                                    <div>
-                                        <h5 class="mb-0">ANGGOTA CYBERHIVE</h5>
+                <div>
+                    <div class="container-fluid">
+                        <div class="page-header min-height-300 border-radius-xl mt-4"
+                            style="background-image: url('../assets/img/curved-images/curved0.jpg'); background-position-y: 50%;">
+                            <span class="mask bg-gradient-primary opacity-6"></span>
+                        </div>
+                        <div class="card card-body blur shadow-blur mx-4 mt-n6">
+                            <div class="row gx-4">
+                                <div class="col-auto">
+                                    <div class="avatar avatar-xl position-relative">
+                                        <img src="{{ asset('images/'.$identitas->foto) }}" alt="Profile Photo">
+                                        <a href="javascript:;"
+                                            class="btn btn-sm btn-icon-only bg-gradient-light position-absolute bottom-0 end-0 mb-n2 me-n2">
+                                            <i class="fa fa-pen top-0" data-bs-toggle="tooltip"
+                                                data-bs-placement="top" title="Edit Image"></i>
+                                        </a>
                                     </div>
-                                    <a href="{{ route('identitas.create') }}"
-                                        class="btn bg-gradient-primary btn-sm mb-0">
-                                        Tambah Data SAYANG...
-                                    </a>
                                 </div>
-                            </div>
-                            <div class="card-body px-0 pt-0 pb-2">
-                                <div class="table-responsive p-0">
-                                    <table class="table align-items-center mb-0">
-                                        <thead>
-                                            <tr>
-                                                <th
-                                                    class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                    NO
-                                                </th>
-
-                                                <th
-                                                    class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                    NAMA
-                                                </th>
-                                                <th
-                                                    class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                    UMUR
-                                                </th>
-                                                <th
-                                                    class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                    EMAIL
-                                                </th>
-                                                <th
-                                                    class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                    PIC / ROLE
-                                                </th>
-                                                <th
-                                                    class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                    AKSI
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="ps-4">
-                                                    <p class="text-xs font-weight-bold mb-0">1</p>
-                                                </td>
-
-                                                <td class="text-center">
-                                                    <p class="text-xs font-weight-bold mb-0">REZKI SAPUTRA</p>
-                                                </td>
-                                                <td class="text-center">
-                                                    <p class="text-xs font-weight-bold mb-0">20</p>
-                                                </td>
-                                                <td class="text-center">
-                                                    <p class="text-xs font-weight-bold mb-0">
-                                                        rezki23ti@mahasiswa.pcr.ac.id</p>
-                                                </td>
-                                                <td class="text-center">
-                                                    <span class="text-secondary text-xs font-weight-bold">PROJEK
-                                                        MANAJER DAN BACKEND DEVELOPER</span>
-                                                </td>
-                                                <td class="text-center">
-                                                    <a href="#" class="mx-3" data-bs-toggle="tooltip"
-                                                        data-bs-original-title="Edit user">
-                                                        <i class="fas fa-user-edit text-secondary"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="ps-4">
-                                                    <p class="text-xs font-weight-bold mb-0">2</p>
-                                                </td>
-
-                                                <td class="text-center">
-                                                    <p class="text-xs font-weight-bold mb-0">AQILA WAFIAH</p>
-                                                </td>
-                                                <td class="text-center">
-                                                    <p class="text-xs font-weight-bold mb-0">19</p>
-                                                </td>
-                                                <td class="text-center">
-                                                    <p class="text-xs font-weight-bold mb-0">
-                                                        aqila23ti@mahasiswa.pcr.ac.id</p>
-                                                </td>
-                                                <td class="text-center">
-                                                    <span class="text-secondary text-xs font-weight-bold">PROJEK
-                                                        ANALIST</span>
-                                                </td>
-                                                <td class="text-center">
-                                                    <a href="#" class="mx-3" data-bs-toggle="tooltip"
-                                                        data-bs-original-title="Edit user">
-                                                        <i class="fas fa-user-edit text-secondary"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="ps-4">
-                                                    <p class="text-xs font-weight-bold mb-0">3</p>
-                                                </td>
-
-                                                <td class="text-center">
-                                                    <p class="text-xs font-weight-bold mb-0">HELIFA GISKA RENATA</p>
-                                                </td>
-                                                <td class="text-center">
-                                                    <p class="text-xs font-weight-bold mb-0">19</p>
-                                                </td>
-                                                <td class="text-center">
-                                                    <p class="text-xs font-weight-bold mb-0">
-                                                        helfia23ti@mahasiswa.pcr.ac.id</p>
-                                                </td>
-                                                <td class="text-center">
-                                                    <span class="text-secondary text-xs font-weight-bold">SISTWEM
-                                                        ANALIST</span>
-                                                </td>
-                                                <td class="text-center">
-                                                    <a href="#" class="mx-3" data-bs-toggle="tooltip"
-                                                        data-bs-original-title="Edit user">
-                                                        <i class="fas fa-user-edit text-secondary"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="ps-4">
-                                                    <p class="text-xs font-weight-bold mb-0">4</p>
-                                                </td>
-
-                                                <td class="text-center">
-                                                    <p class="text-xs font-weight-bold mb-0">MUHAMMAD ABYAZ SHADIQ</p>
-                                                </td>
-                                                <td class="text-center">
-                                                    <p class="text-xs font-weight-bold mb-0">19</p>
-                                                </td>
-                                                <td class="text-center">
-                                                    <p class="text-xs font-weight-bold mb-0">
-                                                        abyaz23ti@mahasiswa.pcr.ac.id</p>
-                                                </td>
-                                                <td class="text-center">
-                                                    <span class="text-secondary text-xs font-weight-bold">FRONTEND
-                                                        DEVELOPER</span>
-                                                </td>
-                                                <td class="text-center">
-                                                    <a href="#" class="mx-3" data-bs-toggle="tooltip"
-                                                        data-bs-original-title="Edit user">
-                                                        <i class="fas fa-user-edit text-secondary"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="ps-4">
-                                                    <p class="text-xs font-weight-bold mb-0">5</p>
-                                                </td>
-
-                                                <td class="text-center">
-                                                    <p class="text-xs font-weight-bold mb-0">FADHEL NOUVAL NUDRIAN</p>
-                                                </td>
-                                                <td class="text-center">
-                                                    <p class="text-xs font-weight-bold mb-0">19</p>
-                                                </td>
-                                                <td class="text-center">
-                                                    <p class="text-xs font-weight-bold mb-0">
-                                                        fadhel23ti@mahasiswa.pcr.ac.id</p>
-                                                </td>
-                                                <td class="text-center">
-                                                    <span class="text-secondary text-xs font-weight-bold">FRONTEND
-                                                        DEVELOPER</span>
-                                                </td>
-                                                <td class="text-center">
-                                                    <a href="#" class="mx-3" data-bs-toggle="tooltip"
-                                                        data-bs-original-title="Edit user">
-                                                        <i class="fas fa-user-edit text-secondary"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                <div class="col-auto my-auto">
+                                    <div class="h-100">
+                                        <h5 class="mb-1">
+                                            {{ $identitas->nama }}
+                                        </h5>
+                                        <p class="mb-0 font-weight-bold text-sm">
+                                            PROJEK MANAJER DAN BACKEND DEVELOPER
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="container-fluid py-4">
+                        <div class="card">
+                            <div class="card-header pb-0 px-3">
+                                <h6 class="mb-0">Informasi Anggota</h6>
+                            </div>
+                            <div class="card-body pt-4 p-3">
+                                <form action="/user-profile" method="POST" role="form text-left">
+                                    <input type="hidden" name="_token"
+                                        value="MawB2idlIsCffrBYvn11gS9yezTb7tUm8Afbg0RU" autocomplete="off">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="user-name" class="form-control-label">Nama Lengkap</label>
+                                                <div class="">
+                                                    <h7 class="mb-1">
+                                                        {{ $identitas->nama }}
+                                                    </h7>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="user-email" class="form-control-label">NO HP</label>
+                                                <div class="">
+                                                    <h7>{{ $identitas->no_hp }}</h7>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="user.phone" class="form-control-label">UMUR</label>
+                                                <div class="">
+                                                   <h6>{{ $identitas->umur }}</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="user.location" class="form-control-label">EMAIL</label>
+                                                <div class="">
+                                                   <h6>rezki23ti@mahasiswa.pcr.ac.id</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="about">Motivasi</label>
+                                        <div class="">
+                                            <h4>{{ $identitas->motivasi }}</h4>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+                <footer class="footer pt-3  ">
+                    <div class="container-fluid">
+                        <div class="row align-items-center justify-content-lg-betendween">
+                            <div class="col-lg-6 mb-lg-0 mb-4">
+                                <div class="copyright text-center text-sm text-muted text-lg-start">
+                                    SEKIAN TERIMAKASIH UNTUK DATANG BERKUNJUNG
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
             </div>
-
-            <footer class="footer pt-3  ">
-                <div class="container-fluid">
-                    <div class="row align-items-center justify-content-lg-betendween">
-                        <div class="col-lg-6 mb-lg-0 mb-4">
-                            <div class="copyright text-center text-sm text-muted text-lg-start">
-                                Sekian terimakasih atas kunjungannya. untuk lebih detail anda bisa klik aksi setiap data
-                                dari anggota
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-        </div>
     </main>
     <!--   Core JS Files   -->
     <script src="{{ asset('public/assets/js/core/popper.min.js') }}"></script>
