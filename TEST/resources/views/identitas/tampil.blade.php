@@ -360,7 +360,7 @@
                 <div class="alert alert-secondary mx-4" role="alert">
                     <span class="text-white">
                         <strong>
-                            <center>SELAMAT DATANG DI CYBERHIVE, DIBAWAH INI ADALAH DESKRIPSI ANGOTA KELOMPOK DAN PIC
+                            <center>SELAMAT DATANG DI CYBERHIVE, DIBAWAH INI ADALAH DESKRIPSI ANGGOTA KELOMPOK DAN PIC
                                 NYA!!!</center>
                         </strong>
                     </span>
