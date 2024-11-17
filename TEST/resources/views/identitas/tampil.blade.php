@@ -73,7 +73,7 @@
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <svg width="12px" height="12px" viewBox="0 0 46 42" version="1.1"
                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                <title>PROFIL-ANGGOTA</title>
+                                <title>TABEL-ANGGOTA</title>
                                 <g id="Basic-Elements" stroke="none" stroke-width="1" fill="none"
                                     fill-rule="evenodd">
                                     <g id="Rounded-Icons" transform="translate(-1717.000000, -291.000000)"
@@ -360,7 +360,7 @@
                 <div class="alert alert-secondary mx-4" role="alert">
                     <span class="text-white">
                         <strong>
-                            <center>SELAMAT DATANG DI CYBERHIVE, DIBAWAH INI ADALAH DESKRIPSI ANGOTTA KELOMPOK DAN PIC
+                            <center>SELAMAT DATANG DI CYBERHIVE, DIBAWAH INI ADALAH DESKRIPSI ANGOTA KELOMPOK DAN PIC
                                 NYA!!!</center>
                         </strong>
                     </span>
