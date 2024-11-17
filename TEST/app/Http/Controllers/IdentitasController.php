@@ -29,7 +29,17 @@ class IdentitasController extends Controller
      */
     public function store(StoreidentitasRequest $request)
     {
-        //
+        $validated = $request->validate([
+            'nama' => 'required|string|max:255',
+            'foto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'umur' => 'required|integer',
+            'no_hp' => 'required|string|max:14',
+            'motivasi' => 'required|string',
+        ]);
+
+        // Simpan data ke database
+        identitas::create($validated);
+        return redirect()->route('identitas.index')->with('success', 'Data berhasil disimpan.');
     }
 
     /**
