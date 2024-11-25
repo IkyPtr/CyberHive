@@ -12,7 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('koordinators', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_ko');
+            $table->string('nama_ko');
+            $table->integer('nim_nip');
+            $table->integer('no_hp');
+            $table->string('email');
             $table->timestamps();
         });
     }
