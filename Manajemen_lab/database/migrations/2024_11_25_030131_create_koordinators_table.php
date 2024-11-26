@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('koordinators', function (Blueprint $table) {
-            $table->string('id_ko')->unique();
+            $table->string('id_ko')->primary();
             $table->string('nama_ko');
             $table->integer('nim_nip');
             $table->integer('no_hp');
