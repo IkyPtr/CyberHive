@@ -9,4 +9,8 @@ class Koordinator extends Model
 {
     use HasFactory;
     protected $guarded = [];
+    public function labs()
+    {
+        return $this->hasMany(Lab::class, 'id_ko', 'id_ko');
+    }
 }

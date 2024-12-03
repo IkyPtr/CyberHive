@@ -14,4 +14,8 @@ class Peserta extends Model
         'nim_nip',
         'kelas',
     ];
+    public function labs()
+    {
+        return $this->hasMany(Lab::class, 'id_ps', 'id_ps');
+    }
 }

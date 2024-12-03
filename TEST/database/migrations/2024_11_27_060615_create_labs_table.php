@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('labs', function (Blueprint $table) {
             $table->id();
-            $table->string('lab_id',10)->unique();
+            $table->string('lab_id',10)->unique()->autoIncrement();
             $table->string('no_ruangan',4);
             $table->string('no_loker',2);
             $table->string('no_pc',2);
@@ -24,16 +24,16 @@ return new class extends Migration
             $table->text('keterangan')->nullable();
             $table->text('alat')->nullable();
             $table->date('tanggal');
-            $table->string('nim',10);
-            $table->string('mk_id',5);
-            $table->string('id_ko',4);
-            $table->string('id_ps',4);
+            $table->string('nim',10)->nullable();
+            $table->string('mk_id',5)->nullable();
+            $table->string('id_ko',4)->nullable();
+            $table->string('id_ps',4)->nullable();
             $table->timestamps();
             // Set foreign key constraints
-            $table->foreign('nim')->references('nim')->on('mahasiswas')->onDelete('cascade');
-            $table->foreign('mk_id')->references('mk_id')->on('matakuliahs')->onDelete('cascade');
-            $table->foreign('id_ko')->references('id_ko')->on('koordinators')->onDelete('cascade');
-            $table->foreign('id_ps')->references('id_ps')->on('pesertas')->onDelete('cascade');
+            $table->foreign('nim')->references('nim')->on('mahasiswas')->nullOnDelete();
+            $table->foreign('mk_id')->references('mk_id')->on('matakuliahs')->nullOnDelete();
+            $table->foreign('id_ko')->references('id_ko')->on('koordinators')->nullOnDelete();
+            $table->foreign('id_ps')->references('id_ps')->on('pesertas')->nullOnDelete();
         });
     }
 

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('koordinators', function (Blueprint $table) {
             $table->id();
-            $table->string('id_ko',4)->unique();
+            $table->string('id_ko',4)->unique()->nullable();
             $table->string('nama_ko');
             $table->string('nim_nip',10)->unique();
             $table->string('no_hp',12)->unique();

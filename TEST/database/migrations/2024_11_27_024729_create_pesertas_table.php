@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('pesertas', function (Blueprint $table) {
             $table->id();
-            $table->string('id_ps',4)->unique();
+            $table->string('id_ps',4)->unique()->nullable();
             $table->string('nama_ps');
             $table->string('nim_nip',10)->unique();
             $table->string('kelas',6);

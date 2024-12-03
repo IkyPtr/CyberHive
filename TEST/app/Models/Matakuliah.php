@@ -9,4 +9,8 @@ class Matakuliah extends Model
 {
     use HasFactory;
     protected $guarded = [];
+    public function labs()
+    {
+        return $this->hasMany(Lab::class, 'mk_id', 'mk_id');
+    }
 }

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('matakuliahs', function (Blueprint $table) {
             $table->id();
-            $table->string('mk_id', 5)->unique();
+            $table->string('mk_id', 5)->unique()->nullable();
             $table->string('nama_mk');
             $table->time('jam_masuk');
             $table->time('jam_keluar');

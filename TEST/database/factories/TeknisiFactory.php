@@ -17,7 +17,10 @@ class TeknisiFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'id_tk' => strtoupper(fake()->unique()->lexify('????')),
+            'username' => $this->faker->unique()->userName,
+            'password' => $this->faker->password,
+            'nama' => $this->faker->name,
         ];
     }
 }
