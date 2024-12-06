@@ -5,7 +5,7 @@ use App\Http\Controllers\IdentitasController;
 use App\Models\identitas;
 
 Route::get('/', function () {
-    return view('identitas.tampil');;
+    return view('index_awal');
 });
 Route::get('/login', function () {
     return view('login');;

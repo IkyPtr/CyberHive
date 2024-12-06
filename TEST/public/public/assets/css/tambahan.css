@@ -1,0 +1,15 @@
+.cs-hero_shapes {
+    position: relative;
+    height: 300px; /* Adjust as needed */
+}
+
+.cs-shape {
+    position: absolute;
+}
+
+.cs-shape_position1 { top: 0; left: 0; }
+.cs-shape_position2 { top: 20%; right: 0; }
+.cs-shape_position3 { bottom: 0; left: 20%; }
+.cs-shape_position4 { top: 40%; right: 20%; }
+.cs-shape_position5 { bottom: 20%; left: 0; }
+.cs-shape_position6 { top: 0; right: 30%; }
