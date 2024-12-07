@@ -7,6 +7,9 @@ use App\Models\identitas;
 Route::get('/', function () {
     return view('index_awal');
 });
+Route::get('/peserta', function () {
+    return view('Peserta.peserta_index');
+});
 Route::get('/login', function () {
     return view('login');;
 });
@@ -42,3 +45,4 @@ Route::get('/fadhel', function() {
     $identitas = Identitas::find(5);
     return view('identitas.fadhel', compact('identitas'));
 })->name('fadhel');
+
