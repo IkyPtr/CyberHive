@@ -10,6 +10,9 @@ Route::get('/', function () {
 Route::get('/peserta', function () {
     return view('Peserta.peserta_index');
 });
+Route::get('/mahasiswa/create', function () {
+    return view('Mahasiswa.kuliah_create');
+});
 Route::get('/login', function () {
     return view('login');;
 });
