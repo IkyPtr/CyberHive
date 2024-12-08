@@ -1,35 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="keywords"
-        content="creative tim, updivision, html dashboard, laravel, html css dashboard laravel, soft ui dashboard laravel, laravel soft ui dashboard, soft ui admin, laravel dashboard, laravel admin, web dashboard, bootstrap 5 dashboard laravel, bootstrap 5, css3 dashboard, bootstrap 5 admin laravel, soft ui dashboard bootstrap 5 laravel, frontend, responsive bootstrap 5 dashboard, soft ui dashboard, soft ui laravel bootstrap 5 dashboard" />
-    <meta name="description"
-        content="A free Laravel Dashboard featuring dozens of UI components & basic Laravel CRUDs." />
-    <meta itemprop="name" content="Soft UI Dashboard Laravel by Creative Tim & UPDIVISION" />
-    <meta itemprop="description"
-        content="A free Laravel Dashboard featuring dozens of UI components & basic Laravel CRUDs." />
-    <meta itemprop="image"
-        content="https://s3.amazonaws.com/creativetim_bucket/products/602/original/soft-ui-dashboard-laravel.jpg" />
-    <meta name="twitter:card" content="product" />
-    <meta name="twitter:site" content="@creativetim" />
-    <meta name="twitter:title" content="Soft UI Dashboard Laravel by Creative Tim & UPDIVISION" />
-    <meta name="twitter:description"
-        content="A free Laravel Dashboard featuring dozens of UI components & basic Laravel CRUDs." />
-    <meta name="twitter:creator" content="@creativetim" />
-    <meta name="twitter:image"
-        content="https://s3.amazonaws.com/creativetim_bucket/products/602/original/soft-ui-dashboard-laravel.jpg" />
-    <meta property="fb:app_id" content="655968634437471" />
-    <meta property="og:title" content="Soft UI Dashboard Laravel by Creative Tim & UPDIVISION" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://www.creative-tim.com/live/soft-ui-dashboard-laravel" />
-    <meta property="og:image"
-        content="https://s3.amazonaws.com/creativetim_bucket/products/602/original/soft-ui-dashboard-laravel.jpg" />
-    <meta property="og:description"
-        content="A free Laravel Dashboard featuring dozens of UI components & basic Laravel CRUDs." />
-    <meta property="og:site_name" content="Creative Tim" />
-    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('public/assets/img/apple-icon.png') }}">
     <link rel="icon" type="image/png" href="{{ asset('public/assets/img/favicon.png') }}">
     <title>
         MANAJEMEN LAB JTI PCR
@@ -46,12 +17,20 @@
     <link id="pagestyle" href="{{ asset('public/assets/css/soft-ui-dashboard.css?v=1.0.3') }}" rel="stylesheet" />
     <style>
         .carousel {
-            width: 300px;
+            width: 100%;
+            /* Changed from 300px to 100% */
             border-radius: 10px;
             overflow: hidden;
         }
         .carousel-item {
             transition: transform 0.6s ease-in-out;
+            height: 400px;
+            /* Added fixed height */
+        }
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         .carousel-control-prev,
         .carousel-control-next {
@@ -83,10 +62,11 @@
             <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4 d-flex justify-content-end"
                 id="navbar">
                 <div class="nav-item d-flex align-self-end">
-                    <a href="https://www.creative-tim.com/product/soft-ui-dashboard-laravel" target="_blank"
-                        class="btn btn-primary active mb-0 text-white" role="button" aria-pressed="true">
-                        Download
-                    </a>
+                    <button type="button" class="btn btn-linkedin btn-icon mt-2">
+                        <a href="{{ url('/login') }}" class="text-white text-decoration-none">
+                            <span class="btn-inner--text">LOGIN</span>
+                        </a>
+                    </button>
                 </div>
                 <div class="ms-md-3 pe-md-3 d-flex align-items-center">
                 </div>
@@ -124,8 +104,8 @@
                                 </div>
                             </div>
                             <div class="row mt-3">
-                                <div class="col-lg-6 col-md-8 mt-8 mt-sm-4">
-                                    <div class="card bg-gradient-dark move-on-hover">
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="card bg-gradient-dark">
                                         <div class="card-body">
                                             <div class="d-flex">
                                                 <h4 class="mb-2 text-white">
@@ -135,27 +115,25 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="card move-on-hover mt-4">
+                                    <div class="card mt-4">
                                         <div class="card-body">
-
-                                        </div>
-                                    </div>
-                                    <div class="card move-on-hover mt-4">
-                                        <div class="card-body">
-                                            <div class="d-flex justify-content-between">
-                                                <button class="btn btn-primary" onclick="logPerkuliahan()">
+                                            <div class="d-flex justify-content-between gap-4">
+                                                <button class="btn btn-linkedin btn-lg flex-grow-1"
+                                                    onclick="window.location.href='{{ url('/logper') }}'">
+                                                    <i class="fas fa-book me-2"></i>
                                                     Log Perkuliahan
                                                 </button>
-                                                <button class="btn btn-secondary" onclick="logKegiatan()">
+                                                <button class="btn btn-secondary btn-lg flex-grow-1"
+                                                    onclick="window.location.href='{{ url('/logkeg') }}'">
+                                                    <i class="fas fa-book me-2"></i>
                                                     Log Kegiatan
                                                 </button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6 col-md-6 mt-6 mt-sm-0">
-                                    <div
-                                        class="card card-background card-background-mask-primary move-on-hover align-items-start">
+                                <div class="col-lg-5 col-md-6">
+                                    <div class="card align-items-start">
                                         <div class="ms-auto">
                                             <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
                                                 <!-- Indicators -->
@@ -172,24 +150,20 @@
                                                 <!-- Slides -->
                                                 <div class="carousel-inner">
                                                     <div class="carousel-item active">
-                                                        <img src="{{ asset('public/assets/img/lab1.jpg') }}"
-                                                            class="d-block w-100" alt="Lab 1"
-                                                            style="height: 200px; object-fit: cover;">
+                                                        <img src="{{ asset('public/assets/img/1.jpg') }}"
+                                                            class="d-block w-100" alt="Lab 1">
                                                     </div>
                                                     <div class="carousel-item">
-                                                        <img src="{{ asset('public/assets/img/lab2.jpg') }}"
-                                                            class="d-block w-100" alt="Lab 2"
-                                                            style="height: 200px; object-fit: cover;">
+                                                        <img src="{{ asset('public/assets/img/2.jpg') }}"
+                                                            class="d-block w-100" alt="Lab 2">
                                                     </div>
                                                     <div class="carousel-item">
-                                                        <img src="{{ asset('public/assets/img/lab3.jpg') }}"
-                                                            class="d-block w-100" alt="Lab 3"
-                                                            style="height: 200px; object-fit: cover;">
+                                                        <img src="{{ asset('public/assets/img/3.jpg') }}"
+                                                            class="d-block w-100" alt="Lab 3">
                                                     </div>
                                                     <div class="carousel-item">
-                                                        <img src="{{ asset('public/assets/img/lab4.jpg') }}"
-                                                            class="d-block w-100" alt="Lab 4"
-                                                            style="height: 200px; object-fit: cover;">
+                                                        <img src="{{ asset('public/assets/img/4.jpg') }}"
+                                                            class="d-block w-100" alt="Lab 4">
                                                     </div>
                                                 </div>
                                                 <!-- Controls -->
@@ -219,39 +193,6 @@
     <script src="{{ asset('public/assets/js/plugins/smooth-scrollbar.min.js') }}"></script>
     <script src="{{ asset('public/assets/js/plugins/fullcalendar.min.js') }}"></script>
     <script src="{{ asset('public/assets/js/plugins/chartjs.min.js') }}"></script>
-    <script>
-        var win = navigator.platform.indexOf('Win') > -1;
-        if (win && document.querySelector('#sidenav-scrollbar')) {
-            var options = {
-                damping: '0.5'
-            }
-            Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
-        }
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const carousel = document.querySelector('#imageCarousel');
-            let touchStartX = 0;
-            let touchEndX = 0;
-            carousel.addEventListener('touchstart', e => {
-                touchStartX = e.changedTouches[0].screenX;
-            });
-            carousel.addEventListener('touchend', e => {
-                touchEndX = e.changedTouches[0].screenX;
-                handleSwipe();
-            });
-            function handleSwipe() {
-                if (touchStartX - touchEndX > 50) {
-                    // Swipe left
-                    bootstrap.Carousel.getInstance(carousel).next();
-                }
-                if (touchEndX - touchStartX > 50) {
-                    // Swipe right
-                    bootstrap.Carousel.getInstance(carousel).prev();
-                }
-            }
-        });
-    </script>
     <!-- Github buttons -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->

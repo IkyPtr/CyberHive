@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8" />
+    {{-- <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="keywords"
         content="creative tim, updivision, html dashboard, laravel, html css dashboard laravel, soft ui dashboard laravel, laravel soft ui dashboard, soft ui admin, laravel dashboard, laravel admin, web dashboard, bootstrap 5 dashboard laravel, bootstrap 5, css3 dashboard, bootstrap 5 admin laravel, soft ui dashboard bootstrap 5 laravel, frontend, responsive bootstrap 5 dashboard, soft ui dashboard, soft ui laravel bootstrap 5 dashboard" />
@@ -30,8 +29,7 @@
     <meta property="og:description"
         content="A free Laravel Dashboard featuring dozens of UI components & basic Laravel CRUDs." />
     <meta property="og:site_name" content="Creative Tim" />
-
-    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('public/assets/img/apple-icon.png') }}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('public/assets/img/apple-icon.png') }}"> --}}
     <link rel="icon" type="image/png" href="{{ asset('public/assets/img/favicon.png') }}">
     <title>
         PROJEK LARAVEL CYBERHIVE KELOMPOK 3 BPF
@@ -47,10 +45,7 @@
     <!-- CSS Files -->
     <link id="pagestyle" href="{{ asset('public/assets/css/soft-ui-dashboard.css?v=1.0.3') }}" rel="stylesheet" />
 </head>
-
 <body class="g-sidenav-show  bg-gray-100  ">
-
-
     <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 "
         id="sidenav-main">
         <div class="sidenav-header">
@@ -58,15 +53,11 @@
                 aria-hidden="true" id="iconSidenav"></i>
             <a class="align-items-center d-flex m-0 navbar-brand text-wrap" href="">
                 <img src="{{ asset('public/assets/img/pcr (2).png') }}" class="navbar-brand-img h-100" alt="...">
-                
             </a>
         </div>
-
     </aside>
     @extends('layouts.user_type.guest')
-
 @section('content')
-
   <main class="main-content  mt-0">
     <section>
       <div class="page-header min-vh-75">
@@ -102,14 +93,11 @@
                     </table>
               </div>
               </div>
-            
-            
           </div>
         </div>
       </div>
     </section>
   </main>
-
 @endsection
     <!--   Core JS Files   -->
     <script src="{{ asset('public/assets/js/core/popper.min.js') }}"></script>
@@ -127,7 +115,6 @@
             Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
         }
     </script>
-
     <!-- Github buttons -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
