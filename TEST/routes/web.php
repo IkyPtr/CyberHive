@@ -22,7 +22,9 @@ Route::get('/logper', function () {
 Route::get('/logkeg', function () {
     return view('logkeg');;
 });
-
+Route::get('/admin/create', function () {
+    return view('Admin.Admin_create');;
+});
 
 Route::resource('identitas', IdentitasController::class);
 Route::get('/rezki', function() {
