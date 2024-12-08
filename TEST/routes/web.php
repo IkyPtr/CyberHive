@@ -25,6 +25,10 @@ Route::get('/logper', function () {
 Route::get('/logkeg', function () {
     return view('logkeg');;
 });
+Route::get('/logkeg/KOOR', function () {
+    return view('Koordinator.koordinator_create');
+});
+
 Route::get('/admin/create', function () {
     return view('Admin.Admin_create');;
 });
