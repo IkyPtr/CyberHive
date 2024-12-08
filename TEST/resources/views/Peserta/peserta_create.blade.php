@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="icon" type="image/png" href="{{ asset('public/assets/img/favicon.png') }}">
     <title>Create Peserta</title>
     <link href="{{ asset('public/assets/css/soft-ui-dashboard.css?v=1.0.3') }}" rel="stylesheet" />
 </head>
@@ -11,7 +12,7 @@
                 <h5 class="card-title">Form Peserta</h5>
             </div>
             <div class="card-body">
-                <form action="{{ route('peserta.store') }}" method="POST">
+                <form action="###############" method="POST">
                     @csrf
                     <div class="row">
                         <div class="col-md-6">
@@ -98,7 +99,7 @@
                     </div>
                     <div class="text-end mt-4">
                         <button type="button" class="btn btn-secondary" onclick="window.history.back()">Tutup</button>
-                        <button type="submit" class="btn btn-primary">Simpan</button>
+                        <button type="submit" class="btn btn-linkedin btn-primary">Simpan</button>
                     </div>
                 </form>
             </div>

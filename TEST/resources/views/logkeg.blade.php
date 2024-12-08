@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     {{-- <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -45,6 +46,7 @@
     <!-- CSS Files -->
     <link id="pagestyle" href="{{ asset('public/assets/css/soft-ui-dashboard.css?v=1.0.3') }}" rel="stylesheet" />
 </head>
+
 <body class="g-sidenav-show  bg-gray-100  ">
     <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 "
         id="sidenav-main">
@@ -57,48 +59,54 @@
         </div>
     </aside>
     @extends('layouts.user_type.guest')
-@section('content')
-  <main class="main-content  mt-0">
-    <section>
-      <div class="page-header min-vh-75">
-        <div class="container">
-          <div class="row">
-            <div class="col-xl-6 col-lg-7 col-md-8 d-flex flex-column mx-auto">
-              <div class="card card-plain mt-8">
-                <div class="card-header pb-0 text-left bg-transparent">
-                  <h3 class="font-weight-bolder text-info text-gradient">Logbook Jurusan Teknologi Informasi</h3>
-                </div>
-                <div class="card-header pb-0 text-left bg-transparent">
-                    <h5 class="font-weight-bolder text-info text-gradient">Silahkan melakukan pengisian logbook sebelum kegiatan dilakukan</h5>
-                  </div>
-                <div class="card-body">
-                    <table>
-                        <tr>
-                            <td>
-                                <div class="text-center">
-                                    <a href="\logbookp" type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0">Pinjam Lab</a>
-                                  </div>
-                            </td>
-                            <td>
-                                <div class="text-center">
-                                    <a href="\logbookp" type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0">Logbook Koordinator</a>
-                                  </div>
-                                </td>
-                            <td>
-                                <div class="text-center">
-                                    <a href="\logbookp" type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0">Logbook Peserta</a>
-                                  </div>
-                            </td>
-                        </tr>
-                    </table>
-              </div>
-              </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-@endsection
+    @section('content')
+        <main class="main-content  mt-0">
+            <section>
+                <div class="page-header min-vh-75">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-7 col-md-8 d-flex flex-column mx-auto">
+                                <div class="card card-plain mt-8">
+                                    <div class="card-header pb-0 text-left bg-transparent">
+                                        <h3 class="font-weight-bolder text-info text-gradient">Logbook Jurusan Teknologi
+                                            Informasi</h3>
+                                    </div>
+                                    <div class="card-header pb-0 text-left bg-transparent">
+                                        <h5 class="font-weight-bolder text-info text-gradient">Silahkan melakukan pengisian
+                                            logbook sebelum kegiatan dilakukan</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <div class="text-center">
+                                                        <a href="\logbookp" type="submit"
+                                                            class="btn bg-gradient-info w-100 mt-4 mb-0">Pinjam Lab</a>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="text-center">
+                                                        <a href="\logbookp" type="submit"
+                                                            class="btn bg-gradient-info w-100 mt-4 mb-0">Logbook
+                                                            Koordinator</a>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="text-center">
+                                                        <a href="{{ url('/peserta/create') }}" type="submit"
+                                                            class="btn bg-gradient-info w-100 mt-4 mb-0">Logbook Peserta</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+        </main>
+    @endsection
     <!--   Core JS Files   -->
     <script src="{{ asset('public/assets/js/core/popper.min.js') }}"></script>
     <script src="{{ asset('public/assets/js/core/bootstrap.min.js') }}"></script>

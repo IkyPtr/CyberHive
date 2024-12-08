@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container mt-5">
-        <form action="{{ route('kuliah.store') }}" method="POST">
+        <form action="#######################33" method="POST">
             @csrf
             <div class="row mb-3">
                 <div class="col-md-6">
