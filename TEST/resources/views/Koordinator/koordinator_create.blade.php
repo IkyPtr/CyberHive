@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="icon" type="image/png" href="{{ asset('public/assets/img/favicon.png') }}">
-    <title>Form Input Koordinator</title>
+    <title>Form Input Admin</title>
     <!-- Fonts and icons -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
     <!-- Nucleo Icons -->
@@ -14,27 +15,45 @@
     <link id="pagestyle" href="{{ asset('public/assets/css/soft-ui-dashboard.css?v=1.0.3') }}" rel="stylesheet" />
     <style>
         .card {
-            width: 110%;
-            margin-left: -5%;
+            width: 120%;
+            max-width: 1200px;
+            margin: 70px auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
+
+        .min-vh-100 {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+
+        .card-header {
+            background-color: transparent;
+            border-bottom: none;
+            padding-top: 1.5rem;
+        }
+
         @media (max-width: 1200px) {
             .card {
-                width: 105%;
+                width: 110%;
                 margin-left: 0%;
             }
         }
+
         @media (max-width: 992px) {
             .card {
-                width: 100%;
+                width: 110%;
                 margin-left: 0;
             }
         }
+
         .container-fluid {
             padding: 0 20px;
         }
     </style>
 </head>
-<body class="g-sidenav-show bg-gray-100 virtual-reality overflow-hidden">
+
+<body class="g-sidenav-show bg-gray-100">
     <!-- Navbar -->
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur">
         <div class="container-fluid py-1 px-3">
@@ -54,18 +73,22 @@
     <div class="border-radius-x1 mt-1 mx-1 position-relative vh-100"
         style="background-image: url('{{ asset('public/assets/img/vr-bg.jpg') }}') ; background-size: cover;">
         <main class="main-content">
-            <div class="container-fluid">
-                <div class="row justify-content-center">
-                    <div class="col-lg-10 col-md-12">
-                        <div class="card card-plain mt-100">
-                            <br><br><br><br>
-                            <div class="me-auto mb-4">
-                                <img src="{{ asset('public/assets/img/LOGO-PCR.png') }}" alt="PCR Logo"
-                                    class="img-fluid mt-n4 mb-2" style="max-height: 60px; width: auto;">
-                                <h6 class="mb-0">Form Input Data Koordinator</h6>
+            <div class="container-fluid py-4">
+                <div class="row justify-content-center align-items-center min-vh-85">
+                    <div class="col-lg-8 col-md-10">
+                        {{-- <br><br><br><br> --}}
+                        <div class="card mx-auto">
+                            <div class="card-header pb-0 px-3">
+                                <div class="card-header pb-0">
+                                    <div class="text-left mb-4">
+                                        <img src="{{ asset('public/assets/img/LOGO-PCR.png') }}" alt="PCR Logo"
+                                            class="img-fluid mt-n4 mb-2" style="max-height: 60px; width: auto;">
+                                        <h6 class="mb-0">{{ __('Form Input Data Koordinator') }}</h6>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="card-body pt-4 p-3">
-                                <form action="/koordinator/store" method="POST" role="form text-left">
+                            <div class="card-body pt-0 p-4">
+                                <form action="/submit" method="POST" role="form text-left">
                                     @csrf
                                     <div class="row">
                                         <div class="col-md-4">
@@ -182,4 +205,5 @@
     <script src="{{ asset('public/assets/js/core/popper.min.js') }}"></script>
     <script src="{{ asset('public/assets/js/core/bootstrap.min.js') }}"></script>
 </body>
+
 </html>

@@ -86,7 +86,7 @@
                                                 </td>
                                                 <td>
                                                     <div class="text-center">
-                                                        <a href="\logbookp" type="submit"
+                                                        <a href="\logkeg\KOOR" type="submit"
                                                             class="btn bg-gradient-info w-100 mt-4 mb-0">Logbook
                                                             Koordinator</a>
                                                     </div>

@@ -44,6 +44,15 @@
     .col-xl-8 {
         width: 100%;
     }
+    .form-control:focus {
+        border-color: #0077b5 !important; /* LinkedIn blue */
+        box-shadow: 0 0 0 0.2rem rgba(0, 119, 181, 0.25) !important;
+    }
+
+    .form-select:focus {
+        border-color: #0077b5 !important;
+        box-shadow: 0 0 0 0.2rem rgba(0, 119, 181, 0.25) !important;
+    }
     </style>
 </head>
 <body class="g-sidenav-show bg-gray-100 virtual-reality overflow-hidden">
@@ -78,7 +87,13 @@
                                 <div class="container-fluid py-4">
                                     <div class="card">
                                         <div class="card-header pb-0 px-3">
-                                            <h6 class="mb-0">{{ __('Form Penginputan Data Admin') }}</h6>
+                                            <div class="card-header pb-0">
+                                                <div class="text-left mb-4">
+                                                    <img src="{{ asset('public/assets/img/LOGO-PCR.png') }}" alt="PCR Logo"
+                                                        class="img-fluid mt-n4 mb-2" style="max-height: 60px; width: auto; ">
+                                                        <h6 class="mb-0">{{ __('Form Penginputan Data Admin') }}</h6>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="card-body pt-4 p-3">
                                             <form action="/submit" method="POST" role="form text-left">
