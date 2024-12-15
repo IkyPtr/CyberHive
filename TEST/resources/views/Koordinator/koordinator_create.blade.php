@@ -3,7 +3,7 @@
 
 <head>
     <link rel="icon" type="image/png" href="{{ asset('public/assets/img/favicon.png') }}">
-    <title>Form Input Admin</title>
+    <title>Form Input Koordinator</title>
     <!-- Fonts and icons -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
     <!-- Nucleo Icons -->
@@ -60,7 +60,7 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
                     <li class="breadcrumb-item text-sm">
-                        <a class="opacity-5 text-dark" href="javascript:;">Index Awal</a>
+                        <a class="opacity-5 text-dark" href="javascript:;">Input Data Koordinator</a>
                     </li>
                     <li class="breadcrumb-item text-sm text-dark active text-capitalize" aria-current="page">
                         CyberHive
@@ -191,7 +191,7 @@
                                     <div class="d-flex justify-content-end mt-4">
                                         <button type="button" class="btn btn-secondary me-2"
                                             onclick="window.history.back()">Tutup</button>
-                                        <button type="submit" class="btn bg-gradient-primary">Simpan</button>
+                                        <button type="submit" class="btn btn-linkedin">Simpan</button>
                                     </div>
                                 </form>
                             </div>
