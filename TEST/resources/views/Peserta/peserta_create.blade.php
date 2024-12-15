@@ -111,7 +111,7 @@
                             </div>
 
                             <div class="card-body">
-                                <form action="/submit" method="POST" role="form text-left">
+                                <form action="{{ route('peserta.store') }}" method="POST" role="form text-left">
                                     @csrf
                                     <div class="row mb-2">
                                         <div class="col-md-8">

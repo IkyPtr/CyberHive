@@ -13,7 +13,8 @@ class MahasiswaController extends Controller
      */
     public function index()
     {
-        //
+        $mahasiswas = Mahasiswa::with('labs')->get();
+        return view('mahasiswa.index', compact('mahasiswas'));
     }
 
     /**
@@ -21,7 +22,7 @@ class MahasiswaController extends Controller
      */
     public function create()
     {
-        //
+        return view('mahasiswa.kuliah_create');
     }
 
     /**
@@ -29,8 +30,35 @@ class MahasiswaController extends Controller
      */
     public function store(StoreMahasiswaRequest $request)
     {
-        //
+        // Simpan data mahasiswa
+        $mahasiswa = Mahasiswa::create([
+            'nama' => $request->nama,
+            'nim' => $request->nim,
+            'kelas' => $request->kelas,
+            'lab_id' => uniqid(), // Generate unique ID untuk relasi
+        ]);
+
+        // Simpan data lab yang berelasi
+        $mahasiswa->labs()->create([
+            'ruang_lab' => $request->ruang_lab,
+            'tanggal' => $request->tanggal,
+            'matakuliah' => $request->matakuliah,
+            'dosen' => $request->dosen,
+            'jam_masuk' => $request->jam_masuk,
+            'jam_keluar' => $request->jam_keluar,
+            'monitor' => $request->monitor,
+            'keyboard' => $request->keyboard,
+            'mouse' => $request->mouse,
+            'jaringan' => $request->jaringan,
+            'keterangan' => $request->keterangan,
+            'alat' => $request->alat,
+            'no_loker' => $request->no_loker,
+            'lab_id' => $mahasiswa->lab_id
+        ]);
+
+        return redirect()->back()->with('success', 'Data berhasil disimpan');
     }
+
 
     /**
      * Display the specified resource.

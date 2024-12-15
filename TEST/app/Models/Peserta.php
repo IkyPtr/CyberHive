@@ -4,18 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+
 
 class Peserta extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'id_ps',
-        'nama_ps',
-        'nim_nip',
-        'kelas',
-    ];
+    protected $guarded = [];
     public function labs()
     {
-        return $this->hasMany(Lab::class, 'id_ps', 'id_ps');
+        return $this->hasMany(Lab::class, 'lab_id', 'id_ps');
     }
 }

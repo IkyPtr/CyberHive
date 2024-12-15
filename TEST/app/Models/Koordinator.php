@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Koordinator extends Model
 {
@@ -11,6 +12,6 @@ class Koordinator extends Model
     protected $guarded = [];
     public function labs()
     {
-        return $this->hasMany(Lab::class, 'id_ko', 'id_ko');
+        return $this->hasMany(Lab::class, 'lab_id', 'lab_id');
     }
 }

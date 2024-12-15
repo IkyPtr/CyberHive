@@ -3,7 +3,7 @@
 
 <head>
     <link rel="icon" type="image/png" href="{{ asset('public/assets/img/favicon.png') }}">
-    <title>Form Peserta</title>
+    <title>Form Lab Kuliah</title>
     <!-- Fonts and icons -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
     <!-- Nucleo Icons -->
@@ -87,12 +87,12 @@
                                     <div class="text-left mb-4">
                                         <img src="{{ asset('public/assets/img/LOGO-PCR.png') }}" alt="PCR Logo"
                                             class="img-fluid mt-n4 mb-2" style="max-height: 60px; width: auto;">
-                                        <h6 class="mb-0">{{ __('Form Peserta') }}</h6>
+                                        <h6 class="mb-0">{{ __('Form Log Kuliah') }}</h6>
                                     </div>
                                 </div>
                             </div>
                             <div class="card-body pt-0 p-4">
-                                <form action="/submit" method="POST" role="form text-left">
+                                <form action="{{ route('mahasiswa.store') }}" method="POST" role="form text-left">
                                     @csrf
                                     <div class="row">
                                         <div class="col-md-4">

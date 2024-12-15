@@ -29,7 +29,29 @@ class PesertaController extends Controller
      */
     public function store(StorePesertaRequest $request)
     {
-        //
+        $peserta = Peserta::create([
+            'id_ps' => uniqid(),
+            'nama' => $request->nama,
+            'nim_nip' => $request->nim_nip,
+            'lab_id' => uniqid()
+        ]);
+        $peserta->labs()->create([
+            'ruang_lab' => $request->ruang_lab,
+            'tanggal' => $request->tanggal,
+            'matakuliah' => '-',
+            'dosen' => '-',
+            'jam_masuk' => $request->jam_masuk,
+            'jam_keluar' => $request->jam_keluar,
+            'monitor' => $request->monitor,
+            'keyboard' => $request->keyboard,
+            'mouse' => $request->mouse,
+            'jaringan' => $request->jaringan,
+            'keterangan' => $request->keterangan,
+            'alat' => $request->alat,
+            'no_loker' => '-',
+            'lab_id' => $peserta->lab_id
+        ]);
+        return redirect()->back()->with('success', 'Data koordinator berhasil disimpan');
     }
 
     /**

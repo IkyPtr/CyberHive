@@ -39,40 +39,22 @@
             bottom: 0;
             margin-bottom: 0.5rem;
         }
-        /* Style for the rounded and white buttons with black text */
-        /* Style for the rounded and white buttons with black text */
+        
         .btn-ket {
-            background-color: white !important;  /* White background */
-            color: rgb(0, 56, 53) !important;  /* Black text */
-            border-radius: 60px;  /* Rounded corners */
-            border: 1px solid #ccc;  /* Add a light border for better contrast */
-            font-size: 18px;  /* Increased font size */
-            font-weight: bold;  /* Make the text bold for emphasis */
-            padding: 12px 24px;  /* Adjust padding for better button size */
+            background-color: white !important;
+            color: rgb(0, 56, 53) !important;
+            border-radius: 60px;
+            border: 1px solid #ccc;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 12px 24px;
         }
 
         .btn-ket:hover {
-            background-color: #003835 !important;  /* Slightly darker background when hovered */
-            color: rgb(255, 255, 255) !important;  /* Ensure the text remains black */
-            border-color: #003835;  /* Darker border on hover */
+            background-color: #003835 !important;
+            color: rgb(255, 255, 255) !important;
+            border-color: #003835;
         }
-        .btn-linkedin {
-            background-color: #77b3b8 !important;  /* White background */
-            color: rgb(255, 255, 255) !important;  /* Black text */
-            border-radius: 60px;  /* Rounded corners */
-            border: 1px solid #77b3b8;  /* Add a light border for better contrast */
-            font-size: 18px;  /* Increased font size */
-            font-weight: bold;  /* Make the text bold for emphasis */
-            padding: 12px 24px;  /* Adjust padding for better button size */
-        }
-
-        .btn-linkedin:hover {
-            background-color: #003835 !important;  /* Slightly darker background when hovered */
-            color: #77b3b8 !important;  /* Ensure the text remains black */
-            border-color: #003835;  /* Darker border on hover */
-        }
-
-
     </style>
 </head>
 <body class="g-sidenav-show  bg-gray-100 virtual-reality overflow-hidden">
@@ -137,26 +119,11 @@
                                     </div>
                                     <div class="card mt-4 bg-transparent">
                                         <div class="card-body ">
-<<<<<<< HEAD
-                                            <div class="d-flex justify-content-between gap-4 ">
-                                                {{-- <button class="btn btn-linkedin btn-lg flex-grow-1"
-                                                    onclick="window.location.href='{{ url('/pinjamLab') }}'">
-                                                    <i class="fas fa-book me-2"></i>
-                                                    Pinjam Lab
-                                                </button> --}}
-                                                <button class="btn btn-linkedin btn-lg flex-grow-1"
-=======
                                             <div class="d-flex justify-content-between gap-6 ">
                                                 <button class="btn btn-ket btn-lg flex-grow-1"
-                                                    onclick="window.location.href='{{ url('/pinjamLab') }}'">
-                                                    <i class="fas fa-book me-2"></i>
-                                                    Pinjam Laboratorium
-                                                </button>
-                                                <button class="btn btn-ket btn-lg flex-grow-1"
->>>>>>> d05d626c30db7f69bb6b92d5ca1014fe8528e91a
                                                     onclick="window.location.href='{{ url('/logkeg/KOOR') }}'">
                                                     <i class="fas fa-book me-2"></i>
-                                                    Logbook Koordinator
+                                                    LogBook Koordinator
                                                 </button>
                                                 <button class="btn btn-ket btn-lg flex-grow-1"
                                                     onclick="window.location.href='{{ url('/peserta/create') }}'">

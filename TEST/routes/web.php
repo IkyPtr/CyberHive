@@ -3,6 +3,14 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IdentitasController;
 use App\Models\identitas;
+use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\KoordinatorController;
+use App\Http\Controllers\PesertaController;
+use App\Models\Peserta;
+
+Route::resource('mahasiswa', MahasiswaController::class);
+Route::resource('koordinator', KoordinatorController::class);
+Route::resource('peserta', PesertaController::class);
 
 Route::get('/', function () {
     return view('index_awal');

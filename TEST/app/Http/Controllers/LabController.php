@@ -13,7 +13,8 @@ class LabController extends Controller
      */
     public function index()
     {
-        //
+        $labs = Lab::with('mahasiswa')->get();
+        return view('lab.index', compact('labs'));
     }
 
     /**
@@ -29,7 +30,8 @@ class LabController extends Controller
      */
     public function store(StoreLabRequest $request)
     {
-        //
+        Lab::create($request->validated());
+        return redirect()->route('lab.index')->with('success', 'Data lab berhasil ditambahkan');
     }
 
     /**

@@ -12,6 +12,6 @@ class Mahasiswa extends Model
     protected $guarded = [];
     public function labs()
     {
-        return $this->hasMany(Lab::class, 'mk_id', 'mk_id');
+        return $this->hasMany(Lab::class, foreignKey: 'lab_id', localKey: 'lab_id');
     }
 }

@@ -107,14 +107,34 @@
                                 </div>
                             </div>
                             <div class="card-body pt-0 p-4">
-                                <form action="/submit" method="POST" role="form text-left">
+                                <form action="{{ route('koordinator.store') }}" method="POST" role="form text-left">
                                     @csrf
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="no_ruangan">Nomor Ruangan</label>
-                                                <input class="form-control" type="text" id="no_ruangan"
-                                                    name="no_ruangan">
+                                                <label for="ruang_lab">Ruang Laboratorium</label>
+                                                <select class="form-control" id="ruang_lab" name="ruang_lab" required>
+                                                    <option value="" disabled selected>Pilih ruang lab</option>
+                                                    <option value="152">Lab 152</option>
+                                                    <option value="156">Lab 156</option>
+                                                    <option value="225">Lab 225</option>
+                                                    <option value="252">Lab 252</option>
+                                                    <option value="256">Lab 256</option>
+                                                    <option value="281">Lab 281</option>
+                                                    <option value="282">Lab 282</option>
+                                                    <option value="283">Lab 283</option>
+                                                    <option value="284">Lab 284</option>
+                                                    <option value="313">Lab 313</option>
+                                                    <option value="316">Lab 316</option>
+                                                    <option value="317">Lab 317</option>
+                                                    <option value="319">Lab 319</option>
+                                                    <option value="320">Lab 320</option>
+                                                    <option value="324">Lab 324</option>
+                                                    <option value="325">Lab 325</option>
+                                                    <option value="329">Lab 329</option>
+                                                    <option value="330">Lab 330</option>
+                                                    <option value="352">Lab 352</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
@@ -188,9 +208,9 @@
                                     <div class="row mt-3">
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="jumlah_peserta">Jumlah Peserta</label>
-                                                <input class="form-control" type="number" id="jumlah_peserta"
-                                                    name="jumlah_peserta">
+                                                <label for="jumlah">Jumlah Peserta</label>
+                                                <input class="form-control" type="number" id="jumlah"
+                                                    name="jumlah">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
