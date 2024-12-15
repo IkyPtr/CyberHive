@@ -14,6 +14,13 @@
     <!-- CSS Files -->
     <link id="pagestyle" href="{{ asset('public/assets/css/soft-ui-dashboard.css?v=1.0.3') }}" rel="stylesheet" />
     <style>
+        body {
+            overflow: hidden;
+            height: 100vh;
+            position: fixed;
+            width: 100%;
+        }
+
         .card {
             width: 120%;
             max-width: 1200px;
@@ -68,6 +75,18 @@
                 </ol>
                 <h6 class="font-weight-bolder mb-0 text-capitalize">Manajemen Lab JTI Politeknik Caltex Riau</h6>
             </nav>
+            <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4 d-flex justify-content-end"
+                id="navbar">
+                <div class="nav-item d-flex align-self-end">
+                    <button type="button" class="btn btn-linkedin btn-icon mt-2">
+                        <a href="{{ url('/login') }}" class="text-white text-decoration-none">
+                            <span class="btn-inner--text">LOGIN</span>
+                        </a>
+                    </button>
+                </div>
+                <div class="ms-md-3 pe-md-3 d-flex align-items-center">
+                </div>
+            </div>
         </div>
     </nav>
     <div class="border-radius-x1 mt-1 mx-1 position-relative vh-100"

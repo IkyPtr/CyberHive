@@ -3,11 +3,8 @@
 <head>
     <link rel="icon" type="image/png" href="{{ asset('public/assets/img/favicon.png') }}">
     <title>
-<<<<<<< HEAD
-        LOGBOOK JTI PCR
-=======
+
         MANAJEMEN LAB JTI PCR
->>>>>>> 6581b903ceef701fca88b365e56d2ba6c01ce240
     </title>
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -22,14 +19,12 @@
     <style>
         .carousel {
             width: 100%;
-            /* Changed from 300px to 100% */
             border-radius: 10px;
             overflow: hidden;
         }
         .carousel-item {
             transition: transform 0.6s ease-in-out;
             height: 400px;
-            /* Added fixed height */
         }
         .carousel-item img {
             width: 100%;
@@ -51,7 +46,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur"
         navbar-scroll="true">
-        <div class="container-fluid py-1 px-3">
+        <div class="container-fluid py-1 px-4">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
                     <li class="breadcrumb-item text-sm">
@@ -87,22 +82,6 @@
                 <div class="container">
                     <div class="row pt-20 justify-content-center">
                         <div class="col-lg-30 col-md-12">
-                            <div class="d-flex">
-
-                                <div class="ms-auto">
-                                    <div id="heroShapesCarousel" class="carousel slide" data-bs-ride="carousel">
-                                        <!-- Indicators -->
-                                        <div class="carousel-indicators">
-                                            <button type="button" data-bs-target="#heroShapesCarousel"
-                                                data-bs-slide-to="0" class="active"></button>
-                                            <button type="button" data-bs-target="#heroShapesCarousel"
-                                                data-bs-slide-to="1"></button>
-                                            <button type="button" data-bs-target="#heroShapesCarousel"
-                                                data-bs-slide-to="2"></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="row mt-1">
                                 <div class="col-lg-10 col-md-6">
                                     <div class="card ">
@@ -123,12 +102,12 @@
                                     <div class="card mt-4 bg-transparent">
                                         <div class="card-body ">
                                             <div class="d-flex justify-content-between gap-4 ">
-                                                <button class="btn btn-linkedin btn-lg flex-grow-1"
+                                                {{-- <button class="btn btn-linkedin btn-lg flex-grow-1"
                                                     onclick="window.location.href='{{ url('/pinjamLab') }}'">
                                                     <i class="fas fa-book me-2"></i>
                                                     Pinjam Lab
-                                                </button>
-                                                <button class="btn btn-linkedin btn-lg flex-grow-10"
+                                                </button> --}}
+                                                <button class="btn btn-linkedin btn-lg flex-grow-1"
                                                     onclick="window.location.href='{{ url('/logkeg/KOOR') }}'">
                                                     <i class="fas fa-book me-2"></i>
                                                     Log Koordinator

@@ -22,6 +22,9 @@ Route::get('/login', function () {
 Route::get('/logkeg', function () {
     return view('logkeg');;
 });
+Route::get('/logper', function () {
+    return view('Mahasiswa.kuliah_create');;
+});
 Route::get('/logkeg/KOOR', function () {
     return view('Koordinator.koordinator_create');
 });
