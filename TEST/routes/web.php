@@ -33,6 +33,10 @@ Route::get('/admin/create', function () {
     return view('Admin.Admin_create');;
 });
 
+Route::get('/admin/index', function () {
+    return view('Admin.Admin_index');;
+});
+
 Route::get('/teknisi/login', function () {
     return view('Teknisi.teknisi_login');;
 });
