@@ -33,6 +33,10 @@ Route::get('/admin/create', function () {
     return view('Admin.Admin_create');;
 });
 
+Route::get('/teknisi/login', function () {
+    return view('Teknisi.teknisi_login');;
+});
+
 // Route::resource('identitas', IdentitasController::class);
 // Route::get('/rezki', function() {
 //     $identitas = Identitas::find(1);
