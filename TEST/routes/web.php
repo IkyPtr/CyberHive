@@ -19,9 +19,6 @@ Route::get('/mahasiswa/create', function () {
 Route::get('/login', function () {
     return view('login');;
 });
-Route::get('/logper', function () {
-    return view('logper');;
-});
 Route::get('/logkeg', function () {
     return view('logkeg');;
 });
@@ -31,6 +28,14 @@ Route::get('/logkeg/KOOR', function () {
 
 Route::get('/admin/create', function () {
     return view('Admin.Admin_create');;
+});
+
+Route::get('/admin/index', function () {
+    return view('Admin.Admin_index');;
+});
+
+Route::get('/teknisi/login', function () {
+    return view('Teknisi.teknisi_login');;
 });
 
 // Route::resource('identitas', IdentitasController::class);

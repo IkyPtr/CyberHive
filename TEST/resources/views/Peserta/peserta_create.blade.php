@@ -1,9 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<<<<<<< HEAD
 <head>
+=======
+<head
+    {{-- <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="creative tim, updivision, html dashboard, laravel, html css dashboard laravel, soft ui dashboard laravel, laravel soft ui dashboard, soft ui admin, laravel dashboard, laravel admin, web dashboard, bootstrap 5 dashboard laravel, bootstrap 5, css3 dashboard, bootstrap 5 admin laravel, soft ui dashboard bootstrap 5 laravel, frontend, responsive bootstrap 5 dashboard, soft ui dashboard, soft ui laravel bootstrap 5 dashboard">
+    <meta name="description" content="A free Laravel Dashboard featuring dozens of UI components & basic Laravel CRUDs." />
+    <meta itemprop="name" content="Soft UI Dashboard Laravel by Creative Tim & UPDIVISION" />
+    <meta itemprop="description" content="A free Laravel Dashboard featuring dozens of UI components & basic Laravel CRUDs." />
+    <meta itemprop="image" content="https://s3.amazonaws.com/creativetim_bucket/products/602/original/soft-ui-dashboard-laravel.jpg" />
+    <meta name="twitter:card" content="product" />
+    <meta name="twitter:site" content="@creativetim" />
+    <meta name="twitter:title" content="Soft UI Dashboard Laravel by Creative Tim & UPDIVISION" />
+    <meta name="twitter:description" content="A free Laravel Dashboard featuring dozens of UI components & basic Laravel CRUDs." />
+    <meta name="twitter:creator" content="@creativetim" />
+    <meta name="twitter:image" content="https://s3.amazonaws.com/creativetim_bucket/products/602/original/soft-ui-dashboard-laravel.jpg" />
+    <meta property="fb:app_id" content="655968634437471" />
+    <meta property="og:title" content="Soft UI Dashboard Laravel by Creative Tim & UPDIVISION" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.creative-tim.com/live/soft-ui-dashboard-laravel" />
+    <meta property="og:image" content="https://s3.amazonaws.com/creativetim_bucket/products/602/original/soft-ui-dashboard-laravel.jpg" />
+    <meta property="og:description" content="A free Laravel Dashboard featuring dozens of UI components & basic Laravel CRUDs." />
+    <meta property="og:site_name" content="Creative Tim" />
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('public/assets/img/apple-icon.png') }}"> --}}
+>>>>>>> 6581b903ceef701fca88b365e56d2ba6c01ce240
     <link rel="icon" type="image/png" href="{{ asset('public/assets/img/favicon.png') }}">
-    <title>Form Peserta</title>
+    <title>Form Logbook Peserta</title>
     <!-- Fonts and icons -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
     <!-- Nucleo Icons -->
@@ -15,35 +40,47 @@
     <link id="pagestyle" href="{{ asset('public/assets/css/soft-ui-dashboard.css?v=1.0.3') }}" rel="stylesheet" />
     <style>
         body {
-            overflow: hidden;
-            background-image: url('{{ asset('public/assets/img/vr-bg.jpg') }}');
-            background-size: cover;
-        }
+        overflow: hidden;
+        background-image: url('{{ asset('public/assets/img/vr-bg.jpg') }}');
+        background-size: cover;
+    }
 
-        .main-container {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+    .main-container {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
 
-        .content-container {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
+    .content-container {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
 
-        .card {
-            width: 100%;
-            max-height: 80vh;
-            overflow-y: auto;
-            background: rgba(255, 255, 255, 0.95);
-        }
+    .card {
+        width: 100%;
+        max-height: 80vh;
+        overflow-y: auto;
+        background: rgba(255, 255, 255, 0.95);
+    }
 
-        .form-group {
-            margin-bottom: 1rem;
-        }
+    .row {
+        margin-bottom: 0.5rem !important;
+    }
+
+    .form-group {
+        margin-bottom: 0.5rem;
+    }
+
+    .mb-3 {
+        margin-bottom: 0.5rem !important;
+    }
+
+    .card-body {
+        padding: 1rem;
+    }
     </style>
 </head>
 
@@ -51,7 +88,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur"
         navbar-scroll="true">
-        <div class="container-fluid py-1 px-3">
+        <div class="container-fluid py-1 px-6">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
                     <li class="breadcrumb-item text-sm">
@@ -72,132 +109,45 @@
                 <div class="col-xl-30">
                     <div class="card">
                         <div class="card-header">
-                            <h6 class="mb-0">Form Peserta</h6>
+                            <div class="mb-3">
+                                <img src="{{ asset('public/assets/img/logo-pcr.png') }}" alt="Logo PCR" style="height: 45px;">
+                            </div>
+                            <h6 class="mb-0">Form Logbook Peserta</h6>
                         </div>
                         <div class="card-body">
                             <form action="/submit" method="POST" role="form text-left">
                                 @csrf
-                                <div class="row g-3">
-                                    <div class="col-md-6">
+                                <div class="row mb-2">
+                                    <div class="col-md-8">
                                         <div class="form-group">
                                             <label>Nama</label>
                                             <input type="text" name="nama" class="form-control" required>
                                         </div>
+                                    </div>
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                             <label>NIM/NIP</label>
                                             <input type="text" name="nim_nip" class="form-control" required>
                                         </div>
-                                        <div class="form-group">
-                                            <label>Kelas</label>
-                                            <select name="ruang_lab" class="form-control" required>
-                                                <option value="1">21 SI A</option>
-                                                <option value="2">21 SI B</option>
-                                                <option value="3">21 SI C</option>
-                                                <option value="4">22 SI A</option>
-                                                <option value="5">22 SI B</option>
-                                                <option value="6">22 SI C</option>
-                                                <option value="7">22 SI D</option>
-                                                <option value="4">23 SI A</option>
-                                                <option value="5">23 SI B</option>
-                                                <option value="6">23 SI C</option>
-                                                <option value="7">23 SI D</option>
-                                                <option value="4">24 SI A</option>
-                                                <option value="5">24 SI B</option>
-                                                <option value="6">24 SI C</option>
-                                                <option value="7">24 SI D</option>
-                                                <option value="7">24 SI E</option>
-                                                <option value="16">24 TI A</option>
-                                                <option value="17">24 TI B</option>
-                                                <option value="18">24 TI C</option>
-                                                <option value="19">24 TI D</option>
-                                                <option value="20">24 TI E</option>
-                                                <option value="21">24 TI F</option>
-                                                <option value="22">24 TI G</option>
-                                                <option value="16">23 TI A</option>
-                                                <option value="17">23 TI B</option>
-                                                <option value="18">23 TI C</option>
-                                                <option value="19">23 TI D</option>
-                                                <option value="20">23 TI E</option>
-                                                <option value="21">23 TI F</option>
-                                                <option value="16">22 TI A</option>
-                                                <option value="17">22 TI B</option>
-                                                <option value="18">22 TI C</option>
-                                                <option value="19">22 TI D</option>
-                                                <option value="20">22 TI E</option>
-                                                <option value="21">22 TI F</option>
-                                                <option value="16">21 TI KA</option>
-                                                <option value="17">21 TI KB</option>
-                                                <option value="18">21 TI KC</option>
-                                                <option value="19">21 TI C</option>
-                                                <option value="19">21 TI D</option>
-                                                <option value="20">21 TI E</option>
-                                                <option value="21">21 TI F</option>
-                                                <option value="23">24 TRK A</option>
-                                                <option value="24">24 TRK B</option>
-                                                <option value="25">23 TRK A</option>
-                                                <option value="26">23 TRK B</option>
-                                                <option value="27">22 TRK A</option>
-                                                <option value="28">22 TRK B</option>
-                                                <option value="29">21 TRK</option>
-                                                <option value="30">24 HMKD</option>
-                                                <option value="31">23 TMS A</option>
-                                                <option value="31">22 TMS B</option>
-                                                <option value="32">23 TRJT A</option>
-                                                <option value="33">23 TRJT B</option>
-                                                <option value="34">22 TRJT A</option>
-                                                <option value="35">22 TRJT B</option>
-                                                <option value="36">24 BD</option>
-                                                <option value="37">24 MTTK A</option>
-                                            </select>
-                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-2">
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Nomor PC</label>
-                                            <select name="ruang_lab" class="form-control" required>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                                <option value="6">6</option>
-                                                <option value="7">7</option>
-                                                <option value="8">8</option>
-                                                <option value="9">9</option>
-                                                <option value="10">10</option>
-                                                <option value="11">11</option>
-                                                <option value="12">12</option>
-                                                <option value="13">13</option>
-                                                <option value="14">14</option>
-                                                <option value="15">15</option>
-                                                <option value="16">16</option>
-                                                <option value="17">17</option>
-                                                <option value="18">18</option>
-                                                <option value="19">19</option>
-                                                <option value="20">20</option>
-                                                <option value="21">21</option>
-                                                <option value="22">22</option>
-                                                <option value="23">23</option>
-                                                <option value="24">24</option>
-                                                <option value="25">25</option>
-                                                <option value="26">26</option>
-                                                <option value="27">27</option>
-                                                <option value="28">28</option>
-                                                <option value="29">29</option>
-                                                <option value="30">30</option>
-                                                <option value="31">31</option>
-                                                <option value="32">32</option>
-                                                <option value="33">33</option>
-                                                <option value="34">34</option>
-                                                <option value="35">35</option>
-                                                <option value="36">36</option>
-                                                <option value="37">37</option>
-                                                <option value="38">38</option>
-                                                <option value="39">39</option>
-                                                <option value="40">40</option>
+                                            <select name="nomor_pc" class="form-control" required>
+                                                @for($i = 1; $i <= 40; $i++)
+                                                    <option value="{{ $i }}">{{ $i }}</option>
+                                                @endfor
                                             </select>
                                         </div>
+                                    </div>
+                                    <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Ruang Lab</label>
+                                            <label>Ruangan Lab</label>
                                             <select name="ruang_lab" class="form-control" required>
+                                                <option value="" disabled selected>Pilih Lab</option>
                                                 <option value="152">152</option>
                                                 <option value="156">156</option>
                                                 <option value="225">225</option>
@@ -210,7 +160,7 @@
                                                 <option value="313">313</option>
                                                 <option value="316">316</option>
                                                 <option value="317">317</option>
-                                                <option value="318">319</option>
+                                                <option value="319">319</option>
                                                 <option value="320">320</option>
                                                 <option value="324">324</option>
                                                 <option value="325">325</option>
@@ -220,66 +170,160 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Tanggal</label>
                                             <input type="date" name="tanggal" class="form-control" required>
                                         </div>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-2">
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Jam Masuk</label>
                                             <input type="time" name="jam_masuk" class="form-control" required>
                                         </div>
+                                    </div>
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Jam Keluar</label>
                                             <input type="time" name="jam_keluar" class="form-control" required>
                                         </div>
+                                    </div>
+                                    <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Kondisi Alat : </label>
-                                            <div class="row">
-                                                <div class="col-md-3">
-                                                    <label>Monitor</label>
-                                                    <select name="monitor" class="form-control" required>
-                                                        <option value="Baik">Bagus</option>
-                                                        <option value="Rusak">Rusak</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <label>Keyboard</label>
-                                                    <select name="keyboard" class="form-control" required>
-                                                        <option value="Baik">Bagus</option>
-                                                        <option value="Rusak">Rusak</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <label>Mouse</label>
-                                                    <select name="mouse" class="form-control" required>
-                                                        <option value="Baik">Bagus</option>
-                                                        <option value="Rusak">Rusak</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <label>Jaringan</label>
-                                                    <select name="jaringan" class="form-control" required>
-                                                        <option value="Baik">Bagus</option>
-                                                        <option value="Rusak">Rusak</option>
-                                                    </select>
-                                                </div>
+                                            <label>Kelas</label>
+                                            <select name="kelas" class="form-control" required>
+                                                <option value="" disabled selected>Pilih Kelas</option>
+                                                    <option value="21 SI A">21 SI A</option>
+                                                    <option value="21 SI B">21 SI B</option>
+                                                    <option value="21 SI C">21 SI C</option>
+                                                    <option value="22 SI A">22 SI A</option>
+                                                    <option value="22 SI B">22 SI B</option>
+                                                    <option value="22 SI C">22 SI C</option>
+                                                    <option value="22 SI D">22 SI D</option>
+                                                    <option value="23 SI A">23 SI A</option>
+                                                    <option value="23 SI B">23 SI B</option>
+                                                    <option value="23 SI C">23 SI C</option>
+                                                    <option value="23 SI D">23 SI D</option>
+                                                    <option value="24 SI A">24 SI A</option>
+                                                    <option value="24 SI B">24 SI B</option>
+                                                    <option value="24 SI C">24 SI C</option>
+                                                    <option value="24 SI D">24 SI D</option>
+                                                    <option value="24 SI E">24 SI E</option>
+                                                    <option value="21 TI KA">21 TI KA</option>
+                                                    <option value="21 TI KB">21 TI KB</option>
+                                                    <option value="21 TI KC">21 TI KC</option>
+                                                    <option value="21 TI C">21 TI C</option>
+                                                    <option value="21 TI D">21 TI D</option>
+                                                    <option value="21 TI E">21 TI E</option>
+                                                    <option value="21 TI F">21 TI F</option>
+                                                    <option value="22 TI A">22 TI A</option>
+                                                    <option value="22 TI B">22 TI B</option>
+                                                    <option value="22 TI C">22 TI C</option>
+                                                    <option value="22 TI D">22 TI D</option>
+                                                    <option value="22 TI E">22 TI E</option>
+                                                    <option value="22 TI F">22 TI F</option>
+                                                    <option value="23 TI A">23 TI A</option>
+                                                    <option value="23 TI B">23 TI B</option>
+                                                    <option value="23 TI C">23 TI C</option>
+                                                    <option value="23 TI D">23 TI D</option>
+                                                    <option value="23 TI E">23 TI E</option>
+                                                    <option value="23 TI F">23 TI F</option>
+                                                    <option value="24 TI A">24 TI A</option>
+                                                    <option value="24 TI B">24 TI B</option>
+                                                    <option value="24 TI C">24 TI C</option>
+                                                    <option value="24 TI D">24 TI D</option>
+                                                    <option value="24 TI E">24 TI E</option>
+                                                    <option value="24 TI F">24 TI F</option>
+                                                    <option value="24 TI SW">24 TI SW</option>
+                                                    <option value="21 TRK">21 TRK</option>
+                                                    <option value="22 TRK A">22 TRK A</option>
+                                                    <option value="22 TRK B">22 TRK B</option>
+                                                    <option value="23 TRK A">23 TRK A</option>
+                                                    <option value="23 TRK B">23 TRK B</option>
+                                                    <option value="24 TRK A">24 TRK A</option>
+                                                    <option value="24 TRK B">24 TRK B</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-2">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Monitor</label>
+                                            <div>
+                                                <label class="form-check form-check-inline">
+                                                    <input type="radio" class="form-check-input" name="monitor" value="Baik" required>Bagus
+                                                </label>
+                                                <label class="form-check form-check-inline">
+                                                    <input type="radio" class="form-check-input" name="monitor" value="Rusak" required>Rusak
+                                                </label>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Keyboard</label>
+                                            <div>
+                                                <label class="form-check form-check-inline">
+                                                    <input type="radio" class="form-check-input" name="keyboard" value="Baik" required>Bagus
+                                                </label>
+                                                <label class="form-check form-check-inline">
+                                                    <input type="radio" class="form-check-input" name="keyboard" value="Rusak" required>Rusak
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Mouse</label>
+                                            <div>
+                                                <label class="form-check form-check-inline">
+                                                    <input type="radio" class="form-check-input" name="mouse" value="Baik" required>Bagus
+                                                </label>
+                                                <label class="form-check form-check-inline">
+                                                    <input type="radio" class="form-check-input" name="mouse" value="Rusak" required>Rusak
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Jaringan</label>
+                                            <div>
+                                                <label class="form-check form-check-inline">
+                                                    <input type="radio" class="form-check-input" name="jaringan" value="Baik" required>Bagus
+                                                </label>
+                                                <label class="form-check form-check-inline">
+                                                    <input type="radio" class="form-check-input" name="jaringan" value="Rusak" required>Rusak
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-2">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Keterangan</label>
-                                            <textarea name="keterangan" class="form-control" rows="2"></textarea>
+                                            <input type="text" name="keterangan" class="form-control">
+
                                         </div>
+                                    </div>
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Alat</label>
                                             <input type="text" name="alat" class="form-control">
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="text-end mt-4">
-                                    <button type="button" class="btn btn-secondary"
-                                        onclick="window.history.back()">Tutup</button>
-                                    <button type="submit" class="btn btn-linkedin btn-primary">Simpan</button>
+                                    <button type="button" class="btn btn-secondary" onclick="window.history.back()">Tutup</button>
+                                    <button type="submit" class="btn btn-primary">Simpan</button>
                                 </div>
                             </form>
                         </div>
