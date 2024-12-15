@@ -36,35 +36,47 @@
     <link id="pagestyle" href="{{ asset('public/assets/css/soft-ui-dashboard.css?v=1.0.3') }}" rel="stylesheet" />
     <style>
         body {
-            overflow: hidden;
-            background-image: url('{{ asset('public/assets/img/vr-bg.jpg') }}');
-            background-size: cover;
-        }
+        overflow: hidden;
+        background-image: url('{{ asset('public/assets/img/vr-bg.jpg') }}');
+        background-size: cover;
+    }
 
-        .main-container {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+    .main-container {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
 
-        .content-container {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
+    .content-container {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
 
-        .card {
-            width: 100%;
-            max-height: 80vh;
-            overflow-y: auto;
-            background: rgba(255, 255, 255, 0.95);
-        }
+    .card {
+        width: 100%;
+        max-height: 80vh;
+        overflow-y: auto;
+        background: rgba(255, 255, 255, 0.95);
+    }
 
-        .form-group {
-            margin-bottom: 1rem;
-        }
+    .row {
+        margin-bottom: 0.5rem !important;
+    }
+
+    .form-group {
+        margin-bottom: 0.5rem;
+    }
+
+    .mb-3 {
+        margin-bottom: 0.5rem !important;
+    }
+
+    .card-body {
+        padding: 1rem;
+    }
     </style>
 </head>
 
@@ -72,7 +84,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur"
         navbar-scroll="true">
-        <div class="container-fluid py-1 px-3">
+        <div class="container-fluid py-1 px-6">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
                     <li class="breadcrumb-item text-sm">
@@ -93,6 +105,9 @@
                 <div class="col-xl-30">
                     <div class="card">
                         <div class="card-header">
+                            <div class="mb-3">
+                                <img src="{{ asset('public/assets/img/logo-pcr.png') }}" alt="Logo PCR" style="height: 45px;">
+                            </div>
                             <h6 class="mb-0">Form Logbook Peserta</h6>
                         </div>
                         <div class="card-body">
