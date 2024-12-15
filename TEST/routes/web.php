@@ -19,9 +19,6 @@ Route::get('/mahasiswa/create', function () {
 Route::get('/login', function () {
     return view('login');;
 });
-Route::get('/logper', function () {
-    return view('logper');;
-});
 Route::get('/logkeg', function () {
     return view('logkeg');;
 });
