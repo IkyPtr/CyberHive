@@ -55,8 +55,8 @@ class MahasiswaController extends Controller
             'no_loker' => $request->no_loker,
             'lab_id' => $mahasiswa->lab_id
         ]);
-
-        return redirect()->back()->with('success', 'Data berhasil disimpan');
+        return redirect('/')
+            ->with('success', 'Data mahasiswa berhasil ditambahkan! Terima kasih atas partisipasinya.');
     }
 
 

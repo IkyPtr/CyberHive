@@ -75,7 +75,7 @@
     </nav>
     <!-- End Navbar -->
     <div class="border-radius-x1 mt-3 mx-3 position-relative vh-100"
-        style="background-image: url('{{ asset('public/assets/img/vr-bg.jpg') }}') ; background-size: cover;">
+        style="background-image: url('') ; background-size: cover;">
         <br><br><br><br>
         <main class="main-content position-relative border-radius-lg d-flex align-items-center justify-content-center"
             style="height: calc(100vh - 100px);">
@@ -87,7 +87,7 @@
                                 <div class="me-auto">
                                     <img src="{{ asset('public/assets/img/LOGO-PCR.png') }}" alt="PCR Logo"
                                         class="img-fluid mt-n4 mb-0" style="max-height: 60px; width: auto;">
-                                    <h4 class="text-uppercase mb-0 ms-1">PENGISIAN LOGBOOK JTI</h4>
+                                    <h5 class="text-uppercase mb-0 ms-1">PENGISIAN LOGBOOK JTI</h5>
                                 </div>
                                 <div class="ms-auto">
                                     <div id="heroShapesCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -104,18 +104,17 @@
                                 </div>
                             </div>
                             <div class="row mt-3">
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="card bg-gradient-dark">
+                                <div class="col-lg-6 col-md-3">
+                                    <div class="card bg-white h-100">
                                         <div class="card-body">
                                             <div class="d-flex">
-                                                <h4 class="mb-2 text-white">
+                                                <h2 class="mb-2 text-black">
                                                     Silahkan mengisi logbook terlebih dahulu sebelum
                                                     melakukan perkuliahan atau kegiatan
-                                                </h4>
+                                                </h2>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="card mt-4">
+                                        <br>
                                         <div class="card-body">
                                             <div class="d-flex justify-content-between gap-4">
                                                 <button class="btn btn-linkedin btn-lg flex-grow-1"
@@ -131,9 +130,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                    </div>
                                 <div class="col-lg-5 col-md-6">
-                                    <div class="card align-items-start">
+                                    <div class="card h-100">
                                         <div class="ms-auto">
                                             <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
                                                 <!-- Indicators -->

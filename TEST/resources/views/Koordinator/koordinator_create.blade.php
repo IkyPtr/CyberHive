@@ -84,15 +84,13 @@
                         </a>
                     </button>
                 </div>
-                <div class="ms-md-3 pe-md-3 d-flex align-items-center">
-                </div>
             </div>
         </div>
     </nav>
     <div class="border-radius-x1 mt-1 mx-1 position-relative vh-100"
         style="background-image: url('{{ asset('public/assets/img/vr-bg.jpg') }}') ; background-size: cover;">
         <main class="main-content">
-            <div class="container-fluid py-4">
+            <div class="container-fluid">
                 <div class="row justify-content-center align-items-center min-vh-85">
                     <div class="col-lg-8 col-md-10">
                         {{-- <br><br><br><br> --}}
@@ -101,7 +99,7 @@
                                 <div class="card-header pb-0">
                                     <div class="text-left mb-4">
                                         <img src="{{ asset('public/assets/img/LOGO-PCR.png') }}" alt="PCR Logo"
-                                            class="img-fluid mt-n4 mb-2" style="max-height: 60px; width: auto;">
+                                            class="img-fluid mt-n4 mb-2" style="max-height: 40px; width: auto;">
                                         <h6 class="mb-0">{{ __('Form Input Data Koordinator') }}</h6>
                                     </div>
                                 </div>
