@@ -76,11 +76,6 @@
             <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4 d-flex justify-content-end"
                 id="navbar">
                 <div class="nav-item d-flex align-self-end">
-                    <button type="button" class="btn btn-linkedin btn-icon mt-2">
-                        <a href="{{ url('/login') }}" class="text-white text-decoration-none">
-                            <span class="btn-inner--text">LOGIN</span>
-                        </a>
-                    </button>
                 </div>
                 <div class="ms-md-3 pe-md-3 d-flex align-items-center">
                 </div>
@@ -93,26 +88,27 @@
         <br><br><br><br>
         <main class="main-content position-relative border-radius-lg d-flex align-items-center justify-content-center"
             style="height: calc(100vh - 100px); width: 110%;">
-            <div class="section min-vh-100 position-relative transform-scale-10 transform-scale-md-8">
+            <div class="section min-vh-100 position-relative transform-scale-8 transform-scale-md-8">
                 <div class="container">
                     <div class="row pt-20 justify-content-center">
                         <div class="col-lg-30 col-md-12">
                             <div class="row mt-1">
                                 <div class="col-lg-10 col-md-6">
-                                    <div class="card ">
-                                        <div class="card-body text-">
+                                    <div class="card">
+                                        <div class="card-body text">
                                             <br>
                                             <div class="me-auto">
                                                 <img src="{{ asset('public/assets/img/LOGO-PCR.png') }}" alt="PCR Logo"
                                                     class="img-fluid mt-n4 mb-0" style="max-height: 60px; width: auto;">
                                             </div><br>
-                                            <h2>
-                                                Logbook Jurusan Teknologi Informasi
-                                            </h2><br>
+                                            <h1>
+                                                Selamat Datang Admin
+                                            </h1><br>
                                             <div class="d-flex">
                                                 <h4 class="mb-2 text-black">
-                                                    Silahkan mengisi logbook terlebih dahulu sebelum
-                                                    melakukan perkuliahan atau kegiatan
+                                                    Silakan memilih jenis data yang ingin diakses terlebih dahulu sebelum melanjutkan pengelolaan informasi.
+                                                    Anda dapat melihat data peserta, data koordinator, atau data lab perkuliahan sesuai kebutuhan.
+                                                    Pastikan untuk memilih dengan tepat agar proses pengelolaan berjalan lancar.
                                                 </h4>
                                             </div>
                                         </div>
@@ -121,14 +117,19 @@
                                         <div class="card-body ">
                                             <div class="d-flex justify-content-between gap-6 ">
                                                 <button class="btn btn-ket btn-lg flex-grow-1"
-                                                    onclick="window.location.href='{{ url('/logkeg/KOOR') }}'">
+                                                    onclick="window.location.href='{{ url('/admin/create') }}'">
                                                     <i class="fas fa-book me-2"></i>
-                                                    LogBook Koordinator
+                                                    Daftar Lab Mahasiswa
                                                 </button>
                                                 <button class="btn btn-ket btn-lg flex-grow-1"
-                                                    onclick="window.location.href='{{ url('/peserta/create') }}'">
+                                                    onclick="window.location.href='{{ url('/admin/Koor') }}'">
                                                     <i class="fas fa-book me-2"></i>
-                                                    Logbook Peserta
+                                                    Daftar Koordinator
+                                                </button>
+                                                <button class="btn btn-ket btn-lg flex-grow-1"
+                                                    onclick="window.location.href='{{ url('/admin/Peserta') }}'">
+                                                    <i class="fas fa-book me-2"></i>
+                                                    Daftar Peserta
                                                 </button>
                                             </div>
                                         </div>

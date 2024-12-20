@@ -138,15 +138,15 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="nama">Nama</label>
-                                                <input class="form-control" type="text" id="nama"
-                                                    name="nama">
+                                                <input class="form-control" type="text" id="nama" name="nama"
+                                                    placeholder="Masukkan nama lengkap" required>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="nim_nip">NIM/NIP</label>
-                                                <input class="form-control" type="text" id="nim_nip"
-                                                    name="nim_nip">
+                                                <input class="form-control" type="text" id="nim_nip" name="nim_nip"
+                                                    placeholder="0XXXXXXXX" required>
                                             </div>
                                         </div>
                                     </div>
@@ -155,21 +155,21 @@
                                             <div class="form-group">
                                                 <label for="no_hp">No HP</label>
                                                 <input class="form-control" type="text" id="no_hp"
-                                                    name="no_hp">
+                                                    name="no_hp" placeholder="08XXXXXXXXXX" required>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="email">Email</label>
                                                 <input class="form-control" type="email" id="email"
-                                                    name="email">
+                                                    name="email" placeholder="contoh@gmail.com" required>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="kegiatan">Kegiatan</label>
                                                 <input class="form-control" type="text" id="kegiatan"
-                                                    name="kegiatan">
+                                                    name="kegiatan" placeholder="Kegiatan UKM" required>
                                             </div>
                                         </div>
                                     </div>
@@ -208,20 +208,21 @@
                                             <div class="form-group">
                                                 <label for="jumlah">Jumlah Peserta</label>
                                                 <input class="form-control" type="number" id="jumlah"
-                                                    name="jumlah">
+                                                    name="jumlah" placeholder="10" required>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="alat">Alat</label>
-                                                <input class="form-control" type="text" id="alat"
-                                                    name="alat">
+                                                <textarea class="form-control" id="alat" name="alat" rows="1"
+                                                    placeholder="Sebutkan alat yang digunakan"></textarea>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="keterangan">Keterangan</label>
-                                                <textarea class="form-control" id="keterangan" name="keterangan" rows="1"></textarea>
+                                                <textarea class="form-control" id="keterangan" name="keterangan" rows="1"
+                                                    placeholder="Tambahkan keterangan jika ada"></textarea>
                                             </div>
                                         </div>
                                     </div>

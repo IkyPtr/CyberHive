@@ -15,7 +15,7 @@
     <link id="pagestyle" href="{{ asset('public/assets/css/soft-ui-dashboard.css?v=1.0.3') }}" rel="stylesheet" />
     <style>
         .card {
-            width: 150%;
+            width: 100%;
         }
 
         .form-control {
@@ -37,7 +37,7 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
                     <li class="breadcrumb-item text-sm">
-                        <a class="opacity-5 text-dark" href="javascript:;">Index Awal</a>
+                        <a class="opacity-5 text-dark" href="javascript:;">Login admin</a>
                     </li>
                     <li class="breadcrumb-item text-sm text-dark active text-capitalize" aria-current="page">
                         CyberHive
@@ -61,14 +61,14 @@
                                         <h3 class="font-weight-bolder text-black text-center">Login</h3>
                                     </div>
                                     <div class="card-body">
-                                        <form role="form" method="POST" action="/session">
+                                        <form role="form" method="POST" action="{{ route('session.store') }}">
                                             @csrf
-                                            <label>Email</label>
+                                            <label>USERNAME</label>
                                             <div class="mb-3">
-                                                <input type="email" class="form-control" name="email" id="email"
-                                                    placeholder="Email" aria-label="Email"
-                                                    aria-describedby="email-addon">
-                                                @error('email')
+                                                <input type="text" class="form-control" name="username" id="username"
+                                                    placeholder="Username" aria-label="username"
+                                                    aria-describedby="username-addon">
+                                                @error('username')
                                                     <p class="text-danger text-xs mt-2">{{ $message }}</p>
                                                 @enderror
                                             </div>

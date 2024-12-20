@@ -116,13 +116,15 @@
                                         <div class="col-md-8">
                                             <div class="form-group">
                                                 <label>Nama</label>
-                                                <input type="text" name="nama" class="form-control" required>
+                                                <input type="text" name="nama" class="form-control"
+                                                    placeholder="Inputkan nama anda" required>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label>NIM/NIP</label>
-                                                <input type="text" name="nim_nip" class="form-control" required>
+                                                <input type="text" name="nim_nip" class="form-control"
+                                                    placeholder="0XXXXXXX" required>
                                             </div>
                                         </div>
                                     </div>
@@ -133,7 +135,8 @@
                                                 <label>Nomor PC</label>
                                                 <select name="nomor_pc" class="form-control" required>
                                                     @for ($i = 1; $i <= 40; $i++)
-                                                        <option value="{{ $i }}">{{ $i }}</option>
+                                                        <option value="{{ $i }}">{{ $i }}
+                                                        </option>
                                                     @endfor
                                                 </select>
                                             </div>
@@ -313,14 +316,15 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Keterangan</label>
-                                                <input type="text" name="keterangan" class="form-control">
-
+                                                <textarea class="form-control" id="keterangan" name="keterangan" rows="3"
+                                                    placeholder="Tambahkan keterangan jika ada"></textarea>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Alat</label>
-                                                <input type="text" name="alat" class="form-control">
+                                                <textarea class="form-control" id="alat" name="alat" rows="3"
+                                                    placeholder="Sebutkan alat yang digunakan"></textarea>
                                             </div>
                                         </div>
                                     </div>

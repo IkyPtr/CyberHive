@@ -7,12 +7,12 @@ use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\KoordinatorController;
 use App\Http\Controllers\PesertaController;
 use App\Models\Peserta;
+use App\Http\Controllers\SessionController;
 Route::resources([
     'mahasiswa' => MahasiswaController::class,
     'koordinator' => KoordinatorController::class,
     'peserta' => PesertaController::class
 ]);
-
 Route::view('/', 'index_awal');
 Route::prefix('peserta')->group(function () {
     Route::get('/', function () {
@@ -47,4 +47,12 @@ Route::prefix('admin')->group(function () {
         return view('Admin.peserta_index');
     });
 });
+Route::post('/session', [SessionController::class, 'store'])->name('session.store');
+Route::get('/admin/dashboard', function() {
+    return view('Admin.Admin_pilihan');
+})->name('admin.dashboard');
+Route::get('/teknisi/dashboard', function() {
+    return view('teknisi');
+})->name('teknisi.dashboard');
+
 Route::view('/teknisi/login', 'Teknisi.teknisi_login');

@@ -229,16 +229,41 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="matakuliah">Mata Kuliah</label>
-                                                <input type="text" class="form-control" id="matakuliah"
-                                                    name="matakuliah" placeholder="Nama mata kuliah" required>
+                                                <select class="form-control" id="matakuliah" name="matakuliah" required>
+                                                    <option value="" disabled selected>Pilih mata kuliah</option>
+                                                    <option value="Basis Data Dasar">Basis Data Dasar</option>
+                                                    <option value="Algoritma">Algoritma</option>
+                                                    <option value="Animasi">Animasi</option>
+                                                    <option value="Data Warehouse">Data Warehouse</option>
+                                                    <option value="Basis Data Lanjut">Basis Data Lanjut</option>
+                                                    <option value="Big Data">Big Data</option>
+                                                    <option value="Pemograman Berbasis Object">Pemograman Berbasis Object</option>
+                                                    <option value="Game">Game</option>
+                                                    <option value="Pemograman Berbasis Web">Pemograman Berbasis Web</option>
+                                                    <option value="Pemograman Berbasis Framework">Pemograman Berbasis Framework</option>
+                                                    <option value="Jaringan Komputer">Jaringan Komputer</option>
+                                                </select>
                                             </div>
+
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="dosen">Dosen Pengampu</label>
-                                                <input type="text" class="form-control" id="dosen"
-                                                    name="dosen" placeholder="Nama dosen pengampu" required>
+                                                <select class="form-control" id="dosen" name="dosen" required>
+                                                    <option value="" disabled selected>Pilih dosen pengampu</option>
+                                                    <option value="ULI">ULI</option>
+                                                    <option value="MIZ">MIZ</option>
+                                                    <option value="MFM">MFM</option>
+                                                    <option value="ERZ">ERZ</option>
+                                                    <option value="HFB">HFB</option>
+                                                    <option value="MUT">MUT</option>
+                                                    <option value="ERW">ERW</option>
+                                                    <option value="AUA">AUA</option>
+                                                    <option value="PHF">PHF</option>
+                                                    <option value="YLK">YLK</option>
+                                                </select>
                                             </div>
+
                                         </div>
                                     </div>
                                     <div class="row mt-3">
