@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="icon" type="image/png" href="{{ asset('public/assets/img/favicon.png') }}">
     <title>
@@ -21,20 +22,24 @@
             border-radius: 10px;
             overflow: hidden;
         }
+
         .carousel-item {
             transition: transform 0.6s ease-in-out;
             height: 400px;
         }
+
         .carousel-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
+
         .carousel-control-prev,
         .carousel-control-next {
             width: 10%;
             opacity: 0.7;
         }
+
         .carousel-indicators {
             bottom: 0;
             margin-bottom: 0.5rem;
@@ -57,6 +62,7 @@
         }
     </style>
 </head>
+
 <body class="g-sidenav-show  bg-gray-100 virtual-reality overflow-hidden">
     <!-- Navbar -->
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur"
@@ -75,9 +81,10 @@
             </nav>
             <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4 d-flex justify-content-end"
                 id="navbar">
-                <div class="nav-item d-flex align-self-end">
-                </div>
                 <div class="ms-md-3 pe-md-3 d-flex align-items-center">
+                    <li>
+                        <a class="opacity-5 text-dark" href="javascript:;"> {{ session('admin')->nama }}</a>
+                    </li>
                 </div>
             </div>
         </div>
@@ -101,14 +108,18 @@
                                                 <img src="{{ asset('public/assets/img/LOGO-PCR.png') }}" alt="PCR Logo"
                                                     class="img-fluid mt-n4 mb-0" style="max-height: 60px; width: auto;">
                                             </div><br>
-                                            <h1>
-                                                Selamat Datang Admin
-                                            </h1><br>
+                                            <h3>
+                                                Selamat Datang {{ session('admin')->nama }}
+                                            </h3>
+                                            <br>
                                             <div class="d-flex">
                                                 <h4 class="mb-2 text-black">
-                                                    Silakan memilih jenis data yang ingin diakses terlebih dahulu sebelum melanjutkan pengelolaan informasi.
-                                                    Anda dapat melihat data peserta, data koordinator, atau data lab perkuliahan sesuai kebutuhan.
-                                                    Pastikan untuk memilih dengan tepat agar proses pengelolaan berjalan lancar.
+                                                    Silakan memilih jenis data yang ingin diakses terlebih dahulu
+                                                    sebelum melanjutkan pengelolaan informasi.
+                                                    Anda dapat melihat data peserta, data koordinator, atau data lab
+                                                    perkuliahan sesuai kebutuhan.
+                                                    Pastikan untuk memilih dengan tepat agar proses pengelolaan berjalan
+                                                    lancar.
                                                 </h4>
                                             </div>
                                         </div>
@@ -158,4 +169,5 @@
         data-cf-beacon='{"rayId":"8eda99853d7f3fcb","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2024.10.5","token":"1b7cbb72744b40c580f8633c6b62637e"}'
         crossorigin="anonymous"></script>
 </body>
+
 </html>

@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Http\Controllers;
+
 use App\Models\Admin;
 use App\Models\Teknisi;
 use Illuminate\Http\Request;
@@ -17,17 +19,18 @@ class SessionController extends Controller
 
         if (str_starts_with($username, 'A')) {
             $admin = Admin::where('username', $username)
-                         ->where('password', $request->password)
-                         ->first();
+                ->where('password', $request->password)
+                ->first();
             if ($admin) {
+                session(['admin' => $admin]);
                 return redirect()->route('admin.dashboard');
             }
         }
 
         if (str_starts_with($username, 'T')) {
             $teknisi = Teknisi::where('username', $username)
-                             ->where('password', $request->password)
-                             ->first();
+                ->where('password', $request->password)
+                ->first();
             if ($teknisi) {
                 return redirect()->route('teknisi.dashboard');
             }
