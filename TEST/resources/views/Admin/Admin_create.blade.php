@@ -56,8 +56,7 @@
     <div class="border-radius-x1 mt-1 mx-1 position-relative vh-100"
         style="background-image: url('{{ asset('public/assets/img/vr-bg.jpg') }}') ; background-size: cover;">
         <main class="main-content"
-            style="height: calc(0vh - 0px);
-                    Width: calc(210vh - 210px)">
+            style="height: calc(0vw - 0px); width: calc(95vw - 10px);">
             <div class="section min-vh-50 position-relative transform-scale-1 transform-scale-md-8">
                 <div class="container d-flex justify-content-start">
                     <div class="row pt-610 justify-content-center">
@@ -70,85 +69,172 @@
                                                 <div class="text-left mb-4">
                                                     <img src="{{ asset('public/assets/img/LOGO-PCR.png') }}" alt="PCR Logo"
                                                         class="img-fluid mt-n4 mb-2" style="max-height: 60px; width: auto; ">
-                                                        <h6 class="mb-0">{{ __('Form Penginputan Data Admin') }}</h6>
+                                                        <h6 class="mb-0">{{ __('Form Cari') }}</h6>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card-body pt-4 p-3">
+                                        <div class="card-body pt-3 p-2">
                                             <form action="/submit" method="POST" role="form text-left">
                                                 @csrf
                                                 <div class="row">
-                                                    <div class="col-md-8">
+                                                    <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="Nama" class="form-control-label">Nama</label>
                                                             <input class="form-control" type="text" id="Nama" name="Nama">
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-4">
+                                                    <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="NoRuang" class="form-control-label">Nomor Ruangan</label>
-                                                            <input class="form-control" type="text" id="NoRuang" name="NoRuang">
+                                                            <label for="ruang_lab">Ruang Laboratorium</label>
+                                                            <select class="form-control" id="ruang_lab" name="ruang_lab" required>
+                                                                <option value="" disabled selected>Pilih ruang lab</option>
+                                                                <option value="152">Lab 152</option>
+                                                                <option value="156">Lab 156</option>
+                                                                <option value="225">Lab 225</option>
+                                                                <option value="252">Lab 252</option>
+                                                                <option value="256">Lab 256</option>
+                                                                <option value="281">Lab 281</option>
+                                                                <option value="282">Lab 282</option>
+                                                                <option value="283">Lab 283</option>
+                                                                <option value="284">Lab 284</option>
+                                                                <option value="313">Lab 313</option>
+                                                                <option value="316">Lab 316</option>
+                                                                <option value="317">Lab 317</option>
+                                                                <option value="319">Lab 319</option>
+                                                                <option value="320">Lab 320</option>
+                                                                <option value="324">Lab 324</option>
+                                                                <option value="325">Lab 325</option>
+                                                                <option value="329">Lab 329</option>
+                                                                <option value="330">Lab 330</option>
+                                                                <option value="352">Lab 352</option>
+                                                            </select>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="row">
-                                                    <div class="col-md-8">
+                                                    <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="Matkul" class="form-control-label">Mata Kuliah</label>
-                                                            <input class="form-control" type="text" id="Matkul" name="Matkul">
+                                                            <label for="matakuliah">Mata Kuliah</label>
+                                                            <select class="form-control" id="matakuliah" name="matakuliah" required>
+                                                                <option value="" disabled selected>Pilih mata kuliah</option>
+                                                                <option value="Basis Data Dasar">Basis Data Dasar</option>
+                                                                <option value="Algoritma">Algoritma</option>
+                                                                <option value="Animasi">Animasi</option>
+                                                                <option value="Data Warehouse">Data Warehouse</option>
+                                                                <option value="Basis Data Lanjut">Basis Data Lanjut</option>
+                                                                <option value="Big Data">Big Data</option>
+                                                                <option value="Pemograman Berbasis Object">Pemograman Berbasis Object</option>
+                                                                <option value="Game">Game</option>
+                                                                <option value="Pemograman Berbasis Web">Pemograman Berbasis Web</option>
+                                                                <option value="Pemograman Berbasis Framework">Pemograman Berbasis Framework</option>
+                                                                <option value="Jaringan Komputer">Jaringan Komputer</option>
+                                                            </select>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-4">
+                                                    <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="Kelas" class="form-control-label">Kelas</label>
-                                                            <input class="form-control" type="text" id="Kelas" name="SKS">
+                                                            <label for="kelas">Kelas</label>
+                                                            <select class="form-control" name="kelas" required>
+                                                                <option value="" disabled selected>Pilih Kelas</option>
+                                                                <option value="21 SI A">21 SI A</option>
+                                                                <option value="21 SI B">21 SI B</option>
+                                                                <option value="21 SI C">21 SI C</option>
+                                                                <option value="22 SI A">22 SI A</option>
+                                                                <option value="22 SI B">22 SI B</option>
+                                                                <option value="22 SI C">22 SI C</option>
+                                                                <option value="22 SI D">22 SI D</option>
+                                                                <option value="23 SI A">23 SI A</option>
+                                                                <option value="23 SI B">23 SI B</option>
+                                                                <option value="23 SI C">23 SI C</option>
+                                                                <option value="23 SI D">23 SI D</option>
+                                                                <option value="24 SI A">24 SI A</option>
+                                                                <option value="24 SI B">24 SI B</option>
+                                                                <option value="24 SI C">24 SI C</option>
+                                                                <option value="24 SI D">24 SI D</option>
+                                                                <option value="24 SI E">24 SI E</option>
+                                                                <option value="21 TI KA">21 TI KA</option>
+                                                                <option value="21 TI KB">21 TI KB</option>
+                                                                <option value="21 TI KC">21 TI KC</option>
+                                                                <option value="21 TI C">21 TI C</option>
+                                                                <option value="21 TI D">21 TI D</option>
+                                                                <option value="21 TI E">21 TI E</option>
+                                                                <option value="21 TI F">21 TI F</option>
+                                                                <option value="22 TI A">22 TI A</option>
+                                                                <option value="22 TI B">22 TI B</option>
+                                                                <option value="22 TI C">22 TI C</option>
+                                                                <option value="22 TI D">22 TI D</option>
+                                                                <option value="22 TI E">22 TI E</option>
+                                                                <option value="22 TI F">22 TI F</option>
+                                                                <option value="23 TI A">23 TI A</option>
+                                                                <option value="23 TI B">23 TI B</option>
+                                                                <option value="23 TI C">23 TI C</option>
+                                                                <option value="23 TI D">23 TI D</option>
+                                                                <option value="23 TI E">23 TI E</option>
+                                                                <option value="23 TI F">23 TI F</option>
+                                                                <option value="24 TI A">24 TI A</option>
+                                                                <option value="24 TI B">24 TI B</option>
+                                                                <option value="24 TI C">24 TI C</option>
+                                                                <option value="24 TI D">24 TI D</option>
+                                                                <option value="24 TI E">24 TI E</option>
+                                                                <option value="24 TI F">24 TI F</option>
+                                                                <option value="24 TI SW">24 TI SW</option>
+                                                                <option value="21 TRK">21 TRK</option>
+                                                                <option value="22 TRK A">22 TRK A</option>
+                                                                <option value="22 TRK B">22 TRK B</option>
+                                                                <option value="23 TRK A">23 TRK A</option>
+                                                                <option value="23 TRK B">23 TRK B</option>
+                                                                <option value="24 TRK A">24 TRK A</option>
+                                                                <option value="24 TRK B">24 TRK B</option>
+                                                            </select>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="row">
-                                                    <div class="col-md-4">
-                                                        <div class="form-group">
-                                                            <label for="SKS" class="form-control-label">SKS</label>
-                                                            <input class="form-control" type="text" id="SKS" name="SKS">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4">
+                                                    <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="Hadir" class="form-control-label">Jumlah Hadir</label>
-                                                            <input class="form-control" type="text" id="Hadir" name="Hadir">
+                                                            <input class="form-control" type="number" id="Hadir" name="Hadir">
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-4">
+                                                    <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="TidakHadir" class="form-control-label">Jumlah Tidak Hadir</label>
-                                                            <input class="form-control" type="text" id="TidakHadir" name="TidakHadir">
+                                                            <input class="form-control" type="number" id="TidakHadir" name="TidakHadir">
                                                         </div>
                                                     </div>
-
                                                 </div>
                                                 <div class="row">
-                                                    <div class="col-md-4">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="SKS" class="form-control-label">SKS</label>
+                                                            <input class="form-control" type="number" id="SKS" name="SKS">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="Tanggal" class="form-control-label">Tanggal</label>
                                                             <input class="form-control" type="date" id="Tanggal" name="Tanggal">
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-4">
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="JamMasuk" class="form-control-label">Jam Masuk</label>
                                                             <input class="form-control" type="time" id="JamMasuk" name="JamMasuk">
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-4">
+                                                    <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="JamKeluar" class="form-control-label">Jam Keluar</label>
                                                             <input class="form-control" type="time" id="JamKeluar" name="JamKeluar">
                                                         </div>
                                                     </div>
-
                                                 </div>
-                                                <div class="d-flex justify-content-end">
-                                                    <button type="submit" class="btn bg-gradient-dark btn-md mt-4 mb-4">{{ 'SIMPAN' }}</button>
+                                                <div class="d-flex justify-content-end mt-4">
+                                                    <button type="button" class="btn btn-secondary me-2"
+                                                        onclick="window.history.back()">Tutup</button>
+                                                    <button type="submit" class="btn btn-linkedin">Simpan</button>
                                                 </div>
                                             </form>
                                         </div>
@@ -159,7 +245,6 @@
                     </div>
                 </div>
             </div>
-
         </main>
     </div>
     <script src="{{ asset('public/assets/js/core/popper.min.js') }}"></script>

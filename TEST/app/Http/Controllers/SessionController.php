@@ -17,25 +17,26 @@ class SessionController extends Controller
 
         $username = $request->username;
 
-        if (str_starts_with($username, 'A')) {
-            $admin = Admin::where('username', $username)
-                ->where('password', $request->password)
-                ->first();
-            if ($admin) {
-                session(['admin' => $admin]);
-                return redirect()->route('admin.dashboard');
-            }
+        // Check in Admin table
+        $admin = Admin::where('username', $username)
+            ->where('password', $request->password)
+            ->first();
+
+        if ($admin) {
+            session(['admin' => $admin]);
+            return redirect()->route('admin.dashboard');
         }
 
-        if (str_starts_with($username, 'T')) {
-            $teknisi = Teknisi::where('username', $username)
-                ->where('password', $request->password)
-                ->first();
-            if ($teknisi) {
-                return redirect()->route('teknisi.dashboard');
-            }
+        // Check in Teknisi table
+        $teknisi = Teknisi::where('username', $username)
+            ->where('password', $request->password)
+            ->first();
+
+        if ($teknisi) {
+            session(['teknisi' => $teknisi]);
+            return redirect()->route('teknisi.dashboard');
         }
 
-        return back()->withErrors(['username' => 'Invalid credentials']);
+        return back()->withErrors(['username' => 'Invalid Username']);
     }
 }

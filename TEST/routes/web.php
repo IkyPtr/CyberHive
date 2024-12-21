@@ -48,9 +48,8 @@ Route::prefix('admin')->group(function () {
     Route::get('/index', function () {
         return view('Admin.Admin_index');
     });
-    Route::get('/Koor', function () {
-        return view('Admin.koordinator_index');
-    });
+    Route::get('/Koor', [KoordinatorController::class, 'index'])->name('koordinator.index');
+
     Route::get('/Peserta', function () {
         return view('Admin.peserta_index');
     });

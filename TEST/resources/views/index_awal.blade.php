@@ -78,7 +78,7 @@
         style="background-image: url('') ; background-size: cover;">
         <br><br><br><br>
         <main class="main-content position-relative border-radius-lg d-flex align-items-center justify-content-center"
-            style="height: calc(100vh - 100px);">
+            style="height: calc(100vh - 100px); width: 105%;">
             <div class="section min-vh-100 position-relative transform-scale-10 transform-scale-md-8">
                 <div class="container">
                     <div class="row pt-20 justify-content-center">

@@ -13,8 +13,10 @@ class KoordinatorController extends Controller
      */
     public function index()
     {
-        //
+        $koordinators = Koordinator::with('labs')->get();
+        return view('Admin.koordinator_index', ['koordinators' => $koordinators]);
     }
+
 
     /**
      * Show the form for creating a new resource.
