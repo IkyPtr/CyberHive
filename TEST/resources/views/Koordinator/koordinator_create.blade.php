@@ -174,36 +174,20 @@
                                         </div>
                                     </div>
                                     <div class="row mt-3">
-                                        <div class="col-md-3">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="tanggal_mulai">Tanggal Mulai</label>
                                                 <input class="form-control" type="date" id="tanggal_mulai"
                                                     name="tanggal_mulai">
                                             </div>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="tanggal_selesai">Tanggal Selesai</label>
                                                 <input class="form-control" type="date" id="tanggal_selesai"
                                                     name="tanggal_selesai">
                                             </div>
                                         </div>
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <label for="jam_masuk">Jam Masuk</label>
-                                                <input class="form-control" type="time" id="jam_masuk"
-                                                    name="jam_masuk">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <label for="jam_keluar">Jam Keluar</label>
-                                                <input class="form-control" type="time" id="jam_keluar"
-                                                    name="jam_keluar">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row mt-3">
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="jumlah">Jumlah Peserta</label>
@@ -211,14 +195,16 @@
                                                     name="jumlah" placeholder="10" required>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="alat">Alat</label>
                                                 <textarea class="form-control" id="alat" name="alat" rows="1"
                                                     placeholder="Sebutkan alat yang digunakan"></textarea>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="keterangan">Keterangan</label>
                                                 <textarea class="form-control" id="keterangan" name="keterangan" rows="1"

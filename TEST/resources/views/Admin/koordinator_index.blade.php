@@ -86,8 +86,6 @@
                                                             <th>Jumlah Peserta</th>
                                                             <th>Kegiatan</th>
                                                             <th>Ruang Lab</th>
-                                                            <th>Jam Masuk</th>
-                                                            <th>Jam keluar</th>
                                                             <th>Tanggal Mulai</th>
                                                             <th>Tanggal Selesai</th>
                                                         </tr>
@@ -102,8 +100,6 @@
                                                             <td>{{ $koordinator->jumlah }}</td>
                                                             <td>{{ $koordinator->kegiatan }}</td>
                                                             <td>{{ $koordinator->labs->first()->ruang_lab ?? '-' }}</td>
-                                                            <td>{{ $koordinator->labs->first()->jam_masuk ?? '-' }}</td>
-                                                            <td>{{ $koordinator->labs->first()->jam_keluar ?? '-' }}</td>
                                                             <td>{{ $koordinator->tanggal_mulai }}</td>
                                                             <td>{{ $koordinator->tanggal_selesai }}</td>
                                                         </tr>
