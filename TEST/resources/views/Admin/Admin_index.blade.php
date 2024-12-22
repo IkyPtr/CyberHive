@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="icon" type="image/png" href="{{ asset('public/assets/img/favicon.png') }}">
     <title>Data Admin</title>
@@ -13,26 +14,34 @@
     <!-- CSS Files -->
     <link id="pagestyle" href="{{ asset('public/assets/css/soft-ui-dashboard.css?v=1.0.3') }}" rel="stylesheet" />
     <style>
-    .card {
-        width: 100%;
-    }
-    .table th, .table td {
-        font-size: 14px;
-        padding: 10px;
-        text-align: center;
-    }
-    .form-control:focus, .form-select:focus {
-        border-color: #0077b5 !important;
-        box-shadow: 0 0 0 0.2rem rgba(0, 119, 181, 0.25) !important;
-    }
+        .card {
+            width: 100%;
+        }
 
-    .table-container {
-        max-width: 100%; /* 100% width, use the full width */
-        margin: 0 auto; /* Center the table */
-        padding: 30px; /* More padding around the table */
-    }
+        .table th,
+        .table td {
+            font-size: 14px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            border-color: #0077b5 !important;
+            box-shadow: 0 0 0 0.2rem rgba(0, 119, 181, 0.25) !important;
+        }
+
+        .table-container {
+            max-width: 100%;
+            /* 100% width, use the full width */
+            margin: 0 auto;
+            /* Center the table */
+            padding: 30px;
+            /* More padding around the table */
+        }
     </style>
 </head>
+
 <body class="g-sidenav-show bg-gray-100 virtual-reality overflow-hidden">
     <!-- Navbar -->
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur"
@@ -54,12 +63,12 @@
     <!-- End Navbar -->
     <div class="border-radius-x1 mt-1 mx-1 position-relative vh-100"
         style="background-image: url('{{ asset('public/assets/img/vr-bg.jpg') }}') ; background-size: cover;">
-        <main class="main-content"
-        style="width: calc(100% - 785px); margin-right: 785px;">
+        <main class="main-content" style="width: calc(100% - 785px); margin-right: 785px;">
             <div class="section min-vh-50 position-relative transform-scale-1 transform-scale-md-8">
                 <div class="container d-flex justify-content-start">
                     <div class="row pt-610 justify-content-center">
-                        <div class="col-xl-12 col-lg-12 col-md-12 d-flex flex-column mx-auto"> <!-- Changed to 12 for full-width -->
+                        <div class="col-xl-12 col-lg-12 col-md-12 d-flex flex-column mx-auto">
+                            <!-- Changed to 12 for full-width -->
                             <div class="card card-plain mt-100">
                                 <div class="container-fluid py-4">
                                     <div class="card">
@@ -94,7 +103,7 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        @foreach($matchingData as $key => $data)
+                                                        @foreach ($matchingData as $key => $data)
                                                             <tr>
                                                                 <td>{{ $key + 1 }}</td>
                                                                 <td>{{ $data->nama }}</td>
@@ -106,38 +115,54 @@
                                                                 <td>{{ $data->tanggal }}</td>
                                                                 <td>{{ $data->jam_masuk }}</td>
                                                                 <td>
-                                                                    @if($data->monitor == 'Baik')
-                                                                        <button class="btn btn-success btn-sm">Baik</button>
+                                                                    @if ($data->monitor == 'Baik')
+                                                                        <button
+                                                                            class="btn btn-success btn-sm">Baik</button>
                                                                     @else
-                                                                        <button class="btn btn-danger btn-sm">Rusak</button>
+                                                                        <button
+                                                                            class="btn btn-danger btn-sm">Rusak</button>
                                                                     @endif
                                                                 </td>
                                                                 <td>
-                                                                    @if($data->keyboard == 'Baik')
-                                                                        <button class="btn btn-success btn-sm">Baik</button>
+                                                                    @if ($data->keyboard == 'Baik')
+                                                                        <button
+                                                                            class="btn btn-success btn-sm">Baik</button>
                                                                     @else
-                                                                        <button class="btn btn-danger btn-sm">Rusak</button>
+                                                                        <button
+                                                                            class="btn btn-danger btn-sm">Rusak</button>
                                                                     @endif
                                                                 </td>
                                                                 <td>
-                                                                    @if($data->mouse == 'Baik')
-                                                                        <button class="btn btn-success btn-sm">Baik</button>
+                                                                    @if ($data->mouse == 'Baik')
+                                                                        <button
+                                                                            class="btn btn-success btn-sm">Baik</button>
                                                                     @else
-                                                                        <button class="btn btn-danger btn-sm">Rusak</button>
+                                                                        <button
+                                                                            class="btn btn-danger btn-sm">Rusak</button>
                                                                     @endif
                                                                 </td>
                                                                 <td>
-                                                                    @if($data->jaringan == 'Baik')
-                                                                        <button class="btn btn-success btn-sm">Baik</button>
+                                                                    @if ($data->jaringan == 'Baik')
+                                                                        <button
+                                                                            class="btn btn-success btn-sm">Baik</button>
                                                                     @else
-                                                                        <button class="btn btn-danger btn-sm">Rusak</button>
+                                                                        <button
+                                                                            class="btn btn-danger btn-sm">Rusak</button>
                                                                     @endif
                                                                 </td>
                                                                 <td>{{ $data->keterangan ?? '-' }}</td>
                                                                 <td>{{ $data->alat ?? '-' }}</td>
+                                                                <!-- Update the delete form in the table -->
                                                                 <td>
-                                                                    <button class="btn btn-warning btn-sm">Edit</button>
-                                                                    <button class="btn btn-danger btn-sm">Hapus</button>
+                                                                    <form
+                                                                        action="{{ route('mahasiswa.destroy', $data->nim) }}"
+                                                                        method="POST">
+                                                                        @csrf
+                                                                        @method('DELETE')
+                                                                        <button type="submit"
+                                                                            class="btn btn-danger btn-sm"
+                                                                            onclick="return confirm('Yakin ingin menghapus data ini?')">Hapus</button>
+                                                                    </form>
                                                                 </td>
                                                             </tr>
                                                         @endforeach
@@ -163,4 +188,5 @@
     <script src="{{ asset('public/assets/js/plugins/chartjs.min.js') }}"></script>
     <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script>
 </body>
+
 </html>

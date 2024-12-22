@@ -11,6 +11,7 @@ class Matakuliah extends Model
     protected $guarded = [];
     public function labs()
     {
-        return $this->hasMany(Lab::class, 'mk_id', 'mk_id');
+        return $this->hasMany(Lab::class, 'lab_id', 'lab_id');
     }
 }
+ 

@@ -15,6 +15,7 @@ return new class extends Migration
     Schema::dropIfExists('mahasiswas');  // Then drop mahasiswas table
     Schema::dropIfExists('pesertas');  // Finally drop pesertas table
     Schema::dropIfExists('koordinators');  // Finally drop coordinators table
+    Schema::dropIfExists('matakuliahs');  // Finally drop matakuliahs table
 
 
     Schema::create('koordinators', function (Blueprint $table) {
@@ -47,6 +48,15 @@ return new class extends Migration
         $table->string(column: 'lab_id');
         $table->timestamps();
     });
+    Schema::create('matakuliahs', function (Blueprint $table) {
+        $table->id();
+        $table->string('matakuliah');
+        $table->string('dosen');
+        $table->time('jam_masuk');
+        $table->time('jam_keluar');
+        $table->string(column: 'lab_id');
+        $table->timestamps();
+    });
 
     Schema::create('labs', function (Blueprint $table) {
         $table->id();
@@ -55,10 +65,6 @@ return new class extends Migration
         $table->string('no_loker');
         $table->string('ruang_lab');
         $table->date('tanggal');
-        $table->string('matakuliah');
-        $table->string('dosen');
-        $table->time('jam_masuk');
-        $table->time('jam_keluar');
         $table->string('monitor');
         $table->string('keyboard');
         $table->string('mouse');
@@ -70,6 +76,7 @@ return new class extends Migration
         $table->foreign('lab_id')->references('lab_id')->on('mahasiswas')->onDelete('cascade');
         $table->foreign('lab_id')->references('lab_id')->on('koordinators')->onDelete('cascade');
         $table->foreign('lab_id')->references('lab_id')->on('pesertas')->onDelete('cascade');
+        $table->foreign('lab_id')->references('lab_id')->on('matakuliahs')->onDelete('cascade');
     });
 }
 
@@ -79,6 +86,7 @@ public function down()
     Schema::dropIfExists('mahasiswas');
     Schema::dropIfExists('pesertas');
     Schema::dropIfExists('koordinators');
+    Schema::dropIfExists('matakuliahs');
 }
 
 };

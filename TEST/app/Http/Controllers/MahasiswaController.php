@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Mahasiswa;
 use App\Http\Requests\StoreMahasiswaRequest;
 use App\Http\Requests\UpdateMahasiswaRequest;
+use App\Models\Lab;
+use App\Models\Matakuliah;
 
 class MahasiswaController extends Controller
 {
@@ -13,7 +15,7 @@ class MahasiswaController extends Controller
      */
     public function index()
     {
-        $mahasiswas = Mahasiswa::with('labs')->get();
+        $mahasiswas = Mahasiswa::with(relations: 'labs')->get();
         return view('mahasiswa.index', compact('mahasiswas'));
     }
 
@@ -42,10 +44,6 @@ class MahasiswaController extends Controller
         $mahasiswa->labs()->create([
             'ruang_lab' => $request->ruang_lab,
             'tanggal' => $request->tanggal,
-            'matakuliah' => $request->matakuliah,
-            'dosen' => $request->dosen,
-            'jam_masuk' => $request->jam_masuk,
-            'jam_keluar' => $request->jam_keluar,
             'monitor' => $request->monitor,
             'keyboard' => $request->keyboard,
             'mouse' => $request->mouse,
@@ -56,6 +54,14 @@ class MahasiswaController extends Controller
             'nomor_pc' => $request->nomor_pc,
             'lab_id' => $mahasiswa->lab_id
         ]);
+        $mahasiswa->matakuliahs()->create([
+            'matakuliah' => $request->matakuliah,
+            'dosen' => $request->dosen,
+            'jam_masuk' => $request->jam_masuk,
+            'jam_keluar' => $request->jam_keluar,
+            'lab_id' => $mahasiswa->lab_id  // Add this line
+        ]);
+
         return redirect('/')
             ->with('success', 'Data mahasiswa berhasil ditambahkan! Terima kasih atas partisipasinya.');
     }
@@ -88,8 +94,20 @@ class MahasiswaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Mahasiswa $mahasiswa)
-    {
-        //
+    public function destroy($nim)
+{
+    $mahasiswa = Mahasiswa::where('nim', $nim)->first();
+    
+    if ($mahasiswa) {
+        Lab::where('lab_id', $mahasiswa->lab_id)->delete();
+        Matakuliah::where('lab_id', $mahasiswa->lab_id)->delete();
+        $mahasiswa->delete();
+        
+        return redirect()->route('admin.search')
+            ->with('success', 'Data berhasil dihapus');
     }
+    return redirect()->route('admin.search')
+        ->with('error', 'Data tidak ditemukan');
+}
+
 }

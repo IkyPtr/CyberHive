@@ -42,9 +42,7 @@ Route::prefix('admin')->group(function () {
 
     Route::get('/create', [AdminController::class, 'create'])->name('admin.create');
     Route::post('/store', [AdminController::class, 'store'])->name('admin.store');
-    Route::get('/index', function () {
-        return view('Admin.Admin_index');
-    });
+    Route::get('/search', [AdminController::class, 'index'])->name('admin.search');
     Route::get('/Koor', [KoordinatorController::class, 'index'])->name('koordinator.index');
     Route::get('/Peserta', function () {
         return view('Admin.peserta_index');
@@ -67,3 +65,5 @@ Route::get('/logper', function () {
 Route::get('/logkeg/KOOR', function () {
     return view('Koordinator.koordinator_create');
 });
+// Add this delete route
+Route::delete('/mahasiswa/{nim}', [MahasiswaController::class, 'destroy'])->name('mahasiswa.destroy');

@@ -80,8 +80,7 @@
                                             </div>
                                         </div>
                                         <div class="card-body pt-3 p-2">
-                                            <form action="{{ route('admin.store') }}" method="POST"
-                                                role="form text-left">
+                                            <form action="{{ route('admin.store') }}" method="POST">
                                                 @csrf
                                                 <div class="row">
                                                     <div class="col-md-6">
@@ -264,7 +263,7 @@
                                                 <div class="d-flex justify-content-end mt-4">
                                                     <button type="button" class="btn btn-secondary me-2"
                                                         onclick="window.history.back()">Tutup</button>
-                                                    <button type="submit" class="btn btn-linkedin">Simpan</button>
+                                                    <button type="submit" class="btn btn-linkedin">Cari Data</button>
                                                 </div>
                                             </form>
                                         </div>
