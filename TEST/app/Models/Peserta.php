@@ -13,6 +13,6 @@ class Peserta extends Model
     protected $guarded = [];
     public function labs()
     {
-        return $this->hasMany(Lab::class, 'lab_id', 'id_ps');
+        return $this->hasMany(Lab::class, 'lab_id', 'lab_id');
     }
 }

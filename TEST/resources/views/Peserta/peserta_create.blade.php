@@ -113,7 +113,7 @@
                                 <form action="{{ route('peserta.store') }}" method="POST" role="form text-left">
                                     @csrf
                                     <div class="row mb-2">
-                                        <div class="col-md-8">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <label>Nama</label>
                                                 <input type="text" name="nama" class="form-control"
@@ -125,69 +125,6 @@
                                                 <label>NIM/NIP</label>
                                                 <input type="text" name="nim_nip" class="form-control"
                                                     placeholder="0XXXXXXX" required>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-2">
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label>Nomor PC</label>
-                                                <select name="nomor_pc" class="form-control" required>
-                                                    @for ($i = 1; $i <= 40; $i++)
-                                                        <option value="{{ $i }}">{{ $i }}
-                                                        </option>
-                                                    @endfor
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label>Ruangan Lab</label>
-                                                <select name="ruang_lab" class="form-control" required>
-                                                    <option value="" disabled selected>Pilih Lab</option>
-                                                    <option value="152">152</option>
-                                                    <option value="156">156</option>
-                                                    <option value="225">225</option>
-                                                    <option value="252">252</option>
-                                                    <option value="256">256</option>
-                                                    <option value="281">281</option>
-                                                    <option value="282">282</option>
-                                                    <option value="283">283</option>
-                                                    <option value="284">284</option>
-                                                    <option value="313">313</option>
-                                                    <option value="316">316</option>
-                                                    <option value="317">317</option>
-                                                    <option value="319">319</option>
-                                                    <option value="320">320</option>
-                                                    <option value="324">324</option>
-                                                    <option value="325">325</option>
-                                                    <option value="329">329</option>
-                                                    <option value="330">330</option>
-                                                    <option value="352">352</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label>Tanggal</label>
-                                                <input type="date" name="tanggal" class="form-control" required>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-2">
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label>Jam Masuk</label>
-                                                <input type="time" name="jam_masuk" class="form-control" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label>Jam Keluar</label>
-                                                <input type="time" name="jam_keluar" class="form-control"
-                                                    required>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
@@ -247,6 +184,55 @@
                                                 </select>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="row mb-2">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Nomor PC</label>
+                                                <select name="nomor_pc" class="form-control" required>
+                                                    @for ($i = 1; $i <= 40; $i++)
+                                                        <option value="{{ $i }}">{{ $i }}
+                                                        </option>
+                                                    @endfor
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Ruangan Lab</label>
+                                                <select name="ruang_lab" class="form-control" required>
+                                                    <option value="" disabled selected>Pilih Lab</option>
+                                                    <option value="152">152</option>
+                                                    <option value="156">156</option>
+                                                    <option value="225">225</option>
+                                                    <option value="252">252</option>
+                                                    <option value="256">256</option>
+                                                    <option value="281">281</option>
+                                                    <option value="282">282</option>
+                                                    <option value="283">283</option>
+                                                    <option value="284">284</option>
+                                                    <option value="313">313</option>
+                                                    <option value="316">316</option>
+                                                    <option value="317">317</option>
+                                                    <option value="319">319</option>
+                                                    <option value="320">320</option>
+                                                    <option value="324">324</option>
+                                                    <option value="325">325</option>
+                                                    <option value="329">329</option>
+                                                    <option value="330">330</option>
+                                                    <option value="352">352</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Tanggal</label>
+                                                <input type="date" name="tanggal" class="form-control" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-2">
+                                        
                                     </div>
                                     <div class="row mt-3">
                                         <div class="col-md-3">

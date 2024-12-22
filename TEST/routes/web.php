@@ -44,9 +44,7 @@ Route::prefix('admin')->group(function () {
     Route::post('/store', [AdminController::class, 'store'])->name('admin.store');
     Route::get('/search', [AdminController::class, 'index'])->name('admin.search');
     Route::get('/Koor', [KoordinatorController::class, 'index'])->name('koordinator.index');
-    Route::get('/Peserta', function () {
-        return view('Admin.peserta_index');
-    });
+    Route::get('/Peserta', [PesertaController::class, 'index'])->name('peserta.index');
 });
 
 // Teknisi Routes
@@ -67,3 +65,4 @@ Route::get('/logkeg/KOOR', function () {
 });
 // Add this delete route
 Route::delete('/mahasiswa/{nim}', [MahasiswaController::class, 'destroy'])->name('mahasiswa.destroy');
+Route::delete('/peserta/{id}', [PesertaController::class, 'destroy'])->name('peserta.destroy');

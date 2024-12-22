@@ -138,7 +138,7 @@
                                                     Daftar Koordinator
                                                 </button>
                                                 <button class="btn btn-ket btn-lg flex-grow-1"
-                                                    onclick="window.location.href='{{ url('/admin/Peserta') }}'">
+                                                    onclick="window.location.href='{{ route('peserta.index') }}'">
                                                     <i class="fas fa-book me-2"></i>
                                                     Daftar Peserta
                                                 </button>

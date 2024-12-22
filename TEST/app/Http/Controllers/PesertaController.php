@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Peserta;
 use App\Http\Requests\StorePesertaRequest;
 use App\Http\Requests\UpdatePesertaRequest;
+use App\Models\Lab;
 
 class PesertaController extends Controller
 {
@@ -13,8 +14,11 @@ class PesertaController extends Controller
      */
     public function index()
     {
-        //
+        $peserta = Peserta::with('labs')->get();
+        return view('Admin.peserta_index', compact('peserta'));
     }
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -35,24 +39,24 @@ class PesertaController extends Controller
             'nim_nip' => $request->nim_nip,
             'lab_id' => uniqid()
         ]);
+
         $peserta->labs()->create([
             'ruang_lab' => $request->ruang_lab,
             'tanggal' => $request->tanggal,
-            'matakuliah' => '-',
-            'dosen' => '-',
-            'jam_masuk' => $request->jam_masuk,
-            'jam_keluar' => $request->jam_keluar,
             'monitor' => $request->monitor,
             'keyboard' => $request->keyboard,
             'mouse' => $request->mouse,
             'jaringan' => $request->jaringan,
             'keterangan' => $request->keterangan,
             'alat' => $request->alat,
+            'nomor_pc' => $request->nomor_pc,
             'no_loker' => '-',
             'lab_id' => $peserta->lab_id
         ]);
-        return redirect()->back()->with('success', 'Data koordinator berhasil disimpan');
+
+        return redirect()->back()->with('success', 'Data peserta berhasil disimpan');
     }
+
 
     /**
      * Display the specified resource.
@@ -81,8 +85,14 @@ class PesertaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Peserta $peserta)
+    public function destroy($id)
     {
-        //
+        $peserta = Peserta::find($id);
+        if ($peserta) {
+            Lab::where('lab_id', $peserta->lab_id)->delete();
+            $peserta->delete();
+            return redirect()->back()->with('success', 'Data berhasil dihapus');
+        }
+        return redirect()->back()->with('error', 'Data tidak ditemukan');
     }
 }
