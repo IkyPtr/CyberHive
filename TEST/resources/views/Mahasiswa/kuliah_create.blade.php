@@ -235,7 +235,7 @@
                                                     <option value="Algoritma">Algoritma</option>
                                                     <option value="Animasi">Animasi</option>
                                                     <option value="Data Warehouse">Data Warehouse</option>
-                                                    <option value="Basis Data Lanjut">Basis Data Lanjut</option>
+                                                    <option value="BDL">Basis Data Lanjut</option>
                                                     <option value="Big Data">Big Data</option>
                                                     <option value="Pemograman Berbasis Object">Pemograman Berbasis Object</option>
                                                     <option value="Game">Game</option>

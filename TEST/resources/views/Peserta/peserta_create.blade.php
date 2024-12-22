@@ -248,70 +248,76 @@
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="row mb-2">
+                                    <div class="row mt-3">
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label>Monitor</label>
-                                                <div>
-                                                    <label class="form-check form-check-inline">
+                                                <label>Kondisi Monitor</label>
+                                                <div class="d-flex gap-3">
+                                                    <div class="form-check">
                                                         <input type="radio" class="form-check-input" name="monitor"
-                                                            value="Baik" required>Bagus
-                                                    </label>
-                                                    <label class="form-check form-check-inline">
+                                                            value="Baik" required>
+                                                        <label class="form-check-label">Baik</label>
+                                                    </div>
+                                                    <div class="form-check">
                                                         <input type="radio" class="form-check-input" name="monitor"
-                                                            value="Rusak" required>Rusak
-                                                    </label>
+                                                            value="Rusak" required>
+                                                        <label class="form-check-label">Rusak</label>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label>Keyboard</label>
-                                                <div>
-                                                    <label class="form-check form-check-inline">
+                                                <label>Kondisi Keyboard</label>
+                                                <div class="d-flex gap-3">
+                                                    <div class="form-check">
                                                         <input type="radio" class="form-check-input"
-                                                            name="keyboard" value="Baik" required>Bagus
-                                                    </label>
-                                                    <label class="form-check form-check-inline">
+                                                            name="keyboard" value="Baik" required>
+                                                        <label class="form-check-label">Baik</label>
+                                                    </div>
+                                                    <div class="form-check">
                                                         <input type="radio" class="form-check-input"
-                                                            name="keyboard" value="Rusak" required>Rusak
-                                                    </label>
+                                                            name="keyboard" value="Rusak" required>
+                                                        <label class="form-check-label">Rusak</label>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label>Mouse</label>
-                                                <div>
-                                                    <label class="form-check form-check-inline">
+                                                <label>Kondisi Mouse</label>
+                                                <div class="d-flex gap-3">
+                                                    <div class="form-check">
                                                         <input type="radio" class="form-check-input" name="mouse"
-                                                            value="Baik" required>Bagus
-                                                    </label>
-                                                    <label class="form-check form-check-inline">
+                                                            value="Baik" required>
+                                                        <label class="form-check-label">Baik</label>
+                                                    </div>
+                                                    <div class="form-check">
                                                         <input type="radio" class="form-check-input" name="mouse"
-                                                            value="Rusak" required>Rusak
-                                                    </label>
+                                                            value="Rusak" required>
+                                                        <label class="form-check-label">Rusak</label>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label>Jaringan</label>
-                                                <div>
-                                                    <label class="form-check form-check-inline">
+                                                <label>Kondisi Jaringan</label>
+                                                <div class="d-flex gap-3">
+                                                    <div class="form-check">
                                                         <input type="radio" class="form-check-input"
-                                                            name="jaringan" value="Baik" required>Bagus
-                                                    </label>
-                                                    <label class="form-check form-check-inline">
+                                                            name="jaringan" value="Baik" required>
+                                                        <label class="form-check-label">Baik</label>
+                                                    </div>
+                                                    <div class="form-check">
                                                         <input type="radio" class="form-check-input"
-                                                            name="jaringan" value="Rusak" required>Rusak
-                                                    </label>
+                                                            name="jaringan" value="Rusak" required>
+                                                        <label class="form-check-label">Rusak</label>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-
                                     <div class="row mb-2">
                                         <div class="col-md-6">
                                             <div class="form-group">

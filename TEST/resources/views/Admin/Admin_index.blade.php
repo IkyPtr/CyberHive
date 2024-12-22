@@ -55,7 +55,7 @@
     <div class="border-radius-x1 mt-1 mx-1 position-relative vh-100"
         style="background-image: url('{{ asset('public/assets/img/vr-bg.jpg') }}') ; background-size: cover;">
         <main class="main-content"
-            style="height: calc(0vh - 0px); Width: calc(280vh - 280px)">
+        style="width: calc(100% - 785px); margin-right: 785px;">
             <div class="section min-vh-50 position-relative transform-scale-1 transform-scale-md-8">
                 <div class="container d-flex justify-content-start">
                     <div class="row pt-610 justify-content-center">
@@ -77,42 +77,73 @@
                                                         <tr>
                                                             <th>No</th>
                                                             <th>Nama</th>
-                                                            <th>Nomor PC</th>
+                                                            <th>NIM</th>
+                                                            <th>No PC</th>
+                                                            <th>Ruang Lab</th>
+                                                            <th>No Loker</th>
+                                                            <th>Kelas</th>
+                                                            <th>Tanggal</th>
+                                                            <th>Jam Masuk</th>
                                                             <th>Monitor</th>
                                                             <th>Keyboard</th>
                                                             <th>Mouse</th>
                                                             <th>Jaringan</th>
                                                             <th>Keterangan</th>
+                                                            <th>Alat</th>
+                                                            <th>Aksi</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <!-- Contoh data tabel, Anda bisa menggantinya dengan data dinamis -->
-                                                        <tr>
-                                                            <td>1</td>
-                                                            <td>Ajo</td>
-                                                            <td>21</td>
-                                                            <td>Bagus</td>
-                                                            <td>Bagus</td>
-                                                            <td>Bagus</td>
-                                                            <td>Rusak</td>
-                                                            <td>
-                                                                Tidak ada jaringan
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>2</td>
-                                                            <td>Jimmi</td>
-                                                            <td>12</td>
-                                                            <td>Rusak</td>
-                                                            <td>Bagus</td>
-                                                            <td>Bagus</td>
-                                                            <td>Bagus</td>
-                                                            <td>
-                                                                Tidak ada browser
-                                                            </td>
-                                                        </tr>
+                                                        @foreach($matchingData as $key => $data)
+                                                            <tr>
+                                                                <td>{{ $key + 1 }}</td>
+                                                                <td>{{ $data->nama }}</td>
+                                                                <td>{{ $data->nim }}</td>
+                                                                <td>{{ $data->nomor_pc }}</td>
+                                                                <td>{{ $data->ruang_lab }}</td>
+                                                                <td>{{ $data->no_loker }}</td>
+                                                                <td>{{ $data->kelas }}</td>
+                                                                <td>{{ $data->tanggal }}</td>
+                                                                <td>{{ $data->jam_masuk }}</td>
+                                                                <td>
+                                                                    @if($data->monitor == 'Baik')
+                                                                        <button class="btn btn-success btn-sm">Baik</button>
+                                                                    @else
+                                                                        <button class="btn btn-danger btn-sm">Rusak</button>
+                                                                    @endif
+                                                                </td>
+                                                                <td>
+                                                                    @if($data->keyboard == 'Baik')
+                                                                        <button class="btn btn-success btn-sm">Baik</button>
+                                                                    @else
+                                                                        <button class="btn btn-danger btn-sm">Rusak</button>
+                                                                    @endif
+                                                                </td>
+                                                                <td>
+                                                                    @if($data->mouse == 'Baik')
+                                                                        <button class="btn btn-success btn-sm">Baik</button>
+                                                                    @else
+                                                                        <button class="btn btn-danger btn-sm">Rusak</button>
+                                                                    @endif
+                                                                </td>
+                                                                <td>
+                                                                    @if($data->jaringan == 'Baik')
+                                                                        <button class="btn btn-success btn-sm">Baik</button>
+                                                                    @else
+                                                                        <button class="btn btn-danger btn-sm">Rusak</button>
+                                                                    @endif
+                                                                </td>
+                                                                <td>{{ $data->keterangan ?? '-' }}</td>
+                                                                <td>{{ $data->alat ?? '-' }}</td>
+                                                                <td>
+                                                                    <button class="btn btn-warning btn-sm">Edit</button>
+                                                                    <button class="btn btn-danger btn-sm">Hapus</button>
+                                                                </td>
+                                                            </tr>
+                                                        @endforeach
                                                     </tbody>
                                                 </table>
+                                                {{ $matchingData->links() }}
                                             </div>
                                         </div>
                                     </div>

@@ -53,6 +53,7 @@ class MahasiswaController extends Controller
             'keterangan' => $request->keterangan,
             'alat' => $request->alat,
             'no_loker' => $request->no_loker,
+            'nomor_pc' => $request->nomor_pc,
             'lab_id' => $mahasiswa->lab_id
         ]);
         return redirect('/')
