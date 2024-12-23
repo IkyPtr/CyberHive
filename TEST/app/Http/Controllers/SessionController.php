@@ -32,10 +32,10 @@ class SessionController extends Controller
             ->where('password', $request->password)
             ->first();
 
-        if ($teknisi) {
-            session(['teknisi' => $teknisi]);
-            return redirect()->route('teknisi.dashboard');
-        }
+            if ($teknisi) {
+                session(['teknisi' => $teknisi]);
+                return redirect()->route('teknisi.index');
+            }
 
         return back()->withErrors(['username' => 'Invalid Username']);
     }

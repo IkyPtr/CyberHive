@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="icon" type="image/png" href="{{ asset('public/assets/img/favicon.png') }}">
     <title>
@@ -21,20 +22,24 @@
             border-radius: 10px;
             overflow: hidden;
         }
+
         .carousel-item {
             transition: transform 0.6s ease-in-out;
             height: 400px;
         }
+
         .carousel-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
+
         .carousel-control-prev,
         .carousel-control-next {
             width: 10%;
             opacity: 0.7;
         }
+
         .carousel-indicators {
             bottom: 0;
             margin-bottom: 0.5rem;
@@ -57,6 +62,7 @@
         }
     </style>
 </head>
+
 <body class="g-sidenav-show  bg-gray-100 virtual-reality overflow-hidden">
     <!-- Navbar -->
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur"
@@ -99,6 +105,19 @@
                         <div class="col-lg-30 col-md-12">
                             <div class="row mt-1">
                                 <div class="col-lg-10 col-md-6">
+                                    <!-- Success Message Card -->
+                                    @if (session('success'))
+                                        <div class="container mt-4">
+                                            <div class="card bg-success text-white">
+                                                <div class="card-body">
+                                                    <div class="d-flex align-items-center">
+                                                        <i class="fas fa-check-circle me-2"></i>
+                                                        <p class="mb-0">{{ session('success') }}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
                                     <div class="card ">
                                         <div class="card-body text-">
                                             <br>
@@ -157,4 +176,5 @@
         data-cf-beacon='{"rayId":"8eda99853d7f3fcb","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2024.10.5","token":"1b7cbb72744b40c580f8633c6b62637e"}'
         crossorigin="anonymous"></script>
 </body>
+
 </html>

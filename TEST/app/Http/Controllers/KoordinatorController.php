@@ -57,7 +57,7 @@ class KoordinatorController extends Controller
             'jaringan' => '-'
         ]);
 
-        return redirect()->back()->with('success', 'Data koordinator berhasil disimpan');
+        return redirect('/logkeg')->with('success', 'SELAMAT DATA ANDA SEBAGAI KOORDINATOR KEGIATAN BERHASIL DISIMPAN');
     }
 
 

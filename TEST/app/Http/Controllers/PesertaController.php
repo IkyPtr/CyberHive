@@ -54,7 +54,7 @@ class PesertaController extends Controller
             'lab_id' => $peserta->lab_id
         ]);
 
-        return redirect()->back()->with('success', 'Data peserta berhasil disimpan');
+        return redirect('/logkeg')->with('success', 'SELAMAT DATA ANDA SEBAGAI PESERTA BERHASIL DISIMPAN');
     }
 
 

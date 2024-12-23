@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Teknisi;
 use App\Http\Requests\StoreTeknisiRequest;
 use App\Http\Requests\UpdateTeknisiRequest;
+use App\Models\Lab;
 
 class TeknisiController extends Controller
 {
@@ -12,9 +13,17 @@ class TeknisiController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        //
-    }
+{
+    $labs = Lab::where(function ($query) {
+        $query->where('monitor', 'Rusak')
+            ->orWhere('keyboard', 'Rusak')
+            ->orWhere('mouse', 'Rusak')
+            ->orWhere('jaringan', 'Rusak');
+    })->get();
+
+    return view('Teknisi.teknisi_index', compact('labs'));
+}
+
 
     /**
      * Show the form for creating a new resource.
@@ -59,8 +68,10 @@ class TeknisiController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Teknisi $teknisi)
+    public function destroy($id)
     {
-        //
+        $lab = Lab::findOrFail($id);
+        $lab->delete();
+        return redirect()->back()->with('success', 'Data berhasil dihapus');
     }
 }

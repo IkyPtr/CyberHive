@@ -6,6 +6,7 @@ use App\Http\Controllers\KoordinatorController;
 use App\Http\Controllers\PesertaController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\TeknisiController;
 
 // Landing page
 Route::view('/', 'index_awal');
@@ -18,7 +19,8 @@ Route::post('/session', [SessionController::class, 'store'])->name('session.stor
 Route::resources([
     'mahasiswa' => MahasiswaController::class,
     'koordinator' => KoordinatorController::class,
-    'peserta' => PesertaController::class
+    'peserta' => PesertaController::class,
+    'teknisi' => TeknisiController::class
 ]);
 
 // Peserta Routes
@@ -48,12 +50,14 @@ Route::prefix('admin')->group(function () {
 });
 
 // Teknisi Routes
+// Add these routes in your teknisi group
 Route::prefix('teknisi')->group(function () {
     Route::view('/login', 'Teknisi.teknisi_login');
-    Route::get('/dashboard', function() {
-        return view('teknisi');
-    })->name('teknisi.dashboard');
+    Route::get('/', [TeknisiController::class, 'index'])->name('teknisi.index');
+    Route::delete('/destroy/{id}', [TeknisiController::class, 'destroy'])->name('teknisi.destroy');
 });
+
+
 
 // Log Routes
 Route::view('/logkeg', 'logkeg');

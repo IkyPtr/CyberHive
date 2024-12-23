@@ -23,6 +23,7 @@
             font-size: 14px;
             padding: 10px;
             text-align: center;
+            vertical-align: upper;
         }
 
         .form-control:focus,
@@ -31,10 +32,16 @@
             box-shadow: 0 0 0 0.2rem rgba(0, 119, 181, 0.25) !important;
         }
 
+        .btn-sm {
+            padding: 0.25rem 0.5rem;
+            font-size: 12px;
+        }
+
         .table-container {
             max-width: 100%;
             margin: 0 auto;
-            padding: 30px;
+            padding: 20px;
+
         }
     </style>
 </head>
@@ -101,10 +108,43 @@
                                                                 <td>{{ $p->labs->first()->nomor_pc }}</td>
                                                                 <td>{{ $p->labs->first()->ruang_lab }}</td>
                                                                 <td>{{ $p->labs->first()->tanggal }}</td>
-                                                                <td>{{ $p->labs->first()->monitor }}</td>
-                                                                <td>{{ $p->labs->first()->keyboard }}</td>
-                                                                <td>{{ $p->labs->first()->mouse }}</td>
-                                                                <td>{{ $p->labs->first()->jaringan }}</td>
+                                                                <td>
+                                                                    @if ($p->labs->first()->monitor == 'Baik')
+                                                                        <button
+                                                                            class="btn btn-success btn-sm">Baik</button>
+                                                                    @else
+                                                                        <button
+                                                                            class="btn btn-danger btn-sm">Rusak</button>
+                                                                    @endif
+                                                                </td>
+                                                                <td>
+                                                                    @if ($p->labs->first()->keyboard == 'Baik')
+                                                                        <button
+                                                                            class="btn btn-success btn-sm">Baik</button>
+                                                                    @else
+                                                                        <button
+                                                                            class="btn btn-danger btn-sm">Rusak</button>
+                                                                    @endif
+                                                                </td>
+                                                                <td>
+                                                                    @if ($p->labs->first()->mouse == 'Baik')
+                                                                        <button
+                                                                            class="btn btn-success btn-sm">Baik</button>
+                                                                    @else
+                                                                        <button
+                                                                            class="btn btn-danger btn-sm">Rusak</button>
+                                                                    @endif
+                                                                </td>
+                                                                <td>
+                                                                    @if ($p->labs->first()->jaringan == 'Baik')
+                                                                        <button
+                                                                            class="btn btn-success btn-sm">Baik</button>
+                                                                    @else
+                                                                        <button
+                                                                            class="btn btn-danger btn-sm">Rusak</button>
+                                                                    @endif
+                                                                </td>
+
                                                                 <td>{{ $p->labs->first()->keterangan }}</td>
                                                                 <td>{{ $p->labs->first()->alat }}</td>
                                                                 <td>
