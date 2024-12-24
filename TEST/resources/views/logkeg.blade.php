@@ -139,12 +139,12 @@
                                     <div class="card mt-4 bg-transparent">
                                         <div class="card-body ">
                                             <div class="d-flex justify-content-between gap-6 ">
-                                                <button class="btn btn-ket btn-linkedin flex-grow-1"
+                                                <button class="btn btn-linkedin btn-lg flex-grow-1"
                                                     onclick="window.location.href='{{ url('/logkeg/KOOR') }}'">
                                                     <i class="fas fa-book me-2"></i>
                                                     LogBook Koordinator
                                                 </button>
-                                                <button class="btn btn-ket btn-linkedin flex-grow-1"
+                                                <button class="btn btn-linkedin btn-lg flex-grow-1"
                                                     onclick="window.location.href='{{ url('/peserta/create') }}'">
                                                     <i class="fas fa-book me-2"></i>
                                                     Logbook Peserta
