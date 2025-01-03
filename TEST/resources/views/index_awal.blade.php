@@ -122,7 +122,7 @@
                                                     <i class="fas fa-book me-2"></i>
                                                     Log Perkuliahan
                                                 </button>
-                                                <button class="btn btn-secondary btn-lg flex-grow-1"
+                                                <button class="btn btn-linkedin btn-lg flex-grow-1"
                                                     onclick="window.location.href='{{ url('/logkeg') }}'">
                                                     <i class="fas fa-book me-2"></i>
                                                     Log Kegiatan
