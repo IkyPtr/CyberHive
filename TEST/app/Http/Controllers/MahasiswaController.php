@@ -63,7 +63,7 @@ class MahasiswaController extends Controller
         ]);
 
         return redirect('/')
-            ->with('success', 'Data mahasiswa berhasil ditambahkan! Terima kasih atas partisipasinya.');
+        ->with('success', 'SELAMAT DATA PERKULIAHAN ANDA BERHASIL DISIMPAN');
     }
 
 
@@ -97,12 +97,12 @@ class MahasiswaController extends Controller
     public function destroy($nim)
 {
     $mahasiswa = Mahasiswa::where('nim', $nim)->first();
-    
+
     if ($mahasiswa) {
         Lab::where('lab_id', $mahasiswa->lab_id)->delete();
         Matakuliah::where('lab_id', $mahasiswa->lab_id)->delete();
         $mahasiswa->delete();
-        
+
         return redirect()->route('admin.search')
             ->with('success', 'Data berhasil dihapus');
     }
