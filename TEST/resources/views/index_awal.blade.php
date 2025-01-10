@@ -95,6 +95,18 @@
                 </div>
             </div>
         @endif
+        @if (session('error'))
+            <div class="container mt-3">
+                <div class="card bg-success text-white" style="max-width: 950px; margin: 0 auto;">
+                    <div class="card-body py-2">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-check-circle me-2"></i>
+                            <p class="mb-0 small">{{ session('error') }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endif
         <main class="main-content position-relative border-radius-lg d-flex align-items-center justify-content-center"
             style="height: calc(100vh - 100px); width: 105%;">
             <div class="section min-vh-100 position-relative transform-scale-10 transform-scale-md-8">

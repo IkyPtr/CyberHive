@@ -40,6 +40,8 @@ class KoordinatorController extends Controller
             'kegiatan' => $request->kegiatan,
             'tanggal_mulai' => $request->tanggal_mulai,
             'tanggal_selesai' => $request->tanggal_selesai,
+            'keterangan_status' => '-',
+            'status' => 'pending',
             'lab_id' => uniqid()
         ]);
 
@@ -66,24 +68,35 @@ class KoordinatorController extends Controller
      */
     public function show(Koordinator $koordinator)
     {
-        //
+        return view('Admin.Laporan.PrintKoor', [
+            'koordinator' => $koordinator
+        ]);
     }
+
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Koordinator $koordinator)
+    public function edit(Koordinator $koordinator, UpdateKoordinatorRequest $request)
     {
-        //
+        return view('Admin.laporan_koordinator', [
+            'koordinator' => $koordinator,
+            'status' => $request->status
+        ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(UpdateKoordinatorRequest $request, Koordinator $koordinator)
     {
-        //
+        $koordinator->update([
+            'status' => $request->status,
+            'keterangan_status' => $request->keterangan_status
+        ]);
+
+        return redirect()->route('koordinator.index')
+            ->with('success', 'Status koordinator berhasil diupdate');
     }
+
+
 
     /**
      * Remove the specified resource from storage.

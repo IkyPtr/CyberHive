@@ -61,16 +61,16 @@
         style="background-image: url('{{ asset('public/assets/img/vr-bg.jpg') }}') ; background-size: cover;">
         <main class="main-content position-relative border-radius-lg d-flex align-items-center justify-content-center">
             <div class="section min-vh-50 position-relative transform-scale-1 transform-scale-md-8">
-                <div class="container d-flex justify-content-start">
+                <div class="container d-flex justify-content-center">
                     <div class="row pt-610 justify-content-center">
-                        <div class="col-xl-12 col-lg-12 col-md-12 d-flex flex-column mx-auto">
+                        <div class="col-xl-12 col-lg-12 col-md-12 d-flex flex-column align-items-center">
                             <div class="card card-plain mt-100">
-                                <div class="container-fluid py-4">
+                                <div class="container-fluid py-2">
                                     <div class="card">
                                         <div class="card-header pb-0 px-3">
                                             <div class="text-left mb-4">
                                                 <img src="{{ asset('public/assets/img/LOGO-PCR.png') }}" alt="PCR Logo"
-                                                    class="img-fluid mt-n4 mb-2" style="max-height: 60px; width: auto;">
+                                                    class="img-fluid mt-n4 mb-2" style="max-height: 80px; width: auto;">
                                                 <h6 class="mb-0">Data Koordinator</h6>
                                             </div>
                                         </div>
@@ -88,21 +88,42 @@
                                                             <th>Ruang Lab</th>
                                                             <th>Tanggal Mulai</th>
                                                             <th>Tanggal Selesai</th>
+                                                            <th>Status</th>
+                                                            <th>AKSI</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        @foreach($koordinators as $index => $koordinator)
-                                                        <tr>
-                                                            <td>{{ $index + 1 }}</td>
-                                                            <td>{{ $koordinator->nama }}</td>
-                                                            <td>{{ $koordinator->nim_nip }}</td>
-                                                            <td>{{ $koordinator->email }}</td>
-                                                            <td>{{ $koordinator->jumlah }}</td>
-                                                            <td>{{ $koordinator->kegiatan }}</td>
-                                                            <td>{{ $koordinator->labs->first()->ruang_lab ?? '-' }}</td>
-                                                            <td>{{ $koordinator->tanggal_mulai }}</td>
-                                                            <td>{{ $koordinator->tanggal_selesai }}</td>
-                                                        </tr>
+                                                        @foreach ($koordinators as $index => $koordinator)
+                                                            <tr>
+                                                                <td>{{ $index + 1 }}</td>
+                                                                <td>{{ $koordinator->nama }}</td>
+                                                                <td>{{ $koordinator->nim_nip }}</td>
+                                                                <td>{{ $koordinator->email }}</td>
+                                                                <td>{{ $koordinator->jumlah }}</td>
+                                                                <td>{{ $koordinator->kegiatan }}</td>
+                                                                <td>{{ $koordinator->labs->first()->ruang_lab ?? '-' }}
+                                                                </td>
+                                                                <td>{{ $koordinator->tanggal_mulai }}</td>
+                                                                <td>{{ $koordinator->tanggal_selesai }}</td>
+                                                                <td>
+                                                                    @if ($koordinator->status === 'diterima')
+                                                                        <a href="{{ route('koordinator.print', $koordinator->id) }}"
+                                                                            class="btn btn-success btn-sm">Diterima</a>
+                                                                    @elseif($koordinator->status === 'ditolak')
+                                                                        <a href="{{ route('koordinator.print', $koordinator->id) }}"
+                                                                            class="btn btn-danger btn-sm">Ditolak</a>
+                                                                    @elseif($koordinator->status === 'pending')
+                                                                        <button type="button"
+                                                                            class="btn btn-warning btn-sm">Pending</button>
+                                                                    @endif
+                                                                </td>
+                                                                <td>
+                                                                    <a href="{{ route('koordinator.edit', ['koordinator' => $koordinator->id, 'status' => 'diterima']) }}"
+                                                                        class="btn btn-success btn-sm">Diterima</a>
+                                                                    <a href="{{ route('koordinator.edit', ['koordinator' => $koordinator->id, 'status' => 'ditolak']) }}"
+                                                                        class="btn btn-danger btn-sm">Ditolak</a>
+                                                                </td>
+                                                            </tr>
                                                         @endforeach
                                                     </tbody>
                                                 </table>

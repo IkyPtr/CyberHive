@@ -83,15 +83,7 @@
                                             <form action="{{ route('admin.store') }}" method="POST">
                                                 @csrf
                                                 <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="Nama"
-                                                                class="form-control-label">Nama</label>
-                                                            <input class="form-control" type="text" id="Nama"
-                                                                name="Nama">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label for="ruang_lab">Ruang Laboratorium</label>
                                                             <select class="form-control" id="ruang_lab" name="ruang_lab"
@@ -120,9 +112,7 @@
                                                             </select>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label for="matakuliah">Mata Kuliah</label>
                                                             <select class="form-control" id="matakuliah"
@@ -147,7 +137,7 @@
                                                             </select>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label for="kelas">Kelas</label>
                                                             <select class="form-control" name="kelas" required>
@@ -203,60 +193,6 @@
                                                                 <option value="24 TRK A">24 TRK A</option>
                                                                 <option value="24 TRK B">24 TRK B</option>
                                                             </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="Hadir" class="form-control-label">Jumlah
-                                                                Hadir</label>
-                                                            <input class="form-control" type="number" id="Hadir"
-                                                                name="Hadir">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="TidakHadir" class="form-control-label">Jumlah
-                                                                Tidak Hadir</label>
-                                                            <input class="form-control" type="number"
-                                                                id="TidakHadir" name="TidakHadir">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="SKS"
-                                                                class="form-control-label">SKS</label>
-                                                            <input class="form-control" type="number" id="SKS"
-                                                                name="SKS">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="Tanggal"
-                                                                class="form-control-label">Tanggal</label>
-                                                            <input class="form-control" type="date" id="Tanggal"
-                                                                name="Tanggal">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="JamMasuk" class="form-control-label">Jam
-                                                                Masuk</label>
-                                                            <input class="form-control" type="time" id="JamMasuk"
-                                                                name="JamMasuk">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="JamKeluar" class="form-control-label">Jam
-                                                                Keluar</label>
-                                                            <input class="form-control" type="time" id="JamKeluar"
-                                                                name="JamKeluar">
                                                         </div>
                                                     </div>
                                                 </div>

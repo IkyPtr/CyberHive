@@ -32,6 +32,28 @@ class MahasiswaController extends Controller
      */
     public function store(StoreMahasiswaRequest $request)
     {
+        // Check for duplicate entries
+        $existingEntry = Mahasiswa::where('nama', $request->nama)
+            ->where('nim', $request->nim)
+            ->where('kelas', $request->kelas)
+            ->whereHas('matakuliahs', function ($query) use ($request) {
+                $query->where('matakuliah', $request->matakuliah)
+                    ->where('dosen', $request->dosen)
+                    ->where('jam_masuk', $request->jam_masuk)
+                    ->where('jam_keluar', $request->jam_keluar);
+            })
+            ->whereHas('labs', function ($query) use ($request) {
+                $query->where('ruang_lab', $request->ruang_lab)
+                    ->where('tanggal', $request->tanggal)
+                    ->where('no_loker', $request->no_loker)
+                    ->where('nomor_pc', $request->nomor_pc);
+            })
+            ->first();
+
+        if ($existingEntry) {
+            return redirect('/')->with('error', 'DATA ANDA SUDAH DIINPUTKAN SEBELUMNYA');
+        }
+
         // Simpan data mahasiswa
         $mahasiswa = Mahasiswa::create([
             'nama' => $request->nama,
@@ -54,17 +76,19 @@ class MahasiswaController extends Controller
             'nomor_pc' => $request->nomor_pc,
             'lab_id' => $mahasiswa->lab_id
         ]);
+
         $mahasiswa->matakuliahs()->create([
             'matakuliah' => $request->matakuliah,
             'dosen' => $request->dosen,
             'jam_masuk' => $request->jam_masuk,
             'jam_keluar' => $request->jam_keluar,
-            'lab_id' => $mahasiswa->lab_id  // Add this line
+            'lab_id' => $mahasiswa->lab_id
         ]);
 
         return redirect('/')
-        ->with('success', 'SELAMAT DATA PERKULIAHAN ANDA BERHASIL DISIMPAN');
+            ->with('success', 'SELAMAT DATA PERKULIAHAN ANDA BERHASIL DISIMPAN');
     }
+
 
 
     /**
@@ -95,19 +119,18 @@ class MahasiswaController extends Controller
      * Remove the specified resource from storage.
      */
     public function destroy($nim)
-{
-    $mahasiswa = Mahasiswa::where('nim', $nim)->first();
+    {
+        $mahasiswa = Mahasiswa::where('nim', $nim)->first();
 
-    if ($mahasiswa) {
-        Lab::where('lab_id', $mahasiswa->lab_id)->delete();
-        Matakuliah::where('lab_id', $mahasiswa->lab_id)->delete();
-        $mahasiswa->delete();
+        if ($mahasiswa) {
+            Lab::where('lab_id', $mahasiswa->lab_id)->delete();
+            Matakuliah::where('lab_id', $mahasiswa->lab_id)->delete();
+            $mahasiswa->delete();
 
+            return redirect()->route('admin.search')
+                ->with('success', 'Data berhasil dihapus');
+        }
         return redirect()->route('admin.search')
-            ->with('success', 'Data berhasil dihapus');
+            ->with('error', 'Data tidak ditemukan');
     }
-    return redirect()->route('admin.search')
-        ->with('error', 'Data tidak ditemukan');
-}
-
 }

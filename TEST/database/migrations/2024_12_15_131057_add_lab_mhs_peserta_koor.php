@@ -28,6 +28,8 @@ return new class extends Migration
         $table->string('kegiatan');
         $table->date('tanggal_mulai');
         $table->date('tanggal_selesai');
+        $table->string('Keterangan_status');
+        $table->string('status');
         $table->string(column: 'lab_id');
         $table->timestamps();
     });
