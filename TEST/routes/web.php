@@ -58,8 +58,11 @@ Route::prefix('admin')->group(function () {
 Route::prefix('teknisi')->group(function () {
     Route::view('/login', 'Teknisi.teknisi_login');
     Route::get('/', [TeknisiController::class, 'index'])->name('teknisi.index');
+    Route::get('/selesai', [TeknisiController::class, 'show'])->name('teknisi.show');
+    Route::put('/{id}', [TeknisiController::class, 'update'])->name('teknisi.update');
     Route::delete('/destroy/{id}', [TeknisiController::class, 'destroy'])->name('teknisi.destroy');
 });
+
 
 
 

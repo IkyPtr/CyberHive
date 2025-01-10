@@ -3,7 +3,7 @@
 
 <head>
     <link rel="icon" type="image/png" href="{{ asset('public/assets/img/favicon.png') }}">
-    <title>Data Index Teknisi</title>
+    <title>Data Selesai Teknisi</title>
     <!-- Fonts and icons -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
     <!-- Nucleo Icons -->
@@ -17,7 +17,6 @@
         .card {
             width: 100%;
         }
-
         .table th,
         .table td {
             font-size: 14px;
@@ -25,23 +24,19 @@
             text-align: center;
             vertical-align: upper;
         }
-
         .form-control:focus,
         .form-select:focus {
             border-color: #0077b5 !important;
             box-shadow: 0 0 0 0.2rem rgba(0, 119, 181, 0.25) !important;
         }
-
         .btn-sm {
             padding: 0.25rem 0.5rem;
             font-size: 12px;
         }
-
         .table-container {
             max-width: 100%;
             margin: 0 auto;
             padding: 20px;
-
         }
     </style>
 </head>
@@ -54,7 +49,7 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
                     <li class="breadcrumb-item text-sm">
-                        <a class="opacity-5 text-dark" href="javascript:;">Index TEKNISI</a>
+                        <a class="opacity-5 text-dark" href="javascript:;">Data Selesai TEKNISI</a>
                     </li>
                     <li class="breadcrumb-item text-sm text-dark active text-capitalize" aria-current="page">
                         CyberHive
@@ -78,7 +73,7 @@
                                             <div class="text-left mb-4">
                                                 <img src="{{ asset('public/assets/img/LOGO-PCR.png') }}" alt="PCR Logo"
                                                     class="img-fluid mt-n4 mb-2" style="max-height: 60px; width: auto;">
-                                                <h6 class="mb-0">Data komponen lab yang rusak</h6>
+                                                <h6 class="mb-0">Data komponen lab yang telah selesai diperbaiki</h6>
                                             </div>
                                         </div>
                                         <div class="card-body pt-4 p-3">
@@ -100,88 +95,33 @@
                                                     </thead>
                                                     <tbody>
                                                         @foreach ($labs as $lab)
-                                                            @if ($lab->monitor == 'Rusak' || $lab->keyboard == 'Rusak' || $lab->mouse == 'Rusak' || $lab->jaringan == 'Rusak')
+                                                            @if ($lab->status == 'Selesai')
                                                                 <tr>
                                                                     <td>{{ $lab->ruang_lab }}</td>
                                                                     <td>{{ $lab->nomor_pc }}</td>
                                                                     <td>
-                                                                        @if ($lab->monitor == 'Rusak')
-                                                                            <button
-                                                                                class="btn btn-danger btn-sm">Rusak</button>
-                                                                        @else
-                                                                            <button
-                                                                                class="btn btn-success btn-sm">Baik</button>
-                                                                        @endif
+                                                                        <button class="btn btn-success btn-sm">Baik</button>
                                                                     </td>
                                                                     <td>
-                                                                        @if ($lab->keyboard == 'Rusak')
-                                                                            <button
-                                                                                class="btn btn-danger btn-sm">Rusak</button>
-                                                                        @else
-                                                                            <button
-                                                                                class="btn btn-success btn-sm">Baik</button>
-                                                                        @endif
+                                                                        <button class="btn btn-success btn-sm">Baik</button>
                                                                     </td>
                                                                     <td>
-                                                                        @if ($lab->mouse == 'Rusak')
-                                                                            <button
-                                                                                class="btn btn-danger btn-sm">Rusak</button>
-                                                                        @else
-                                                                            <button
-                                                                                class="btn btn-success btn-sm">Baik</button>
-                                                                        @endif
+                                                                        <button class="btn btn-success btn-sm">Baik</button>
                                                                     </td>
                                                                     <td>
-                                                                        @if ($lab->jaringan == 'Rusak')
-                                                                            <button
-                                                                                class="btn btn-danger btn-sm">Rusak</button>
-                                                                        @else
-                                                                            <button
-                                                                                class="btn btn-success btn-sm">Baik</button>
-                                                                        @endif
+                                                                        <button class="btn btn-success btn-sm">Baik</button>
                                                                     </td>
                                                                     <td>{{ $lab->keterangan }}</td>
                                                                     <td>
-                                                                        @if ($lab->status == '-')
-                                                                            <button class="btn btn-light btn-sm">Belum
-                                                                                di periksa</button>
-                                                                        @elseif($lab->status == 'Pending')
-                                                                            <button
-                                                                                class="btn btn-warning btn-sm">Dipending</button>
-                                                                        @else
-                                                                            {{ $lab->status }}
-                                                                        @endif
+                                                                        <button class="btn btn-success btn-sm">Telah Selesai</button>
                                                                     </td>
                                                                     <td>{{ $lab->tanggal_status }}</td>
-                                                                    {{-- <form
-                                                                            action="{{ route('teknisi.destroy', $lab->id) }}"
-                                                                            method="POST">
+                                                                    <td>
+                                                                        <form action="{{ route('teknisi.destroy', $lab->id) }}" method="POST">
                                                                             @csrf
                                                                             @method('DELETE')
-                                                                            <button type="submit"
-                                                                                class="btn btn-danger btn-sm">Hapus</button>
-                                                                        </form> --}}
-                                                                    <td>
-                                                                        <div class="d-inline-flex">
-                                                                            <form
-                                                                                action="{{ route('teknisi.update', $lab->id) }}"
-                                                                                method="POST" class="me-2">
-                                                                                @csrf
-                                                                                @method('PUT')
-                                                                                <button type="submit" name="status"
-                                                                                    value="Pending"
-                                                                                    class="btn btn-warning btn-sm">Pending</button>
-                                                                            </form>
-                                                                            <form
-                                                                                action="{{ route('teknisi.update', $lab->id) }}"
-                                                                                method="POST">
-                                                                                @csrf
-                                                                                @method('PUT')
-                                                                                <button type="submit" name="status"
-                                                                                    value="Selesai"
-                                                                                    class="btn btn-success btn-sm">Selesai</button>
-                                                                            </form>
-                                                                        </div>
+                                                                            <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                                                                        </form>
                                                                     </td>
                                                                 </tr>
                                                             @endif

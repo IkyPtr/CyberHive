@@ -74,6 +74,8 @@ class MahasiswaController extends Controller
             'alat' => $request->alat,
             'no_loker' => $request->no_loker,
             'nomor_pc' => $request->nomor_pc,
+            'status' => '-',
+            'tanggal_status' => null,
             'lab_id' => $mahasiswa->lab_id
         ]);
 

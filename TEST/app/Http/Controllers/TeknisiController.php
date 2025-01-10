@@ -13,16 +13,16 @@ class TeknisiController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-{
-    $labs = Lab::where(function ($query) {
-        $query->where('monitor', 'Rusak')
-            ->orWhere('keyboard', 'Rusak')
-            ->orWhere('mouse', 'Rusak')
-            ->orWhere('jaringan', 'Rusak');
-    })->get();
+    {
+        $labs = Lab::where(function ($query) {
+            $query->where('monitor', 'Rusak')
+                ->orWhere('keyboard', 'Rusak')
+                ->orWhere('mouse', 'Rusak')
+                ->orWhere('jaringan', 'Rusak');
+        })->get();
 
-    return view('Teknisi.teknisi_index', compact('labs'));
-}
+        return view('Teknisi.teknisi_index', compact('labs'));
+    }
 
 
     /**
@@ -44,10 +44,12 @@ class TeknisiController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Teknisi $teknisi)
+    public function show()
     {
-        //
+        $labs = Lab::where('status', 'Selesai')->get();
+        return view('Admin.Laporan_Selesai', compact('labs'));
     }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -60,9 +62,30 @@ class TeknisiController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateTeknisiRequest $request, Teknisi $teknisi)
+    public function update(UpdateTeknisiRequest $request, $id)
     {
-        //
+        $lab = Lab::findOrFail($id);
+        if ($request->status === 'Pending') {
+            $lab->update([
+                'status' => 'Pending',
+                'tanggal_status' => now(),
+                'lab_id' => $lab->lab_id
+            ]);
+            return redirect()->route('teknisi.index')
+                ->with('success', 'Status berhasil diupdate');
+        } elseif ($request->status === 'Selesai') {
+            $lab->update([
+                'status' => 'Selesai',
+                'tanggal_status' => now(),
+                'monitor' => 'Baik',
+                'keyboard' => 'Baik',
+                'mouse' => 'Baik',
+                'jaringan' => 'Baik',
+                'lab_id' => $lab->lab_id
+            ]);
+            return redirect()->route('teknisi.show')
+                ->with('success', 'Status berhasil diupdate');
+        }
     }
 
     /**

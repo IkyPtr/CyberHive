@@ -99,7 +99,6 @@
                                                             <th>Jaringan</th>
                                                             <th>Keterangan</th>
                                                             <th>Alat</th>
-                                                            <th>Aksi</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -152,18 +151,6 @@
                                                                 </td>
                                                                 <td>{{ $data->keterangan ?? '-' }}</td>
                                                                 <td>{{ $data->alat ?? '-' }}</td>
-                                                                <!-- Update the delete form in the table -->
-                                                                <td>
-                                                                    <form
-                                                                        action="{{ route('mahasiswa.destroy', $data->nim) }}"
-                                                                        method="POST">
-                                                                        @csrf
-                                                                        @method('DELETE')
-                                                                        <button type="submit"
-                                                                            class="btn btn-danger btn-sm"
-                                                                            onclick="return confirm('Yakin ingin menghapus data ini?')">Hapus</button>
-                                                                    </form>
-                                                                </td>
                                                             </tr>
                                                         @endforeach
                                                     </tbody>

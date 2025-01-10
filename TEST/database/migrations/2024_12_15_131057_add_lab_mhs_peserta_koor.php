@@ -73,6 +73,8 @@ return new class extends Migration
         $table->string('jaringan');
         $table->text('keterangan')->nullable();
         $table->text('alat')->nullable();
+        $table->string('status')->nullable();
+        $table->date('tanggal_status')->nullable();
         $table->timestamps();
 
         $table->foreign('lab_id')->references('lab_id')->on('mahasiswas')->onDelete('cascade');

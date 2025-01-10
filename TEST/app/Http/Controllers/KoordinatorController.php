@@ -56,7 +56,7 @@ class KoordinatorController extends Controller
             'monitor' => '-',
             'keyboard' => '-',
             'mouse' => '-',
-            'jaringan' => '-'
+            'jaringan' => '-',
         ]);
 
         return redirect('/logkeg')->with('success', 'SELAMAT DATA ANDA SEBAGAI KOORDINATOR KEGIATAN BERHASIL DISIMPAN');
