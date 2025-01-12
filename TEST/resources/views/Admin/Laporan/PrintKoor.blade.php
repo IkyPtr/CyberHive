@@ -36,6 +36,7 @@
             margin: 0 auto;
             padding: 30px;
         }
+
         /* Background gradasi dan desain body */
         body {
             font-family: "Arial", sans-serif;
@@ -51,7 +52,8 @@
                 margin: 30mm 45mm 30mm 45mm;
                 font-family: "Times New Roman", serif;
                 font-size: 12pt;
-                background: none; /* Menghilangkan background saat mencetak */
+                background: none;
+                /* Menghilangkan background saat mencetak */
             }
 
             .no-print {
@@ -59,15 +61,20 @@
             }
 
             table {
-                width: 80%;  /* Atur lebar tabel sesuai kebutuhan */
-                margin: 0 auto;  /* Agar tabel terpusat */
+                width: 80%;
+                /* Atur lebar tabel sesuai kebutuhan */
+                margin: 0 auto;
+                /* Agar tabel terpusat */
                 border-collapse: collapse;
                 margin-top: 20px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Menambahkan shadow pada tabel */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                /* Menambahkan shadow pada tabel */
             }
 
-            th, td {
-                border: 1px solid #ccc;  /* Ganti border hitam dengan warna abu-abu lebih soft */
+            th,
+            td {
+                border: 1px solid #ccc;
+                /* Ganti border hitam dengan warna abu-abu lebih soft */
                 padding: 10px;
                 text-align: center;
                 font-size: 12pt;
@@ -92,7 +99,8 @@
             .title {
                 font-size: 18pt;
                 font-weight: bold;
-                color: #396cab;  /* Warna biru pada judul */
+                color: #396cab;
+                /* Warna biru pada judul */
                 margin: 20px 0;
             }
 
@@ -165,34 +173,35 @@
                                         <div class="card-header pb-0 px-3">
                                             <div class="text-left mb-4">
                                                 <img src="{{ asset('public/assets/img/LOGO-PCR.png') }}" alt="PCR Logo"
-                                                    class="img-fluid mt-n4 mb-2" style="max-height: 80px; width: auto;">
+                                                    class="img-fluid mt-n4 mb-2" style="max-height: 60px; width: auto;">
                                                 <h6 class="mb-0">Data Koordinator</h6>
                                             </div>
                                         </div>
                                         <div class="card-body pt-4 p-3">
                                             <div class="table-container">
-                                                <table>
-                                                    <tr>
-                                                        <th>NAMA</th>
-                                                        <th>TANGGAL</th>
-                                                        <th>RUANG LAB</th>
-                                                        <th>KETERANGAN</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>{{ $koordinator->nama }}</td>
-                                                        <td>{{ $koordinator->tanggal_mulai }}</td>
-                                                        <td>{{ $koordinator->labs->first()->ruang_lab ?? '-' }}</td>
-                                                        <td>{{ $koordinator->Keterangan_status }}</td>
-                                                    </tr>
+                                                <table class="table table-bordered">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>NAMA</th>
+                                                            <th>TANGGAL</th>
+                                                            <th>RUANG LAB</th>
+                                                            <th>KETERANGAN</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>{{ $koordinator->nama }}</td>
+                                                            <td>{{ $koordinator->tanggal_mulai }}</td>
+                                                            <td>{{ $koordinator->labs->first()->ruang_lab ?? '-' }}</td>
+                                                            <td>{{ $koordinator->Keterangan_status }}</td>
+                                                        </tr>
+                                                    </tbody>
                                                 </table>
-                                                </table>
-
                                                 <div class="signature">
                                                     <p>TANDA TANGAN</p>
                                                     <br><br><br>
                                                     <p>ADMIN/KALAB</p>
                                                 </div>
-
                                                 <button onclick="window.print()" class="no-print">Print Laporan</button>
                                             </div>
                                         </div>
