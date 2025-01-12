@@ -68,6 +68,7 @@ class KoordinatorController extends Controller
      */
     public function show(Koordinator $koordinator)
     {
+        $koordinator = Koordinator::with('labs')->find($koordinator->id);
         return view('Admin.Laporan.PrintKoor', [
             'koordinator' => $koordinator
         ]);
@@ -87,6 +88,7 @@ class KoordinatorController extends Controller
 
     public function update(UpdateKoordinatorRequest $request, Koordinator $koordinator)
     {
+
         $koordinator->update([
             'status' => $request->status,
             'keterangan_status' => $request->keterangan_status
