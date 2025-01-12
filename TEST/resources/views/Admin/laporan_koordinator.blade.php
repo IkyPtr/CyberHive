@@ -84,7 +84,7 @@
                                                     <label>Keterangan Status</label>
                                                     <textarea class="form-control" name="keterangan_status" rows="3" required></textarea>
                                                 </div>
-                                                <button type="submit" class="btn btn-primary mt-3">Simpan</button>
+                                                <button type="submit" class="btn btn-linkedin mt-3">Simpan</button>
                                             </form>
                                         </div>
                                     </div>
