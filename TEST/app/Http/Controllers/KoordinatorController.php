@@ -12,10 +12,15 @@ class KoordinatorController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        $koordinators = Koordinator::with('labs')->get();
-        return view('Admin.koordinator_index', ['koordinators' => $koordinators]);
-    }
+{
+    $koordinators = Koordinator::with('labs')
+        ->whereHas('labs', function($query) {
+            $query->whereNotNull('ruang_lab');
+        })
+        ->get();
+    return view('Admin.koordinator_index', ['koordinators' => $koordinators]);
+}
+
 
 
     /**

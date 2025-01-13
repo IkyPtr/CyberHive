@@ -117,23 +117,18 @@
                                                             <label for="matakuliah">Mata Kuliah</label>
                                                             <select class="form-control" id="matakuliah"
                                                                 name="matakuliah" required>
-                                                                <option value="" disabled selected>Pilih mata
-                                                                    kuliah</option>
+                                                                <option value="" disabled selected>Pilih mata kuliah</option>
+                                                                <option value="Basis Data Dasar">Basis Data Dasar</option>
                                                                 <option value="Algoritma">Algoritma</option>
                                                                 <option value="Animasi">Animasi</option>
                                                                 <option value="Data Warehouse">Data Warehouse</option>
-                                                                <option value="BDD">Basis Data Dasar</option>
                                                                 <option value="BDL">Basis Data Lanjut</option>
                                                                 <option value="Big Data">Big Data</option>
-                                                                <option value="Pemograman Berbasis Object">Pemograman
-                                                                    Berbasis Object</option>
+                                                                <option value="Pemograman Berbasis Object">Pemograman Berbasis Object</option>
                                                                 <option value="Game">Game</option>
-                                                                <option value="Pemograman Berbasis Web">Pemograman
-                                                                    Berbasis Web</option>
-                                                                <option value="Pemograman Berbasis Framework">
-                                                                    Pemograman Berbasis Framework</option>
-                                                                <option value="Jaringan Komputer">Jaringan Komputer
-                                                                </option>
+                                                                <option value="Pemograman Berbasis Web">Pemograman Berbasis Web</option>
+                                                                <option value="Pemograman Berbasis Framework">Pemograman Berbasis Framework</option>
+                                                                <option value="Jaringan Komputer">Jaringan Komputer</option>
                                                             </select>
                                                         </div>
                                                     </div>
