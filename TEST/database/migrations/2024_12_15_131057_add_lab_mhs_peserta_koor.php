@@ -28,7 +28,7 @@ return new class extends Migration
         $table->string('kegiatan');
         $table->date('tanggal_mulai');
         $table->date('tanggal_selesai');
-        $table->string('Keterangan_status');
+        $table->string('Keterangan_status')->nullable()->default('-');
         $table->string('status');
         $table->string(column: 'lab_id');
         $table->timestamps();
@@ -62,7 +62,7 @@ return new class extends Migration
 
     Schema::create('labs', function (Blueprint $table) {
         $table->id();
-        $table->string('lab_id');
+        $table->string('lab_id')->index(); // hanya sekali
         $table->string('nomor_pc')->nullable();
         $table->string('no_loker');
         $table->string('ruang_lab');
@@ -76,12 +76,8 @@ return new class extends Migration
         $table->string('status')->nullable();
         $table->date('tanggal_status')->nullable();
         $table->timestamps();
-
-        $table->foreign('lab_id')->references('lab_id')->on('mahasiswas')->onDelete('cascade');
-        $table->foreign('lab_id')->references('lab_id')->on('koordinators')->onDelete('cascade');
-        $table->foreign('lab_id')->references('lab_id')->on('pesertas')->onDelete('cascade');
-        $table->foreign('lab_id')->references('lab_id')->on('matakuliahs')->onDelete('cascade');
     });
+
 }
 
 public function down()

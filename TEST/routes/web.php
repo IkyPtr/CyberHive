@@ -24,14 +24,7 @@ Route::resources([
 ]);
 
 // Peserta Routes
-Route::prefix('peserta')->group(function () {
-    Route::get('/', function () {
-        return view('Peserta.peserta_index');
-    });
-    Route::get('/create', function () {
-        return view('Peserta.peserta_create');
-    });
-});
+Route::get('/peserta/create', [PesertaController::class, 'create'])->name('peserta.create');
 
 // Admin Routes
 Route::prefix('admin')->group(function () {

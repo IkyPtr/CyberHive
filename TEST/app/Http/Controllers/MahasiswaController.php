@@ -15,9 +15,13 @@ class MahasiswaController extends Controller
      */
     public function index()
     {
-        $mahasiswas = Mahasiswa::with(relations: 'labs')->get();
-        return view('mahasiswa.index', compact('mahasiswas'));
+        // Ambil semua data mahasiswa dari database
+        $matchingData = \App\Models\Mahasiswa::paginate(10);
+        // Tampilkan ke view Admin_index (karena view mahasiswa.index tidak ada)
+       return view('Admin.Admin_index', compact('matchingData'));
+
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -30,66 +34,66 @@ class MahasiswaController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreMahasiswaRequest $request)
-    {
-        // Check for duplicate entries
-        $existingEntry = Mahasiswa::where('nama', $request->nama)
-            ->where('nim', $request->nim)
-            ->where('kelas', $request->kelas)
-            ->whereHas('matakuliahs', function ($query) use ($request) {
-                $query->where('matakuliah', $request->matakuliah)
-                    ->where('dosen', $request->dosen)
-                    ->where('jam_masuk', $request->jam_masuk)
-                    ->where('jam_keluar', $request->jam_keluar);
-            })
-            ->whereHas('labs', function ($query) use ($request) {
-                $query->where('ruang_lab', $request->ruang_lab)
-                    ->where('tanggal', $request->tanggal)
-                    ->where('no_loker', $request->no_loker)
-                    ->where('nomor_pc', $request->nomor_pc);
-            })
-            ->first();
+        public function store(StoreMahasiswaRequest $request)
+        {
+            // Check for duplicate entries
+            $existingEntry = Mahasiswa::where('nama', $request->nama)
+                ->where('nim', $request->nim)
+                ->where('kelas', $request->kelas)
+                ->whereHas('matakuliahs', function ($query) use ($request) {
+                    $query->where('matakuliah', $request->matakuliah)
+                        ->where('dosen', $request->dosen)
+                        ->where('jam_masuk', $request->jam_masuk)
+                        ->where('jam_keluar', $request->jam_keluar);
+                })
+                ->whereHas('labs', function ($query) use ($request) {
+                    $query->where('ruang_lab', $request->ruang_lab)
+                        ->where('tanggal', $request->tanggal)
+                        ->where('no_loker', $request->no_loker)
+                        ->where('nomor_pc', $request->nomor_pc);
+                })
+                ->first();
 
-        if ($existingEntry) {
-            return redirect('/')->with('error', 'DATA ANDA SUDAH DIINPUTKAN SEBELUMNYA');
+            if ($existingEntry) {
+                return redirect('/')->with('error', 'DATA ANDA SUDAH DIINPUTKAN SEBELUMNYA');
+            }
+
+            // Simpan data mahasiswa
+            $mahasiswa = Mahasiswa::create([
+                'nama' => $request->nama,
+                'nim' => $request->nim,
+                'kelas' => $request->kelas,
+                'lab_id' => uniqid(), // Generate unique ID untuk relasi
+            ]);
+
+            // Simpan data lab yang berelasi
+            $mahasiswa->labs()->create([
+                'ruang_lab' => $request->ruang_lab,
+                'tanggal' => $request->tanggal,
+                'monitor' => $request->monitor,
+                'keyboard' => $request->keyboard,
+                'mouse' => $request->mouse,
+                'jaringan' => $request->jaringan,
+                'keterangan' => $request->keterangan,
+                'alat' => $request->alat,
+                'no_loker' => $request->no_loker,
+                'nomor_pc' => $request->nomor_pc,
+                'status' => '-',
+                'tanggal_status' => null,
+                'lab_id' => $mahasiswa->lab_id
+            ]);
+
+            $mahasiswa->matakuliahs()->create([
+                'matakuliah' => $request->matakuliah,
+                'dosen' => $request->dosen,
+                'jam_masuk' => $request->jam_masuk,
+                'jam_keluar' => $request->jam_keluar,
+                'lab_id' => $mahasiswa->lab_id
+            ]);
+
+            return redirect('/')
+                ->with('success', 'SELAMAT DATA PERKULIAHAN ANDA BERHASIL DISIMPAN');
         }
-
-        // Simpan data mahasiswa
-        $mahasiswa = Mahasiswa::create([
-            'nama' => $request->nama,
-            'nim' => $request->nim,
-            'kelas' => $request->kelas,
-            'lab_id' => uniqid(), // Generate unique ID untuk relasi
-        ]);
-
-        // Simpan data lab yang berelasi
-        $mahasiswa->labs()->create([
-            'ruang_lab' => $request->ruang_lab,
-            'tanggal' => $request->tanggal,
-            'monitor' => $request->monitor,
-            'keyboard' => $request->keyboard,
-            'mouse' => $request->mouse,
-            'jaringan' => $request->jaringan,
-            'keterangan' => $request->keterangan,
-            'alat' => $request->alat,
-            'no_loker' => $request->no_loker,
-            'nomor_pc' => $request->nomor_pc,
-            'status' => '-',
-            'tanggal_status' => null,
-            'lab_id' => $mahasiswa->lab_id
-        ]);
-
-        $mahasiswa->matakuliahs()->create([
-            'matakuliah' => $request->matakuliah,
-            'dosen' => $request->dosen,
-            'jam_masuk' => $request->jam_masuk,
-            'jam_keluar' => $request->jam_keluar,
-            'lab_id' => $mahasiswa->lab_id
-        ]);
-
-        return redirect('/')
-            ->with('success', 'SELAMAT DATA PERKULIAHAN ANDA BERHASIL DISIMPAN');
-    }
 
 
 

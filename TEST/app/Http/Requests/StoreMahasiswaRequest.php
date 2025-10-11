@@ -22,7 +22,24 @@ class StoreMahasiswaRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'nama' => 'required|string|max:255',
+            'nim' => 'required|string|max:20',
+            'kelas' => 'required|string|max:50',
+            'ruang_lab' => 'required|string',
+            'tanggal' => 'required|date',
+            'matakuliah' => 'required|string',
+            'dosen' => 'required|string',
+            'jam_masuk' => 'required',
+            'jam_keluar' => 'required',
+            'no_loker' => 'nullable|string',
+            'nomor_pc' => 'nullable|string',
+            'monitor' => 'nullable|string',
+            'keyboard' => 'nullable|string',
+            'mouse' => 'nullable|string',
+            'jaringan' => 'nullable|string',
+            'keterangan' => 'nullable|string',
+            'alat' => 'nullable|string',
         ];
     }
+
 }

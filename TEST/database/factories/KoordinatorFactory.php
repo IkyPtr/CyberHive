@@ -17,13 +17,17 @@ class KoordinatorFactory extends Factory
     public function definition(): array
     {
         return [
-            'id_ko' => strtoupper(fake()->unique()->lexify('????')), // Generates 4 char ID
-            'nama_ko' => fake()->name(),
-            'nim_nip' => fake()->unique()->numerify('##########'),
-            'no_hp' => fake()->unique()->numerify('08##########'),
-            'email' => fake()->unique()->safeEmail(),
-            'username' => substr(fake()->unique()->userName(), 0, 10),
-            'password' => substr(fake()->password(8), 0, 10),
+            'id_ko' => uniqid(),
+            'nama' => $this->faker->name(),
+            'nim_nip' => $this->faker->numerify('NIP###'),
+            'email' => $this->faker->unique()->safeEmail(),
+            'jumlah' => $this->faker->numberBetween(10, 100),
+            'kegiatan' => $this->faker->sentence(2),
+            'tanggal_mulai' => $this->faker->date(),
+            'tanggal_selesai' => $this->faker->date(),
+            'keterangan_status' => '-', // ✅ default biar tidak error
+            'status' => 'pending',
+            'lab_id' => uniqid(),
         ];
     }
 }
