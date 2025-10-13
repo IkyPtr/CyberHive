@@ -16,11 +16,13 @@ Route::view('/login', 'login');
 Route::post('/session', [SessionController::class, 'store'])->name('session.store');
 
 // Resource Controllers
+// Resource Controllers
 Route::resources([
     'mahasiswa' => MahasiswaController::class,
     'koordinator' => KoordinatorController::class,
     'peserta' => PesertaController::class,
-    'teknisi' => TeknisiController::class
+    'teknisi' => TeknisiController::class,
+    'lab' => \App\Http\Controllers\LabController::class,
 ]);
 
 // Peserta Routes
