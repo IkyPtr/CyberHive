@@ -40,7 +40,7 @@ Route::prefix('admin')->group(function () {
     Route::get('/create', [AdminController::class, 'create'])->name('admin.create');
     Route::post('/store', [AdminController::class, 'store'])->name('admin.store');
     Route::get('/search', [AdminController::class, 'index'])->name('admin.search');
-    Route::get('/Koor', [KoordinatorController::class, 'index'])->name('koordinator.index');
+    Route::get('/Koor', [KoordinatorController::class, 'index'])->name('admin.koordinator.index');
     Route::get('/koordinator/{koordinator}/edit', [KoordinatorController::class, 'edit'])->name('koordinator.edit');
     Route::put('/koordinator/{koordinator}', [KoordinatorController::class, 'update'])->name('koordinator.update');
     Route::get('/koordinator/{koordinator}/print', [KoordinatorController::class, 'show'])
