@@ -2,18 +2,18 @@
 
 Proyek Manajemen Lab JTI PCR Semester 3
 
-## 🚀 Deskripsi Proyek
+##  Deskripsi Proyek
 
 CyberHive adalah aplikasi berbasis web yang digunakan untuk mengelola proses peminjaman dan pengembalian fasilitas laboratorium di lingkungan Jurusan Teknik Informatika. Sistem ini dirancang untuk membantu admin, koordinator, teknisi, dan peserta dalam mengelola data laboratorium secara terstruktur dan efisien.
 
-## 🎯 Tujuan Sistem
+##  Tujuan Sistem
 
 * Mempermudah proses reservasi dan peminjaman ruangan atau alat lab
 * Mengurangi kesalahan pencatatan secara manual
 * Membantu monitoring data peminjaman dan pengembalian
 * Mempercepat proses validasi dan pelaporan
 
-## 🧩 Fitur Utama
+##  Fitur Utama
 
 * CRUD Data Peserta, Koordinator, Teknisi, Admin
 * Manajemen Reservasi Peminjaman Lab
@@ -22,7 +22,7 @@ CyberHive adalah aplikasi berbasis web yang digunakan untuk mengelola proses pem
 * Pengujian fitur menggunakan PHPUnit (Feature Test & Unit Test)
 * Deploy menggunakan Vercel
 
-## 🛠️ Teknologi yang Digunakan
+##  Teknologi yang Digunakan
 
 | Teknologi     | Keterangan         |
 | ------------- | ------------------ |
@@ -33,7 +33,7 @@ CyberHive adalah aplikasi berbasis web yang digunakan untuk mengelola proses pem
 | GitHub        | Version Control    |
 | VSCode        | Text Editor        |
 
-## 📂 Struktur Proyek (Singkat)
+##  Struktur Proyek (Singkat)
 
 ```
 CyberHive/
@@ -53,7 +53,7 @@ CyberHive/
 └── tests/
 ```
 
-## 🧪 Pengujian & Uji Coba
+##  Pengujian & Uji Coba
 
 Pengujian dilakukan menggunakan **PHPUnit**, contoh test file:
 
@@ -71,7 +71,7 @@ php artisan test
 
 🔗 [https://cyber-hive-seven.vercel.app](https://cyber-hive-seven.vercel.app)
 
-## 👨‍💻 Developer
+##  Developer
 
 Dibuat oleh Rezki Saputra, M. Abyaz Shadiq, Aqila Wafiah dan Helfia Giska Renata
 
