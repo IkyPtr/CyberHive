@@ -16,7 +16,6 @@ Route::view('/login', 'login');
 Route::post('/session', [SessionController::class, 'store'])->name('session.store');
 
 // Resource Controllers
-// Resource Controllers
 Route::resources([
     'mahasiswa' => MahasiswaController::class,
     'koordinator' => KoordinatorController::class,
@@ -41,25 +40,18 @@ Route::prefix('admin')->group(function () {
     Route::post('/store', [AdminController::class, 'store'])->name('admin.store');
     Route::get('/search', [AdminController::class, 'index'])->name('admin.search');
     Route::get('/Koor', [KoordinatorController::class, 'index'])->name('admin.koordinator.index');
-    Route::get('/koordinator/{koordinator}/edit', [KoordinatorController::class, 'edit'])->name('koordinator.edit');
-    Route::put('/koordinator/{koordinator}', [KoordinatorController::class, 'update'])->name('koordinator.update');
+    Route::get('/koordinator/{koordinator}/edit', [KoordinatorController::class, 'edit'])->name('admin.koordinator.edit');
+    Route::put('/koordinator/{koordinator}', [KoordinatorController::class, 'update'])->name('admin.koordinator.update');
     Route::get('/koordinator/{koordinator}/print', [KoordinatorController::class, 'show'])
-    ->name('koordinator.print');
-    Route::get('/Peserta', [PesertaController::class, 'index'])->name('peserta.index');
+        ->name('admin.koordinator.print');
+    Route::get('/Peserta', [PesertaController::class, 'index'])->name('admin.peserta.index');
 });
 
 // Teknisi Routes
-// Add these routes in your teknisi group
 Route::prefix('teknisi')->group(function () {
     Route::view('/login', 'Teknisi.teknisi_login');
-    Route::get('/', [TeknisiController::class, 'index'])->name('teknisi.index');
-    Route::get('/selesai', [TeknisiController::class, 'show'])->name('teknisi.show');
-    Route::put('/{id}', [TeknisiController::class, 'update'])->name('teknisi.update');
-    Route::delete('/destroy/{id}', [TeknisiController::class, 'destroy'])->name('teknisi.destroy');
+    Route::get('/selesai', [TeknisiController::class, 'show'])->name('teknisi.selesai');
 });
-
-
-
 
 // Log Routes
 Route::view('/logkeg', 'logkeg');
@@ -69,6 +61,7 @@ Route::get('/logper', function () {
 Route::get('/logkeg/KOOR', function () {
     return view('Koordinator.koordinator_create');
 });
-// Add this delete route
-Route::delete('/mahasiswa/{nim}', [MahasiswaController::class, 'destroy'])->name('mahasiswa.destroy');
-Route::delete('/peserta/{id}', [PesertaController::class, 'destroy'])->name('peserta.destroy');
+
+// Delete Routes (nama diganti untuk menghindari duplikasi)
+Route::delete('/mahasiswa/{nim}', [MahasiswaController::class, 'destroy'])->name('mahasiswa.custom.destroy');  // Nama diganti dari 'mahasiswa.destroy'
+Route::delete('/peserta/{id}', [PesertaController::class, 'destroy'])->name('peserta.custom.destroy');  // Nama diganti dari 'peserta.destroy'
