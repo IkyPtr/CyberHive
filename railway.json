@@ -1,0 +1,6 @@
+{
+  "build": {
+    "builder": "railpack/php:latest",
+    "buildCommand": "composer install --no-dev --optimize-autoloader"
+  }
+}
