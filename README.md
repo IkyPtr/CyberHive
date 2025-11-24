@@ -69,7 +69,7 @@ php artisan test
 
 ## 🕸️ Link Demo Deploy
 
-🔗 [https://cyber-hive-seven.vercel.app](https://cyber-hive-seven.vercel.app)
+🔗 LINK BELUM TERSEDIA, NAMUN ANDA BISA JALANKAN DI LOCALHOST, SILAHKAN CLONE TERLEBIH DAHULU
 
 ##  Developer
 
