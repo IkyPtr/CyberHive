@@ -1,0 +1,6 @@
+projectKey=manajemen-lab-jti
+serverUrl=http://localhost:9000
+serverVersion=25.11.0.114957
+dashboardUrl=http://localhost:9000/dashboard?id=manajemen-lab-jti
+ceTaskId=0ea33ad2-0dfd-434e-ac18-483950dbb997
+ceTaskUrl=http://localhost:9000/api/ce/task?id=0ea33ad2-0dfd-434e-ac18-483950dbb997
